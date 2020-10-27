@@ -1,89 +1,112 @@
 #!/bin/bash
 
-#
 <<'COMMENTS'
 
 Script by Alex Alduk S3437526
 
-This script initiates and installs the the Linux Kernel for the Raspberry Pi 4
+This script initiates and installs the Linux Kernel for the Raspberry Pi 4
 
-The first variable is the working directory - NO
+*** TO-DO ***
 
-Input working directory as variable - NO
-Input IP address when running script...
+Checkout personal repo
+Checkout Raspberry Pi repo
+Copy .config file into git repo
+Build kernel
+Backup /boot directory and compress
+Copy files to boot directory
+Restart Pi 
 
+No user input??
+
+Input IP address when running script... - check about user input...
+Change script group owner to sudo to be able to run without "sudo" command
+remove unneccessary "sudo" commands
 
 COMMENTS
 
 #Variables
-declare dir=$(pwd)"/tmp"
+declare dir="$(pwd)""/tmp"
 declare displayIP=$1":0.0"
 declare gitRepo="git@github.com:s3437526/USAP_Assignment2.git"
 
 #*************************************************************************************
 #Dummmy test print! - remove!
 #*************************************************************************************
-printf "Entered IP address is :$displayIP\n"
+printf "Entered IP address is: "$displayIP"\n"
 
 #Check for input flags - if the first variable (local IP address) is null then exit
-if [ -z "$1" ] ;
-then
-	printf "There has been no IP address input. Please ensure you enter your local IP address before continuting.\nExiting..."
-exit
-fi
+function startup_checks () {
 
+	if [[ -z "$1" ]] ; then
+		printf "There has been no IP address input. Please ensure you enter your local IP address before continuting.\nExiting..."
+	exit
+	fi
+}
 
-#Install pre-requisites for kernel download
-echo "Installing dependancies..."
-apt install raspberrypi-kernel-headers build-essential bc git wget bison flex libssl-dev make
+# Prepare download and working directories
+function setup_directories () {
 
-#Crete temporary clone directory for setup
-#If the directory exists then warn the user to back it up as it would get deleted on completion of the script
-if [ -d $dir ] ;
-then
-	printf "\nThe $dir directory already exists.\nPlease ensure it is backed up as it will be deleted on completion of this process.\nExiting...\n"
-exit
-fi
+	#Crete temporary clone directory for setup
+	#If the directory exists then warn the user to back it up as it would get deleted on completion of the script
+	if [[ -d "$dir" ]] ; then
+	printf "\nThe "$dir" directory already exists.\nPlease ensure it is backed up as it will be deleted on completion of this process.\nExiting...\n"
+	exit
+	fi	
 
-cd $dir
-mkdir tmp
-cd tmp
+	mkdir $dir
+	cd $dir
+	#mkdir tmp
+	#cd tmp
 
-#Convert directory to git directory
-git init
-git checkout -b Requirement_5
+	#Convert directory to git directory
+	git init
+	git checkout -b Assignment_2
+}
 
-#Download latest linux kernel
-echo "Fetching the latest Rasbperry Pi Kernel mirror"
-git clone --depth=1 https://github.com/raspberrypi/linux
+#Download and prepare Linux kernel
+function prepare_kernel () {
 
-#Select kernel for Rapberry Pi 4
-echo "Setting Kernel to Rasberry Pi 4"
-KERNEL=kernel7l
+	#Download latest linux kernel
+	echo "Fetching the latest Rasbperry Pi Kernel mirror"
+	git clone --depth=1 https://github.com/raspberrypi/linux
 
-echo "Making bcm2711_defconfig..."
-cd linux
-make bcm2711_defconfig
+	#Select kernel for Rapberry Pi 4
+	echo "Setting Kernel to Rasberry Pi 4"
+	KERNEL=kernel7l
 
+	#Set processor type for Raspberry Pi 4
+	echo "Making bcm2711_defconfig..."
+	cd linux
+	make bcm2711_defconfig
+}
+
+#Prepare user interface to allow user to modify kernel features
+function setup_ui () {
+	
+	#Display appropriate message to the user stating the requirements for X
+	#and give them time to cancel if this is not set up appropriately
+	printf "\nEnsuring X11 screen is exported as localhost. Please ensure X11 is being forwarded otherwise this process will fail. \nCurrent display is exported as "$displayIP". If this is not the same this process will fail. Be sure to export the correct display with an instance of X server running. \nResuming in 15 seconds...\n"
+	sleep 15
+	export DISPLAY="$displayIP"
+
+#Install UI builder
 echo "Installing qt5..."
-apt-get install qt5-\*-dev
+sudo apt-get install qt5-\*-dev
 
-printf "\nEnsuring X11 screen is exported as localhost. Please ensure X11 is being forwarded otherwise this process will fail. \nCurrent display is exported as $displayIP. If this is not the same this process will fail. Be sure to export the correct display with an instance of X server running. \nResuming in 10 seconds..."
-sleep 10
-export DISPLAY=$displayIP
-
+#Build and launch UI - if this process fails display error message and exit out
+#of the function
 echo "Making Xconfig"
-#cd linux
 make xconfig || { printf "There was an error with getting Xconfig running. Please check that you have X11 installed, X11 forwarded and a correct local (client computer) IP address.";  exit ; }
+}
 
-echo "Setting image to run on 4 cores..."
-sudo make -j4 zImage modules dtbs
+#Build and install the Raspberry Pi 4 kernel
+function install_kernel () {
 
-echo "Installing..."
-sudo make modules_install 
-sudo cp arch/arm/boot/dts/*.dtb /boot/ 
-sudo cp arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/ 
-sudo cp arch/arm/boot/dts/overlays/README /boot/overlays/
+	echo "Installing..."
+	sudo make modules_install
+	sudo cp arch/arm/boot/dts/*.dtb /boot/ #was sudo
+	sudo cp arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/ #was sudo
+	sudo cp arch/arm/boot/dts/overlays/README /boot/overlays/ #was sudo
 
 echo "Copying architecture to Kernel image..."
 sudo cp arch/arm/boot/zImage /boot/$KERNEL.img
@@ -91,3 +114,26 @@ sudo cp arch/arm/boot/zImage /boot/$KERNEL.img
 #Delete temporary folder
 #echo "Deleting temporary folder..."
 #sudo rm -r /home/alx/tmp
+
+sudo reboot
+
+exit 0
+}
+
+startup_checks "$displayIP"
+
+#Install pre-requisites for kernel download
+echo "Installing dependancies..."
+sudo apt install raspberrypi-kernel-headers build-essential bc git wget bison flex libssl-dev make
+
+setup_directories
+
+prepare_kernel
+
+setup_ui "$displayIP"
+
+#Set up image to run on 4 cores
+#echo "Setting image to run on 4 cores..."
+#make -j4 zImage modules dtbs #was sudo
+
+#install_kernel

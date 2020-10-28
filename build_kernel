@@ -1,6 +1,6 @@
 #!/bin/bash
 
-<<'COMMENTS'
+:"
 
 Script by Alex Alduk S3437526
 
@@ -19,27 +19,37 @@ Restart Pi
 No user input??
 
 Input IP address when running script... - check about user input...
-Change script group owner to sudo to be able to run without "sudo" command
-remove unneccessary "sudo" commands
+Change script group owner to sudo to be able to run without 'sudo' command
+remove unneccessary 'sudo' commands
+add error checking of calls with the following:
+result='$?'
+if [[ '$?' -ne '0' ]] ; then
+exit '$result' #replace all single quotes with doubles here...
+fi
 
-COMMENTS
+"
 
 #Variables
-declare dir="$(pwd)""/tmp"
-declare displayIP=$1":0.0"
+declare dir
+dir="$(pwd)""/tmp" #CHANGE TO ~/tmp
+declare inputIP="$1"
+declare displayIP="$1:0.0"
 declare gitRepo="git@github.com:s3437526/USAP_Assignment2.git"
 
-#*************************************************************************************
+#*******************************************************************************
 #Dummmy test print! - remove!
-#*************************************************************************************
-printf "Entered IP address is: "$displayIP"\n"
+#*******************************************************************************
+printf "Entered IP address is: '%s'""$displayIP""\n"
 
-#Check for input flags - if the first variable (local IP address) is null then exit
+#Check for input flags - if the first variable (local IP address) is 
+#null then exit
 function startup_checks () {
 
-	if [[ -z "$1" ]] ; then
-		printf "There has been no IP address input. Please ensure you enter your local IP address before continuting.\nExiting..."
-	exit
+	if [[ -z "$inputIP" ]] ; then
+		printf "There has been no IP address input.\n"
+	       	printf "Please ensure you enter your local IP address before "
+		printf "contuniung.\nExiting..."
+		exit 1  
 	fi
 }
 
@@ -47,20 +57,23 @@ function startup_checks () {
 function setup_directories () {
 
 	#Crete temporary clone directory for setup
-	#If the directory exists then warn the user to back it up as it would get deleted on completion of the script
+	#If the directory exists then warn the user to back it up as it would 
+	#get deleted on completion of the script
 	if [[ -d "$dir" ]] ; then
-	printf "\nThe "$dir" directory already exists.\nPlease ensure it is backed up as it will be deleted on completion of this process.\nExiting...\n"
-	exit
+		printf "\nThe '%s'$dir directory already exists.\n"
+		printf "Please ensure it is backed up as it will be deleted "
+		printf "on completion of this process.\nExiting...\n"
+		exit 1
 	fi	
 
-	mkdir $dir
-	cd $dir
+	mkdir "$dir"
+	cd "$dir" || exit 1 # ADD ERROR MESSAGE HERE...............................?
 	#mkdir tmp
 	#cd tmp
 
 	#Convert directory to git directory
 	git init
-	git checkout -b Assignment_2
+	git checkout -b Assignment_2 # THINK THIS NEEDS TO BE CLONE, NOT CHECKOUT
 }
 
 #Download and prepare Linux kernel
@@ -76,7 +89,7 @@ function prepare_kernel () {
 
 	#Set processor type for Raspberry Pi 4
 	echo "Making bcm2711_defconfig..."
-	cd linux
+	cd linux || exit 1 # ERRRRRORRRRRRR MESSAGE HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 	make bcm2711_defconfig
 }
 
@@ -85,18 +98,26 @@ function setup_ui () {
 	
 	#Display appropriate message to the user stating the requirements for X
 	#and give them time to cancel if this is not set up appropriately
-	printf "\nEnsuring X11 screen is exported as localhost. Please ensure X11 is being forwarded otherwise this process will fail. \nCurrent display is exported as "$displayIP". If this is not the same this process will fail. Be sure to export the correct display with an instance of X server running. \nResuming in 15 seconds...\n"
+	printf "\nEnsuring X11 screen is exported as localhost. Please ensure "
+	printf "X11 is being forwarded otherwise this process will fail.\n"
+	printf "Current display is exported as '%s'$displayIP. If this is not "
+	printf "the same this process will fail. Be sure to export the correct "
+	printf "display with an instance of X server running. \nResuming in 15 "
+	printf "seconds...\n"
 	sleep 15
 	export DISPLAY="$displayIP"
 
-#Install UI builder
-echo "Installing qt5..."
-sudo apt-get install qt5-\*-dev
+	#Install UI builder
+	echo "Installing qt5..."
+	sudo apt-get install qt5-\*-dev
 
-#Build and launch UI - if this process fails display error message and exit out
-#of the function
-echo "Making Xconfig"
-make xconfig || { printf "There was an error with getting Xconfig running. Please check that you have X11 installed, X11 forwarded and a correct local (client computer) IP address.";  exit ; }
+	#Build and launch UI - if this process fails display error message and 
+	#exit out of the function
+	echo "Making Xconfig"
+	make xconfig || { printf "There was an error with getting Xconfig "
+	printf "running.\nPlease check that you have X11 installed, X11 "
+	printf "forwarded and a correct local (client computer) IP address."; 
+       	exit 1 ; } # FIX THIS ERROR/EXIT
 }
 
 #Build and install the Raspberry Pi 4 kernel
@@ -124,7 +145,8 @@ startup_checks "$displayIP"
 
 #Install pre-requisites for kernel download
 echo "Installing dependancies..."
-sudo apt install raspberrypi-kernel-headers build-essential bc git wget bison flex libssl-dev make
+sudo apt install raspberrypi-kernel-headers build-essential bc git wget bison 
+flex libssl-dev make #This was on the same line as above................
 
 setup_directories
 

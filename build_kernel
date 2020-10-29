@@ -22,71 +22,107 @@ Input IP address when running script... - check about user input...
 Change script group owner to sudo to be able to run without 'sudo' command
 remove unneccessary 'sudo' commands
 add error checking of calls with the following:
-result='$?'
-if [[ '$?' -ne '0' ]] ; then
-exit '$result' #replace all single quotes with doubles here...
-fi
 
 added some error handling...
+...and again...
 
 "
 
-#Variables
+# Variables
+#==========
 declare dir
 dir="$HOME/tmp"
-declare inputIP="$1"
-declare displayIP="$1:0.0"
-declare gitRepo="git@github.com:s3437526/USAP_Assignment2.git"
+declare input_IP="$1"
+declare display_IP="$1:0.0"
+declare FAILURE=1
+declare SUCCESS=0
+failed_process=""
 
 #*******************************************************************************
 #Dummmy test print! - remove!
 #*******************************************************************************
-printf "Entered IP address is:%s""$displayIP""\n"
+printf "Entered IP address is: %s""$display_IP""\n"
 
-#Check for input flags - if the first variable (local IP address) is 
-#null then exit
+# Check for input flags - if the first variable (local IP address) is 
+# null then exit
+#===============================================================================
 function startup_checks () {
 
-	if [[ -z "$inputIP" ]] ; then
+	if [[ -z "$input_IP" ]] ; then
 		printf "There has been no IP address input.\n"
-	       	printf "Please ensure you enter your local IP address before "
-		printf "contuniung.\nExiting..."
-		exit 1  
+	   	printf "Please ensure you enter your local IP address before "
+		printf "continuing.\nExiting..."
+		exit "$FAILURE"  
 	fi
 }
 
-# Prepare download and working directories
-function setup_directories () {
+# Handle any failed processes - this function gets called and is given a
+# parameter of the failed process and displays it to the user before exiting
+#===============================================================================
+function handleFails () {
 
-	#Crete temporary clone directory for setup
-	#If the directory exists then warn the user to back it up as it would 
-	#get deleted on completion of the script
-	if [[ -d "$dir" ]] ; then
-		printf "\nThe %s$dir directory already exists.\n"
-		printf "Please ensure it is backed up as it will be deleted "
-		printf "on completion of this process.\nExiting...\n"
-		exit 1
-	fi	
-
-	mkdir "$dir" || { printf "Error: creating directory failed.\n"
-	printf "Directory selected is: %s$dir. Exiting..." ; exit 1 ; }
-
-	cd "$dir" || { printf "Error: opening tmp directory failed.\n"
-      	printf "Directory selected is: %s$dir. Exiting..." ; exit 1 ; }
-	#mkdir tmp
-	#cd tmp
-
-	#Convert directory to git directory
-	git init
-	git checkout -b Assignment_2 # THINK THIS NEEDS TO BE CLONE, NOT CHECKOUT
+	printf "An error was encountered while running the %s$failed_process "
+	printf "process.\nExiting..." 
+	exit "$result"
 }
 
-#Download and prepare Linux kernel
+# Prepare download and working directories - if at any point these processes
+# fail, notify the user and exit
+#===============================================================================
+function setup_directories () {
+
+	local git_repo="git@github.com:s3437526/USAP_Assignment2.git"
+	local student_dir="s3437526"
+
+	# Crete temporary clone directory for setup
+	# If the directory exists then warn the user to back it up as it would 
+	# get deleted on completion of the script
+	if [[ -d "$dir" ]] ; then
+		printf "\nThe %s""$dir"" directory already exists.\n"
+		printf "Please ensure it is backed up as it will be deleted "
+		printf "on completion of this process.\nExiting...\n"
+		exit "$FAILURE"
+	fi	
+
+	# Prepare local directories - if any of these processes fail, notify
+	# the user and exit
+	mkdir "$dir" || { printf "Error: creating directory failed.\n" ;
+	printf "Directory selected is: %s""$dir"". Exiting..." ;
+	exit "$FAILURE" ; }
+
+	cd "$dir" || { printf "Error: opening tmp directory failed.\n"
+      	printf "Directory selected is: %s""$dir"". Exiting..." ;
+       	exit "$FAILURE" ; }
+
+	# Convert directory to git directory - if it fails, notify the user
+	echo "Initialising local git repository..."
+	if ! git init ;  then
+		result="$?"
+		failed_process="Git initialisation"
+		handle_fails "$failed_process"
+	fi
+
+	# Clone the remote repo into the local directory for use - if it fails
+	# notify the user
+	echo "Cloning remote repo to %s""$student_dir"" directory..."
+	if ! git clone "$git_repo" "$student_dir" ; then
+		result="$?"
+		failed_process="cloning of remote repository"
+		handle_fails "$failed_process"
+	fi
+}
+
+# Download and prepare Linux kernel - report any errors to the user and exit
+#===============================================================================
 function prepare_kernel () {
 
 	#Download latest linux kernel
 	echo "Fetching the latest Rasbperry Pi Kernel mirror"
-	git clone --depth=1 https://github.com/raspberrypi/linux
+	if ! git clone --depth=1 https://github.com/raspberrypi/linux ; then
+		result="$?"
+		failed_process="remote repository cloning into local directory"
+		handle_faile "$failed_process"
+	fi
 
 	#Select kernel for Rapberry Pi 4
 	echo "Setting Kernel to Rasberry Pi 4"
@@ -94,23 +130,24 @@ function prepare_kernel () {
 
 	#Set processor type for Raspberry Pi 4
 	echo "Making bcm2711_defconfig..."
-	cd linux || exit 1 # ERRRRRORRRRRRR MESSAGE HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+	cd linux || { printf "Error: changing to the linux directory failed.\n"
+       	printf "Exiting..." ; exit "$FAILURE" ; }
 	make bcm2711_defconfig
 }
 
-#Prepare user interface to allow user to modify kernel features
+# Prepare user interface to allow user to modify kernel features
 function setup_ui () {
 	
 	#Display appropriate message to the user stating the requirements for X
 	#and give them time to cancel if this is not set up appropriately
 	printf "\nEnsuring X11 screen is exported as localhost. Please ensure "
 	printf "X11 is being forwarded otherwise this process will fail.\n"
-	printf "Current display is exported as '%s'$displayIP. If this is not "
-	printf "the same this process will fail. Be sure to export the correct "
-	printf "display with an instance of X server running. \nResuming in 15 "
-	printf "seconds...\n"
+	printf "Current display is exported as %s""$display_IP"". If this is "
+	printf "not the same this process will fail. Be sure to export the "
+	printf "correct display with an instance of X server running. \n"
+	printf "Resuming in 15 seconds...\n"
 	sleep 15
-	export DISPLAY="$displayIP"
+	export DISPLAY="$display_IP"
 
 	#Install UI builder
 	echo "Installing qt5..."
@@ -122,10 +159,10 @@ function setup_ui () {
 	make xconfig || { printf "There was an error with getting Xconfig "
 	printf "running.\nPlease check that you have X11 installed, X11 "
 	printf "forwarded and a correct local (client computer) IP address."; 
-       	exit 1 ; } # FIX THIS ERROR/EXIT
+       	exit "$FAILURE" ; } # FIX THIS ERROR/EXIT
 }
 
-#Build and install the Raspberry Pi 4 kernel
+# Build and install the Raspberry Pi 4 kernel
 function install_kernel () {
 
 	echo "Installing..."
@@ -137,30 +174,32 @@ function install_kernel () {
 echo "Copying architecture to Kernel image..."
 sudo cp arch/arm/boot/zImage /boot/$KERNEL.img
 
-#Delete temporary folder
-#echo "Deleting temporary folder..."
-#sudo rm -r /home/alx/tmp
+# Delete temporary folder
+# echo "Deleting temporary folder..."
+# sudo rm -r /home/alx/tmp
 
 sudo reboot
 
-exit 0
+exit $SUCCESS
 }
 
-startup_checks "$displayIP"
+startup_checks "$display_IP"
 
-#Install pre-requisites for kernel download
+# Install pre-requisites for kernel download
 echo "Installing dependancies..."
-sudo apt install raspberrypi-kernel-headers build-essential bc git wget bison 
-flex libssl-dev make #This was on the same line as above................
+sudo apt install raspberrypi-kernel-headers build-essential bc git wget bison flex libssl-dev make 
+#This was on the same line as above................
 
 setup_directories
 
 prepare_kernel
 
-setup_ui "$displayIP"
+setup_ui "$display_IP"
 
-#Set up image to run on 4 cores
-#echo "Setting image to run on 4 cores..."
-#make -j4 zImage modules dtbs #was sudo
+# Set up image to run on 4 cores
+# echo "Setting image to run on 4 cores..."
+# make -j4 zImage modules dtbs #was sudo
 
-#install_kernel
+# install_kernel
+
+

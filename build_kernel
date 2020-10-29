@@ -1,6 +1,6 @@
 #!/bin/bash
 
-:"
+: "
 
 Script by Alex Alduk S3437526
 
@@ -27,11 +27,13 @@ if [[ '$?' -ne '0' ]] ; then
 exit '$result' #replace all single quotes with doubles here...
 fi
 
+added some error handling...
+
 "
 
 #Variables
 declare dir
-dir="$(pwd)""/tmp" #CHANGE TO ~/tmp
+dir="$HOME/tmp"
 declare inputIP="$1"
 declare displayIP="$1:0.0"
 declare gitRepo="git@github.com:s3437526/USAP_Assignment2.git"
@@ -39,7 +41,7 @@ declare gitRepo="git@github.com:s3437526/USAP_Assignment2.git"
 #*******************************************************************************
 #Dummmy test print! - remove!
 #*******************************************************************************
-printf "Entered IP address is: '%s'""$displayIP""\n"
+printf "Entered IP address is:%s""$displayIP""\n"
 
 #Check for input flags - if the first variable (local IP address) is 
 #null then exit
@@ -60,14 +62,17 @@ function setup_directories () {
 	#If the directory exists then warn the user to back it up as it would 
 	#get deleted on completion of the script
 	if [[ -d "$dir" ]] ; then
-		printf "\nThe '%s'$dir directory already exists.\n"
+		printf "\nThe %s$dir directory already exists.\n"
 		printf "Please ensure it is backed up as it will be deleted "
 		printf "on completion of this process.\nExiting...\n"
 		exit 1
 	fi	
 
-	mkdir "$dir"
-	cd "$dir" || exit 1 # ADD ERROR MESSAGE HERE...............................?
+	mkdir "$dir" || { printf "Error: creating directory failed.\n"
+	printf "Directory selected is: %s$dir. Exiting..." ; exit 1 ; }
+
+	cd "$dir" || { printf "Error: opening tmp directory failed.\n"
+      	printf "Directory selected is: %s$dir. Exiting..." ; exit 1 ; }
 	#mkdir tmp
 	#cd tmp
 

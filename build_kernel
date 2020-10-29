@@ -8,7 +8,7 @@ This script initiates and installs the Linux Kernel for the Raspberry Pi 4
 
 *** TO-DO ***
 
-Checkout personal repo
+Clone personal repo
 Checkout Raspberry Pi repo
 Copy .config file into git repo
 Build kernel
@@ -19,9 +19,7 @@ Restart Pi
 No user input??
 
 Input IP address when running script... - check about user input...
-Change script group owner to sudo to be able to run without 'sudo' command
 remove unneccessary 'sudo' commands
-add error checking of calls with the following:
 
 added some error handling...
 ...and again...
@@ -101,6 +99,7 @@ function setup_directories () {
 		failed_process="Git initialisation"
 		handle_fails "$failed_process"
 	fi
+	echo "Done."
 
 	# Clone the remote repo into the local directory for use - if it fails
 	# notify the user
@@ -110,6 +109,7 @@ function setup_directories () {
 		failed_process="cloning of remote repository"
 		handle_fails "$failed_process"
 	fi
+	echo "Done."
 }
 
 # Download and prepare Linux kernel - report any errors to the user and exit
@@ -121,25 +121,39 @@ function prepare_kernel () {
 	if ! git clone --depth=1 https://github.com/raspberrypi/linux ; then
 		result="$?"
 		failed_process="remote repository cloning into local directory"
-		handle_faile "$failed_process"
+		handle_fails "$failed_process"
 	fi
+	echo "Done."
 
 	#Select kernel for Rapberry Pi 4
 	echo "Setting Kernel to Rasberry Pi 4"
-	KERNEL=kernel7l
+	if ! KERNEL=kernel7l ; then
+		result="$?"
+		failed_process="setting of up the Raspberry Pi 4 kernel"
+		handle_fails "$failed_process"
+	fi
+	echo "Done."
 
 	#Set processor type for Raspberry Pi 4
 	echo "Making bcm2711_defconfig..."
 	cd linux || { printf "Error: changing to the linux directory failed.\n"
        	printf "Exiting..." ; exit "$FAILURE" ; }
-	make bcm2711_defconfig
+
+	if ! make bcm2711_defconfig ; then
+		result="$?"
+		failed_process="making of the bcm2711 kernel configuration"
+		handle_fails "$failed_process"
+	fi
+	echo "Done."
+	# EXPORT .config FILE FROM HERE TO APPROPRIATE DIRECTORY ****************
 }
 
 # Prepare user interface to allow user to modify kernel features
+#===============================================================================
 function setup_ui () {
 	
-	#Display appropriate message to the user stating the requirements for X
-	#and give them time to cancel if this is not set up appropriately
+	# Display appropriate message to the user stating the requirements for X
+	# and give them time to cancel if this is not set up appropriately
 	printf "\nEnsuring X11 screen is exported as localhost. Please ensure "
 	printf "X11 is being forwarded otherwise this process will fail.\n"
 	printf "Current display is exported as %s""$display_IP"". If this is "
@@ -149,46 +163,85 @@ function setup_ui () {
 	sleep 15
 	export DISPLAY="$display_IP"
 
-	#Install UI builder
+	# Install UI builder
 	echo "Installing qt5..."
-	sudo apt-get install qt5-\*-dev
+	if ! sudo apt-get install qt5-\*-dev ; then
+		result="$?"
+		failed_process="installation of the qt5"
+		handle_fails "$failed_process"
+	fi
+	echo "Done."
 
-	#Build and launch UI - if this process fails display error message and 
-	#exit out of the function
+	# Build and launch UI - if this process fails display error message and 
+	# exit out of the function
 	echo "Making Xconfig"
 	make xconfig || { printf "There was an error with getting Xconfig "
 	printf "running.\nPlease check that you have X11 installed, X11 "
 	printf "forwarded and a correct local (client computer) IP address."; 
-       	exit "$FAILURE" ; } # FIX THIS ERROR/EXIT
+       	exit "$FAILURE" ; } # FAILS HERE....
+	echo "Done."
 }
 
-# Build and install the Raspberry Pi 4 kernel
+# Build and install the Raspberry Pi 4 kernel - notifying the user and exiting
+# if any failures occur
+#===============================================================================
 function install_kernel () {
 
-	echo "Installing..."
-	sudo make modules_install
-	sudo cp arch/arm/boot/dts/*.dtb /boot/ #was sudo
-	sudo cp arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/ #was sudo
-	sudo cp arch/arm/boot/dts/overlays/README /boot/overlays/ #was sudo
+	echo "Installing kernel..."
+	if ! make modules_install ; then
+		result="$?"
+		failed_process="making of the install modules"
+		handle_fails "$failed_process"
+	fi
+	echo "Done."
 
-echo "Copying architecture to Kernel image..."
-sudo cp arch/arm/boot/zImage /boot/$KERNEL.img
+	if ! cp arch/arm/boot/dts/*.dtb /boot/ ; then # was sudo
+		result="$?"
+		failed_process="copying of architecture to boot directory"
+		handle_fails "$failed_process"
+	fi
+	echo "Done."
 
-# Delete temporary folder
-# echo "Deleting temporary folder..."
-# sudo rm -r /home/alx/tmp
+	if ! cp arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/ ; then
+		result="$?"
+		failed_process="copying of architecture to overlays directory"
+		handle_fails "$failed_process"
+	fi
+	echo "done."
 
-sudo reboot
+	if ! cp arch/arm/boot/dts/overlays/README /boot/overlays/ ; then
+		result="$?"
+		failed_process="copying of architecture to overlays directory"
+		handle_fails "$failed_process"
+	fi
+	echo "Done."
 
-exit $SUCCESS
+	echo "Copying architecture to Kernel image..."
+	if ! cp arch/arm/boot/zImage /boot/$KERNEL.img ; then
+		result="$?"
+		failed_process="copying of kernel image to the boot directory"
+		handle_fails "$failed_process"
+	fi
+	echo "Done"
+
+	# Delete temporary folder
+	# echo "Deleting temporary folder..."
+	# sudo rm -r /home/alx/tmp
+
+	exit "$SUCCESS"
 }
 
 startup_checks "$display_IP"
 
 # Install pre-requisites for kernel download
 echo "Installing dependancies..."
-sudo apt install raspberrypi-kernel-headers build-essential bc git wget bison flex libssl-dev make 
-#This was on the same line as above................
+if ! sudo apt install raspberrypi-kernel-headers build-essential bc git wget bison flex libssl-dev make ; then
+	result="$?"
+	failed_process="installing of depencencies"
+	handle_fails "$failed_process"
+fi
+echo "Done."
+#This was on the same line as above..... can it be split to keep to witin 80 characters??
 
 setup_directories
 
@@ -197,9 +250,16 @@ prepare_kernel
 setup_ui "$display_IP"
 
 # Set up image to run on 4 cores
-# echo "Setting image to run on 4 cores..."
-# make -j4 zImage modules dtbs #was sudo
+echo "Setting image to run on 4 cores..."
+if ! make -j4 zImage modules dtbs ; then #was sudo
+	result="$?"
+	failed_process="setting of the image to run on 4 cores"
+	handle_fails "$failed_process"
+fi
+echo "Done."
 
-# install_kernel
-
-
+if install_kernel ; then
+	printf "Kernel installed successfully, restarting in 10 seconds..."
+	sleep 10
+	sudo reboot
+fi

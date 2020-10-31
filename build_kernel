@@ -185,13 +185,13 @@ function prepare_kernel () {
 	fi
 	"$ECHO" "Done."
 	# Copy .config file to the local repo
-	"$ECHO" "Copying $config_file file to the local repository \
-	       	$STUDENT_DIR..."
+	"$ECHO" "Copying $config_file file to the local repository $STUDENT_DIR"
 	if ! "$CP" "$config_file" "$dir"/"$STUDENT_DIR"/"$config_file" ; then
 		result="$?"
 		failed_process="copying of the .config file to the git repo"
 		handle_fails "$failed_process"
 	fi
+	echo "$dir"/"$STUDENT_DIR"/"$config_file" > ~/log
 	"$ECHO" "Done."
 }
 
@@ -235,28 +235,28 @@ function setup_ui () {
 function install_kernel () {
 
 	"$ECHO" "Installing kernel..."
-	if ! make modules_install ; then
+	if ! sudo make modules_install ; then
 		result="$?"
 		failed_process="making of the install modules"
 		handle_fails "$failed_process"
 	fi
 	"$ECHO" "Done."
 
-	if ! "$CP" arch/arm/boot/dts/*.dtb /boot/ ; then # was sudo
+	if ! sudo "$CP" arch/arm/boot/dts/*.dtb /boot/ ; then # was sudo
 		result="$?"
 		failed_process="copying of architecture to boot directory"
 		handle_fails "$failed_process"
 	fi
 	"$ECHO" "Done."
 
-	if ! "$CP" arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/ ; then
+	if ! sudo "$CP" arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/ ; then
 		result="$?"
 		failed_process="copying of architecture to overlays directory"
 		handle_fails "$failed_process"
 	fi
 	"$ECHO" "done."
 
-	if ! "$CP" arch/arm/boot/dts/overlays/README /boot/overlays/ ; then
+	if ! sudo "$CP" arch/arm/boot/dts/overlays/README /boot/overlays/ ; then
 		result="$?"
 		failed_process="copying of architecture to overlays directory"
 		handle_fails "$failed_process"
@@ -264,7 +264,7 @@ function install_kernel () {
 	"$ECHO" "Done."
 
 	"$ECHO" "Copying architecture to Kernel image..."
-	if ! "$CP" arch/arm/boot/zImage /boot/$KERNEL.img ; then
+	if ! sudo "$CP" arch/arm/boot/zImage /boot/$KERNEL.img ; then
 		result="$?"
 		failed_process="copying of kernel image to the boot directory"
 		handle_fails "$failed_process"
@@ -295,6 +295,7 @@ setup_directories
 prepare_kernel
 
 setup_ui "$display_IP"
+
 
 # Set up image to run on 4 cores
 "$ECHO" "Setting image to run on 4 cores..."

@@ -21,8 +21,7 @@ No user input??
 Input IP address when running script... - check about user input...
 remove unneccessary 'sudo' commands
 
-added some error handling...
-...and again...
+Added declarations paths to executables as constants
 
 "
 
@@ -35,11 +34,21 @@ declare display_IP="$1:0.0"
 declare FAILURE=1
 declare SUCCESS=0
 failed_process=""
+declare PRINTF=/usr/bin/printf
+declare MKDIR=/bin/mkdir
+declare CP=/bin/cp
+declare ECHO=/bin/echo
+declare SLEEP=/bin/sleep
+declare MAKE=/usr/bin/make
+#declare INSTALL=/usr/bin/install
+#declare WGET=/usr/bin/wget
+declare REBOOT=/sbin/reboot
+declare GIT=/usr/bin/git
 
 #*******************************************************************************
 #Dummmy test print! - remove!
 #*******************************************************************************
-printf "Entered IP address is: %s""$display_IP""\n"
+"$PRINTF" "Entered IP address is: %s""$display_IP""\n"
 
 # Check for input flags - if the first variable (local IP address) is 
 # null then exit
@@ -47,10 +56,10 @@ printf "Entered IP address is: %s""$display_IP""\n"
 function startup_checks () {
 
 	if [[ -z "$input_IP" ]] ; then
-		printf "There has been no IP address input.\n"
-	   	printf "Please ensure you enter your local IP address before "
-		printf "continuing.\nExiting..."
-		exit "$FAILURE"  
+		"$PRINTF" "There has been no IP address input.\n"
+	   	"$PRINTF" "Please ensure you enter your local IP address before"
+		"$PRINTF" " continuing.\nExiting..."
+		$EXIT "$FAILURE"  
 	fi
 }
 
@@ -59,8 +68,8 @@ function startup_checks () {
 #===============================================================================
 function handleFails () {
 
-	printf "An error was encountered while running the %s$failed_process "
-	printf "process.\nExiting..." 
+	"$PRINTF" "An error was encountered while running the %s$failed_process "
+	"$PRINTF" "process.\nExiting..." 
 	exit "$result"
 }
 
@@ -76,40 +85,40 @@ function setup_directories () {
 	# If the directory exists then warn the user to back it up as it would 
 	# get deleted on completion of the script
 	if [[ -d "$dir" ]] ; then
-		printf "\nThe %s""$dir"" directory already exists.\n"
-		printf "Please ensure it is backed up as it will be deleted "
-		printf "on completion of this process.\nExiting...\n"
+		"$PRINTF" "\nThe %s""$dir"" directory already exists.\n"
+		"$PRINTF" "Please ensure it is backed up as it will be deleted "
+		"$PRINTF" "on completion of this process.\nExiting...\n"
 		exit "$FAILURE"
 	fi	
 
 	# Prepare local directories - if any of these processes fail, notify
 	# the user and exit
-	mkdir "$dir" || { printf "Error: creating directory failed.\n" ;
-	printf "Directory selected is: %s""$dir"". Exiting..." ;
+	"$MKDIR" "$dir" || { "$PRINTF" "Error: creating directory failed.\n" ;
+	"$PRINTF" "Directory selected is: %s""$dir"". Exiting..." ;
 	exit "$FAILURE" ; }
 
-	cd "$dir" || { printf "Error: opening tmp directory failed.\n"
-      	printf "Directory selected is: %s""$dir"". Exiting..." ;
+	cd "$dir" || { "$PRINTF" "Error: opening tmp directory failed.\n"
+      	"$PRINTF" "Directory selected is: %s""$dir"". Exiting..." ;
        	exit "$FAILURE" ; }
 
 	# Convert directory to git directory - if it fails, notify the user
-	echo "Initialising local git repository..."
-	if ! git init ;  then
+	"$ECHO" "Initialising local git repository..."
+	if ! "$GIT" init ;  then
 		result="$?"
 		failed_process="Git initialisation"
 		handle_fails "$failed_process"
 	fi
-	echo "Done."
+	"$ECHO" "Done."
 
 	# Clone the remote repo into the local directory for use - if it fails
 	# notify the user
-	echo "Cloning remote repo to %s""$student_dir"" directory..."
-	if ! git clone "$git_repo" "$student_dir" ; then
+	"$ECHO" "Cloning remote repo to ""$student_dir"" directory..."
+	if ! "$GIT" clone "$git_repo" "$student_dir" ; then
 		result="$?"
 		failed_process="cloning of remote repository"
 		handle_fails "$failed_process"
 	fi
-	echo "Done."
+	"$ECHO" "Done."
 }
 
 # Download and prepare Linux kernel - report any errors to the user and exit
@@ -117,34 +126,34 @@ function setup_directories () {
 function prepare_kernel () {
 
 	#Download latest linux kernel
-	echo "Fetching the latest Rasbperry Pi Kernel mirror"
-	if ! git clone --depth=1 https://github.com/raspberrypi/linux ; then
+	"$ECHO" "Fetching the latest Rasbperry Pi Kernel mirror"
+	if ! "$GIT" clone --depth=1 https://github.com/raspberrypi/linux ; then
 		result="$?"
 		failed_process="remote repository cloning into local directory"
 		handle_fails "$failed_process"
 	fi
-	echo "Done."
+	"$ECHO" "Done."
 
 	#Select kernel for Rapberry Pi 4
-	echo "Setting Kernel to Rasberry Pi 4"
+	"$ECHO" "Setting Kernel to Rasberry Pi 4"
 	if ! KERNEL=kernel7l ; then
 		result="$?"
 		failed_process="setting of up the Raspberry Pi 4 kernel"
 		handle_fails "$failed_process"
 	fi
-	echo "Done."
+	"$ECHO" "Done."
 
 	#Set processor type for Raspberry Pi 4
-	echo "Making bcm2711_defconfig..."
-	cd linux || { printf "Error: changing to the linux directory failed.\n"
-       	printf "Exiting..." ; exit "$FAILURE" ; }
+	"$ECHO" "Making bcm2711_defconfig..."
+	cd linux || { "$PRINTF" "Error: changing to the linux directory failed.\n"
+       	"$PRINTF" "Exiting..." ; exit "$FAILURE" ; }
 
-	if ! make bcm2711_defconfig ; then
+	if ! "$MAKE" bcm2711_defconfig ; then
 		result="$?"
 		failed_process="making of the bcm2711 kernel configuration"
 		handle_fails "$failed_process"
 	fi
-	echo "Done."
+	"$ECHO" "Done."
 	# EXPORT .config FILE FROM HERE TO APPROPRIATE DIRECTORY ****************
 }
 
@@ -154,78 +163,78 @@ function setup_ui () {
 	
 	# Display appropriate message to the user stating the requirements for X
 	# and give them time to cancel if this is not set up appropriately
-	printf "\nEnsuring X11 screen is exported as localhost. Please ensure "
-	printf "X11 is being forwarded otherwise this process will fail.\n"
-	printf "Current display is exported as %s""$display_IP"". If this is "
-	printf "not the same this process will fail. Be sure to export the "
-	printf "correct display with an instance of X server running. \n"
-	printf "Resuming in 15 seconds...\n"
-	sleep 15
+	"$PRINTF" "\nEnsuring X11 screen is exported as localhost. Please ensure "
+	"$PRINTF" "X11 is being forwarded otherwise this process will fail.\n"
+	"$PRINTF" "Current display is exported as %s""$display_IP"". If this is "
+	"$PRINTF" "not the same this process will fail. Be sure to export the "
+	"$PRINTF" "correct display with an instance of X server running. \n"
+	"$PRINTF" "Resuming in 15 seconds...\n"
+	"$SLEEP" 15
 	export DISPLAY="$display_IP"
 
 	# Install UI builder
-	echo "Installing qt5..."
-	if ! sudo apt-get install qt5-\*-dev ; then
+	"$ECHO" "Installing qt5..."
+	if ! sudo apt-get "$INSTALL" qt5-\*-dev ; then
 		result="$?"
-		failed_process="installation of the qt5"
+		failed_process="install section of the qt5"
 		handle_fails "$failed_process"
 	fi
-	echo "Done."
+	"$ECHO" "Done."
 
 	# Build and launch UI - if this process fails display error message and 
 	# exit out of the function
-	echo "Making Xconfig"
-	make xconfig || { printf "There was an error with getting Xconfig "
-	printf "running.\nPlease check that you have X11 installed, X11 "
-	printf "forwarded and a correct local (client computer) IP address."; 
+	"$ECHO" "Making Xconfig"
+	"$MAKE" xconfig || { "$PRINTF" "There was an error with getting Xconfig "
+	"$PRINTF" "running.\nPlease check that you have X11 installed, X11 "
+	"$PRINTF" "forwarded and a correct local (client computer) IP address."; 
        	exit "$FAILURE" ; } # FAILS HERE....
-	echo "Done."
+	"$ECHO" "Done."
 }
 
-# Build and install the Raspberry Pi 4 kernel - notifying the user and exiting
+# Build and "$INSTALL" the Raspberry Pi 4 kernel - notifying the user and exiting
 # if any failures occur
 #===============================================================================
 function install_kernel () {
 
-	echo "Installing kernel..."
+	"$ECHO" "Installing kernel..."
 	if ! make modules_install ; then
 		result="$?"
 		failed_process="making of the install modules"
 		handle_fails "$failed_process"
 	fi
-	echo "Done."
+	"$ECHO" "Done."
 
-	if ! cp arch/arm/boot/dts/*.dtb /boot/ ; then # was sudo
+	if ! "$CP" arch/arm/boot/dts/*.dtb /boot/ ; then # was sudo
 		result="$?"
 		failed_process="copying of architecture to boot directory"
 		handle_fails "$failed_process"
 	fi
-	echo "Done."
+	"$ECHO" "Done."
 
-	if ! cp arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/ ; then
+	if ! "$CP" arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/ ; then
 		result="$?"
 		failed_process="copying of architecture to overlays directory"
 		handle_fails "$failed_process"
 	fi
-	echo "done."
+	"$ECHO" "done."
 
-	if ! cp arch/arm/boot/dts/overlays/README /boot/overlays/ ; then
+	if ! "$CP" arch/arm/boot/dts/overlays/README /boot/overlays/ ; then
 		result="$?"
 		failed_process="copying of architecture to overlays directory"
 		handle_fails "$failed_process"
 	fi
-	echo "Done."
+	"$ECHO" "Done."
 
-	echo "Copying architecture to Kernel image..."
-	if ! cp arch/arm/boot/zImage /boot/$KERNEL.img ; then
+	"$ECHO" "Copying architecture to Kernel image..."
+	if ! "$CP" arch/arm/boot/zImage /boot/$KERNEL.img ; then
 		result="$?"
 		failed_process="copying of kernel image to the boot directory"
 		handle_fails "$failed_process"
 	fi
-	echo "Done"
+	"$ECHO" "Done"
 
 	# Delete temporary folder
-	# echo "Deleting temporary folder..."
+	# "$ECHO" "Deleting temporary folder..."
 	# sudo rm -r /home/alx/tmp
 
 	exit "$SUCCESS"
@@ -234,14 +243,14 @@ function install_kernel () {
 startup_checks "$display_IP"
 
 # Install pre-requisites for kernel download
-echo "Installing dependancies..."
-if ! sudo apt install raspberrypi-kernel-headers build-essential bc git wget bison flex libssl-dev make ; then
+"$ECHO" "Installing dependancies..."
+if ! sudo apt install raspberrypi-kernel-headers build-essential bc git wget\
+	bison flex libssl-dev make ; then
 	result="$?"
 	failed_process="installing of depencencies"
 	handle_fails "$failed_process"
 fi
-echo "Done."
-#This was on the same line as above..... can it be split to keep to witin 80 characters??
+"$ECHO" "Done."
 
 setup_directories
 
@@ -250,16 +259,16 @@ prepare_kernel
 setup_ui "$display_IP"
 
 # Set up image to run on 4 cores
-echo "Setting image to run on 4 cores..."
-if ! make -j4 zImage modules dtbs ; then #was sudo
+"$ECHO" "Setting image to run on 4 cores..."
+if ! "$MAKE" -j4 zImage modules dtbs ; then #was sudo
 	result="$?"
 	failed_process="setting of the image to run on 4 cores"
 	handle_fails "$failed_process"
 fi
-echo "Done."
+"$ECHO" "Done."
 
-if install_kernel ; then
-	printf "Kernel installed successfully, restarting in 10 seconds..."
-	sleep 10
-	sudo reboot
+if "$INSTALL"_kernel ; then
+	"$PRINTF" "Kernel installed successfully, restarting in 10 seconds..."
+	"$SLEEP" 10
+	sudo "$REBOOT" 
 fi

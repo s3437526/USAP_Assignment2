@@ -191,7 +191,6 @@ function prepare_kernel () {
 		failed_process="copying of the .config file to the git repo"
 		handle_fails "$failed_process"
 	fi
-	echo "$dir"/"$STUDENT_DIR"/"$config_file" > ~/log
 	"$ECHO" "Done."
 }
 
@@ -240,28 +239,25 @@ function install_kernel () {
 		failed_process="making of the install modules"
 		handle_fails "$failed_process"
 	fi
-	"$ECHO" "Done."
-
+	"$ECHO" "Done"
+	
 	if ! sudo "$CP" arch/arm/boot/dts/*.dtb /boot/ ; then # was sudo
 		result="$?"
 		failed_process="copying of architecture to boot directory"
 		handle_fails "$failed_process"
 	fi
-	"$ECHO" "Done."
 
 	if ! sudo "$CP" arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/ ; then
 		result="$?"
 		failed_process="copying of architecture to overlays directory"
 		handle_fails "$failed_process"
 	fi
-	"$ECHO" "done."
 
 	if ! sudo "$CP" arch/arm/boot/dts/overlays/README /boot/overlays/ ; then
 		result="$?"
 		failed_process="copying of architecture to overlays directory"
 		handle_fails "$failed_process"
 	fi
-	"$ECHO" "Done."
 
 	"$ECHO" "Copying architecture to Kernel image..."
 	if ! sudo "$CP" arch/arm/boot/zImage /boot/$KERNEL.img ; then
@@ -306,8 +302,11 @@ if ! make -j4 zImage modules dtbs ; then #was sudo
 fi
 "$ECHO" "Done."
 
-if install_kernel ; then
-	"$PRINTF" "Kernel installed successfully, restarting in 10 seconds..."
-	"$SLEEP" 10
-	sudo "$REBOOT" 
-fi
+if ! install_kernel ; then
+	result="$?"
+	failed_process="installation of the kernel"
+	handle_fails "$failed_process"
+fi	
+"$ECHO" "Kernel installed successfully, restarting in 10 seconds..."
+"$SLEEP" 10
+sudo "$REBOOT" 

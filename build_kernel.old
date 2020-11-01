@@ -32,7 +32,7 @@ dir="$HOME/tmp"
 declare input_IP="$1"
 declare display_IP="$1:0.0"
 declare FAILURE=1
-declare SUCCESS=0
+#declare SUCCESS=0
 declare STUDENT_DIR="s3437526"
 failed_process=""
 declare PRINTF=/usr/bin/printf
@@ -43,7 +43,7 @@ declare SLEEP=/bin/sleep
 #declare MAKE=/usr/bin/make
 #declare INSTALL=/usr/bin/install
 #declare WGET=/usr/bin/wget
-declare REBOOT=/sbin/reboot
+#declare REBOOT=/sbin/reboot
 declare GIT=/usr/bin/git
 declare TAR=/bin/tar
 
@@ -277,8 +277,7 @@ startup_checks "$display_IP"
 
 # Install pre-requisites for kernel download
 "$ECHO" "Installing dependancies..."
-if ! sudo apt install raspberrypi-kernel-headers build-essential bc git wget\
-	bison flex libssl-dev make ; then
+if ! sudo apt install raspberrypi-kernel-headers build-essential bc git wget bison flex libssl-dev make ; then
 	result="$?"
 	failed_process="installing of depencencies"
 	handle_fails "$failed_process"
@@ -305,4 +304,5 @@ if ! install_kernel ; then
 	result="$?"
 	failed_process="installation of the kernel"
 	handle_fails "$failed_process"
-fi	
+fi
+'

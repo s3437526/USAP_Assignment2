@@ -23,23 +23,17 @@ remove unneccessary 'sudo' commands
 
 Adjustments to kernel install setup
 fix up exception handling for incorrect IP address entered on start
-
-Started revamping script to use .config file created in requirement 3
-Added .config file for kernel build
-Added original build_kernel script which automated the creation of kernel as per
-requirement 3. This is temporary and for backup purposes.
-
 "
 
 # Variables
 #==========
 declare dir
 dir="$HOME/tmp"
-#declare input_IP="$1"
-#declare display_IP="$1:0.0"
+declare input_IP="$1"
+declare display_IP="$1:0.0"
 declare FAILURE=1
-#declare SUCCESS=0
-declare STUDENT_DIR="$HOME/s3437526_A2"
+declare SUCCESS=0
+declare STUDENT_DIR="s3437526"
 failed_process=""
 declare PRINTF=/usr/bin/printf
 declare MKDIR=/bin/mkdir
@@ -52,6 +46,24 @@ declare SLEEP=/bin/sleep
 declare REBOOT=/sbin/reboot
 declare GIT=/usr/bin/git
 declare TAR=/bin/tar
+
+#*******************************************************************************
+#Dummmy test print! - remove!
+#*******************************************************************************
+"$PRINTF" "Entered IP address is: %s""$display_IP""\n"
+
+# Check for input flags - if the first vari - able (local IP address) is 
+# null then exit
+#===============================================================================
+function startup_checks () {
+
+	if [[ -z "$input_IP" ]] ; then
+		"$PRINTF" "There has been no IP address input.\n"
+	   	"$PRINTF" "Please ensure you enter your local IP address before"
+		"$PRINTF" " continuing.\nExiting..."
+		exit "$FAILURE"  
+	fi
+}
 
 # Handle any failed processes - this function gets called and is given a
 # parameter of the failed process and displays it to the user before exiting
@@ -86,15 +98,19 @@ function setup_directories () {
 	"$MKDIR" "$dir" || { "$PRINTF" "Error: creating directory failed.\n" ;
 	"$PRINTF" "Directory selected is: %s""$dir"". Exiting..." ;
 	exit "$FAILURE" ; }
-	
-	"$MKDIR" "$STUDENT_DIR" || { "$PRINTF" "Error: creating student\
-	       	directory failed.\n" ;
-	"$PRINTF" "Directory selected is: %s""$dir"". Exiting..." ;
-	exit "$FAILURE" ; }
-	
+
 	cd "$dir" || { "$PRINTF" "Error: opening tmp directory failed.\n"
       	"$PRINTF" "Directory selected is: %s""$dir"". Exiting..." ;
        	exit "$FAILURE" ; }
+
+	# Convert directory to git directory - if it fails, notify the user
+	"$ECHO" "Initialising local git repository..."
+	if ! "$GIT" init ;  then
+		result="$?"
+		failed_process="Git initialisation"
+		handle_fails "$failed_process"
+	fi
+	"$ECHO" "Done."
 
 	# Clone the remote repo into the local directory for use - if it fails
 	# notify the user
@@ -124,12 +140,28 @@ function prepare_kernel () {
 	fi
 	"$ECHO" "Done."
 
-	
-	# Access build directory
+	# Select kernel for Rapberry Pi 4
+	"$ECHO" "Setting Kernel to Rasberry Pi 4"
+	if ! KERNEL=kernel7l ; then
+		result="$?"
+		failed_process="setting of up the Raspberry Pi 4 kernel"
+		handle_fails "$failed_process"
+	fi
+	"$ECHO" "Done."
+
+	# Set processor type for Raspberry Pi 4
+	"$ECHO" "Making bcm2711_defconfig..."
 	cd linux || { "$PRINTF" "Error: changing to the linux directory failed."
        	"$PRINTF" "\nExiting..." ; exit "$FAILURE" ; }
 	"$ECHO" "Done."
 
+	if ! make bcm2711_defconfig ; then
+		result="$?"
+		failed_process="making of the bcm2711 kernel configuration"
+		handle_fails "$failed_process"
+	fi
+	"$ECHO" "Done."
+	
 	# Create backup directory for /boot directory in case of failure
 	"$ECHO" "Creating backup boot directory..."
 	if ! "$MKDIR" "$HOME"/boot_backup ; then
@@ -148,16 +180,47 @@ function prepare_kernel () {
 		handle_fails "$failed_process"
 	fi
 	"$ECHO" "Done."
-
-
-	# Copy .config file to the kernel build directory
-	"$ECHO" "Copying $config_file file to the build directory $dir"
-	if ! "$CP" "$STUDENT_DIR"/"$config_file" "$config_file" ; then
+	# Copy .config file to the local repo
+	"$ECHO" "Copying $config_file file to the local repository $STUDENT_DIR"
+	if ! "$CP" "$config_file" "$dir"/"$STUDENT_DIR"/"$config_file" ; then
 		result="$?"
-		failed_process="copying of the .config file to the build directory"
+		failed_process="copying of the .config file to the git repo"
 		handle_fails "$failed_process"
 	fi
-	cat "$STUDENT_DIR"/"$config_file" >log
+	"$ECHO" "Done."
+}
+
+# Prepare user interface to allow user to modify kernel features
+#===============================================================================
+function setup_ui () {
+	
+	# Display appropriate message to the user stating the requirements for X
+	# and give them time to cancel if this is not set up appropriately
+	"$PRINTF" "\nEnsuring X11 screen is exported as localhost. Please ensur"
+	"$PRINTF" " X11 is being forwarded otherwise this process will fail.\n"
+	"$PRINTF" "Current display is exported as %s""$display_IP"". If this is"
+	"$PRINTF" " not the same this process will fail. Be sure to export the "
+	"$PRINTF" "correct display with an instance of X server running. \n"
+	"$PRINTF" "Resuming in 15 seconds...\n"
+	"$SLEEP" 15
+	export DISPLAY="$display_IP"
+
+	# Install UI builder
+	"$ECHO" "Installing qt5..."
+	if ! sudo apt-get install qt5-\*-dev ; then
+		result="$?"
+		failed_process="install section of the qt5"
+		handle_fails "$failed_process"
+	fi
+	"$ECHO" "Done."
+
+	# Build and launch UI - if this process fails display error message and 
+	# exit out of the function
+	"$ECHO" "Making Xconfig"
+	make xconfig || { "$PRINTF" "There was an error with getting Xconfig "
+	"$PRINTF" "running.\nPlease check that you have X11 installed, X11 "
+	"$PRINTF" "forwarded and a correct lcal (client computer) IP address."; 
+       	exit "$FAILURE" ; }
 	"$ECHO" "Done."
 }
 
@@ -193,7 +256,7 @@ function install_kernel () {
 	fi
 
 	"$ECHO" "Copying architecture to Kernel image..."
-	if ! sudo "$CP" arch/arm/boot/zImage /boot/"$KERNEL".img ; then
+	if ! sudo "$CP" arch/arm/boot/zImage /boot/$KERNEL.img ; then
 		result="$?"
 		failed_process="copying of kernel image to the boot directory"
 		handle_fails "$failed_process"
@@ -207,10 +270,10 @@ function install_kernel () {
 	"$ECHO" "Kernel installed successfully, restarting in 10 seconds..."
 	"$SLEEP" 10
 	sudo "$REBOOT" 
-	#exit "$SUCCESS"
+	exit "$SUCCESS"
 }
 
-#startup_checks "$display_IP"
+startup_checks "$display_IP"
 
 # Install pre-requisites for kernel download
 "$ECHO" "Installing dependancies..."
@@ -226,7 +289,7 @@ setup_directories
 
 prepare_kernel
 
-#setup_ui "$display_IP"
+setup_ui "$display_IP"
 
 
 # Set up image to run on 4 cores

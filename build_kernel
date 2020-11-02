@@ -8,26 +8,6 @@ This script initiates and installs the Linux Kernel for the Raspberry Pi 4
 
 *** TO-DO ***
 
-Clone personal repo
-Checkout Raspberry Pi repo
-Copy .config file into git repo
-Build kernel
-Backup /boot directory and compress
-Copy files to boot directory
-Restart Pi 
-
-No user input??
-
-Input IP address when running script... - check about user input...
-remove unneccessary 'sudo' commands
-
-Adjustments to kernel install setup
-fix up exception handling for incorrect IP address entered on start
-
-Started revamping script to use .config file created in requirement 3
-Added .config file for kernel build
-Added original build_kernel script which automated the creation of kernel as per
-requirement 3. This is temporary and for backup purposes.
 
 "
 
@@ -35,8 +15,6 @@ requirement 3. This is temporary and for backup purposes.
 #==========
 declare dir
 dir="$HOME/tmp"
-#declare input_IP="$1"
-#declare display_IP="$1:0.0"
 declare FAILURE=1
 #declare SUCCESS=0
 declare STUDENT_DIR="$HOME/s3437526_A2"
@@ -46,9 +24,6 @@ declare MKDIR=/bin/mkdir
 declare CP=/bin/cp
 declare ECHO=/bin/echo
 declare SLEEP=/bin/sleep
-#declare MAKE=/usr/bin/make
-#declare INSTALL=/usr/bin/install
-#declare WGET=/usr/bin/wget
 declare REBOOT=/sbin/reboot
 declare GIT=/usr/bin/git
 declare TAR=/bin/tar
@@ -154,7 +129,8 @@ function prepare_kernel () {
 	"$ECHO" "Copying $config_file file to the build directory $dir"
 	if ! "$CP" "$STUDENT_DIR"/"$config_file" "$config_file" ; then
 		result="$?"
-		failed_process="copying of the .config file to the build directory"
+		failed_process="copying of the .config file to the build \
+			directory"
 		handle_fails "$failed_process"
 	fi
 	cat "$STUDENT_DIR"/"$config_file" >log

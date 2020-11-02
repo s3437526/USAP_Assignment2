@@ -1,0 +1,112 @@
+.\" Manpage for build_kernel script for Raspberry Pi 4
+.\" By Aleksandar Alduk S3437526
+.\" CPT264– UNIX (Linux) Systems Administration and Programming (USAP), 
+.\" Study Period 3, 2020
+.\"
+.TH man 1 "November 2020" Linux "build_kernel page"
+.SH NAME
+build_kernel \- create a new custom Linux kernel
+.SH DESCRIPTION
+build_kernel is a script which automates the 
+installation of a customised kernel based on the
+Raspberry Pi 4 armvhf architecture. 
+
+It takes no arguments
+and when run, it downloads the latest kernel image from
+github, installs any required dependancies and builds the
+kernel using a pre-configured .config file.
+.SH OPTIONS
+The build_kernel script takes no options and does not require
+user input.
+.SH DIAGNOSTICS
+Most of the problems associated with the creating of the 
+custom kernel will be likely resulting from incorrect
+file and directory permissions, missing or incorrectly
+named directories. Reviewing each error message should
+give adequate guidance of where the program failed and
+allow the user to troubleshoot the process.
+
+The following diagnostics may be issued to the user:
+
+"Directory already exists"
+.RS
+Displayed to the user if the temporary working directory
+"tmp" already exists in the user's home directory and 
+prompts the user to ensure it is backed up and removed 
+prior to commencing.
+.RE
+"ERROR: creating directory failed"
+.RS
+Displayed to the user if there was a problem with creating
+the temporary working "tmp" directory in the user's home
+directory.
+.RE 
+"ERROR: changing to the linux directory failed"
+.RS
+Displayed to the user if there was a problem with changing
+into the working "tmp" directory in theu ser's home
+directory.
+.RE
+"An error has occurred while running the creating boot 
+backup directory process."
+.RS
+Displayed to the user if there was a problem with creating
+the boot backup directory in the user's home directory.
+.RE
+"An error has occurred while running the backing up and 
+compressing of boot directory process."
+.RS
+Displayed to the user if there was a problem with backing
+up and compressing of the boot directory.
+.RE
+"An error has occurred while running the copying of 
+the .config file to the build directory process."
+.RS
+Displayed to the user if there was a problem with copying
+of the .config file from the downloaded repo into the
+working directory for use with the script.
+.RE
+"An error has occurred while running the making of the 
+install modules process."
+.RS
+Displayed to the user if there was a problem with making
+of the install modules process.
+.RE
+"An error has occurred while running the copying of 
+architecture to boot directory process."
+.RS
+Displayed to the user if there was a problem with copying
+of the architecture into the boot directory.
+.RE
+"An error has occurred while running the copying 
+architecture to overlays directory process."
+.RS
+Displayed to the user if there was a problem with copying
+of the architecture into the boot overlays directory. 
+.RE
+"An error has occurred while running the copying of kernel 
+image to boot directory process."
+.RS
+Displayed to the user if there was a problem with copying
+of the kernel image into the boot directory.
+.RE
+"An error has occurred while running the installing of 
+dependancies process."
+.RS
+Displayed to the user if there was a problem with installing
+of dependencies required to run all subsequent installation
+processes.
+.RE
+"An error has occurred while running the insallation of 
+the kernel process."
+.RS
+Displayed to the user if there was a problem with installing
+the newly build custom kernel.
+.RE
+"An error has occurred while running the setting of the 
+image to run on 4 cores process."
+.RS
+Displayed to the user if there was a problem with setting the
+kernel image to run on 4 cores of the ARM processor.
+.SH AUTHOR
+Aleksandar Alduk S3437526, USAP, SP3 2020 <s3437526@student.rmit.edu.au>

@@ -4,7 +4,7 @@
 
 ***
 
-:question:**Purpose**
+:question: **Purpose**
 
 This program was designed to automate the build and compilation of a custom kernel script which includes changes from the baseline kernel image.
 
@@ -12,7 +12,7 @@ This program was designed to automate the build and compilation of a custom kern
 
 ***
 
-:open_file_folder:**Files in the project**
+:open_file_folder: **Files in the project**
 
 The main user interactive files in the project are:
 -	[Build_kernel script](https://duckduckgo.com)
@@ -21,12 +21,12 @@ The main user interactive files in the project are:
 
 ***
 
-:page_with_curl:**Resources used**
+:page_with_curl: **Resources used**
 
 
 ***
 
-:computer:**Running the program**
+:computer: **Running the program**
 
 
 To run the program run the build_kernel script using the `./build_kernel` command in the directory which contains the script file. For example, if the script is located in /home/pi/ directory then run the script from that location.
@@ -37,7 +37,7 @@ On successful completion the installation will reboot the Raspberry Pi.
 
 ***
 
-:paperclip:**Additional comments about the program**
+:paperclip: **Additional comments about the program**
 
 
 ***

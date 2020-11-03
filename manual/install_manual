@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# Script by Aleksandar Alduk S3437526
+
+# This script is designed to automate the installation
+# of the manual page for the build_kernel script.
+
+: "
+To do - finish the writing of the gzip function and test
+To do - write manpage for this script
+To dp - implement and document the inclusion of this page in documentation
+"
+
+# Install the manual page
+function install_manpage () {
+
+	local SUCCESS=0
+	local FAILURE=1
+	local man_file="build_kernel.1"
+	local man_path="/manual"
+
+	# Install the manual into the /usr/local/man/man1 directory - 
+	# if it fails, report to the user and exit
+		echo "Installing manual page for the build_kernel script..."
+		if ! install -g 0 -o 0 -m 0644 "$man_file" /usr/local/man/man1/\
+			; then
+		printf "%s" "Error: unable to install manual page for the "
+		printf "%s\n" "build_kernel script."
+		printf "%s" "Please check that the file \"$man_file\""
+		printf "%s\n" "exists in the \"$man_path\" directory."
+		printf "%s\n" "Exiting..."
+		exit "$FAILURE"
+	fi
+	echo "Done."
+
+	gzip /usr/local/man/man1/build_kernel.1
+
+	exit "$SUCCESS"
+}
+
+install_manpage

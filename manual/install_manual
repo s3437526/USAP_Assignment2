@@ -6,35 +6,55 @@
 # of the manual page for the build_kernel script.
 
 : "
-To do - finish the writing of the gzip function and test
+
 To do - write manpage for this script
 To dp - implement and document the inclusion of this page in documentation
+
+Troubleshooting manpage script installation
+Add this script to the build_kernel script
 "
+
+# Global variables/definitions
+declare CP=/bin/cp
+declare GZIP=/bin/gzip
 
 # Install the manual page
 function install_manpage () {
-
+	
+	# Local variables
 	local SUCCESS=0
 	local FAILURE=1
 	local man_file="build_kernel.1"
-	local man_path="/manual"
+	local man_src="manual"
+	local man_dest="/usr/share/man/man1/"
 
-	# Install the manual into the /usr/local/man/man1 directory - 
-	# if it fails, report to the user and exit
-		echo "Installing manual page for the build_kernel script..."
-		if ! install -g 0 -o 0 -m 0644 "$man_file" /usr/local/man/man1/\
-			; then
-		printf "%s" "Error: unable to install manual page for the "
-		printf "%s\n" "build_kernel script."
+	# Copy the manpage to the shared man1 page directory - if this 
+	# fails then notify the user and exit
+	echo "Copying manual page entry to manuals directory..."
+	if ! sudo "$CP" "$man_file" "$man_dest""$man_file" ; then
+		printf "%s" "Error: unable to copy manual page for the "
+		printf "%s\n" "build_kernel script to the manuals directory."
 		printf "%s" "Please check that the file \"$man_file\""
-		printf "%s\n" "exists in the \"$man_path\" directory."
+		printf "%s\n" "exists in the \"$man_src\" directory."
 		printf "%s\n" "Exiting..."
 		exit "$FAILURE"
 	fi
 	echo "Done."
 
-	gzip /usr/local/man/man1/build_kernel.1
-
+	# Compress the manpage document to a gzip format for use with man - 
+	# if it fails, report to the user and exit
+	echo "Compressing file for use with the manual system..."
+	if ! sudo "$GZIP" "$man_dest""$man_file" ; then
+		printf "%s" "Error: unable to compress \"$man_file\" "
+		printf "%s\n" "build_kernel script."
+		printf "%s" "Please check that the file \"$man_file\""
+		printf "%s" "exists in the \"$man_src\" and "
+ 	       	printf "%s\n" "directory."
+		printf "%s\n" "Exiting..."
+		exit "$FAILURE"
+	fi
+	echo "Done." 
+	echo "The manual can now be accessed by typing man build_kernel"
 	exit "$SUCCESS"
 }
 

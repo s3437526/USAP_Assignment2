@@ -188,7 +188,7 @@ function install_kernel () {
 	# sudo rm -r /home/alx/tmp
 
 	# Run the manual installer script in the /manual directory
-	./manual/install_manual
+	./"$STUDENT_DIR"/manual/install_manual
 
 	"$ECHO" "Kernel installed successfully, restarting in 10 seconds..."
 	"$SLEEP" 10

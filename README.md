@@ -15,9 +15,10 @@ This program was designed to automate the build and compilation of a custom kern
 :open_file_folder: **Files in the project**
 
 The main user interactive files in the project are:
--	[Build_kernel script](https://duckduckgo.com)
--	[Project report?](https://duckduckgo.com)
--	[?](https://duckduckgo.com)
+-	[Build_kernel script](https://github.com/s3437526/USAP_Assignment2)
+-	[Project report - pending](https://duckduckgo.com)
+-	[Install_manual script](https://github.com/s3437526/USAP_Assignment2/tree/develop/manuali)
+-	[?]()
 
 ***
 
@@ -28,10 +29,15 @@ The main user interactive files in the project are:
 
 :computer: **Running the program**
 
+***Building the kernel***
 
 To run the program run the build_kernel script using the `./build_kernel` command in the directory which contains the script file. For example, if the script is located in /home/pi/ directory then run the script from that location.
 
 The process will automatically download and install all the pre-requisites and commence the setup, build and installation of the kernel.
+
+***Installing manual pages***
+
+The install_manual script is run automatically on completion of the kernel instalaltion and therefore does not require explicit calling. If, however, you choose to run it, simply run it from the directory in which it resides by running the `./install_manual` command.
 
 On successful completion the installation will reboot the Raspberry Pi.
 
@@ -39,6 +45,8 @@ On successful completion the installation will reboot the Raspberry Pi.
 
 :paperclip: **Additional comments about the program**
 
+-	Disabling of camera  feature was done as follows:.....
+-	Manual pages for the build_kernel and install_manual scripts can be run using the man command as follows: `man build_kernel` and `man install_manual`.
 
 ***
 

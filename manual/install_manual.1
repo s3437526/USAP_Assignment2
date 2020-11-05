@@ -1,0 +1,52 @@
+.\" Manpage for instal_manual script for Raspberry Pi 4
+.\" By Aleksandar Alduk S3437526
+.\" CPT264– UNIX (Linux) Systems Administration and Programming (USAP), 
+.\" Study Period 3, 2020
+.\"
+.TH man 1 "November 2020" Linux "install_manual page"
+.SH NAME
+install_manual \- Install user maunal for the build_kernel script
+.SH DESCRIPTION
+.B install_manual
+is a simple script which automates the installation of the user
+manual for the build_kernel script. 
+
+It takes no arguments and when run, it copies the manual page
+located in the local directory into the manuals directory. It
+then compresses it for use with the manuals program. To execute
+type ./install_manual.
+.SH OPTIONS
+The install_manual script takes no options and does not require
+user input.
+.SH DIAGNOSTICS
+Most of the problems associated with the installation of the 
+manual will be likely resulting from incorrect
+file and directory permissions, missing or incorrectly
+named directories. Reviewing each error message should
+give adequate guidance of where the program failed and
+allow the user to troubleshoot the process.
+
+The following diagnostics may be issued to the user:
+
+"Error: unable to copy manual page for the build_kernel
+script to the maunals directory. Please check that the
+manual file exists in the source directory."
+.RS
+Displayed to the user if there was a problem with accessing
+the manual file or directory. 
+
+Check that the file is in fact in the directory that 
+the command is being run in, that the destination
+directory exists and that you have permission to copy the 
+contents over to it.
+.RE
+"ERROR: unable to compress file. Please check that the file
+exists in the directory."
+.RS
+Displayed to the user if there was a problem with compressing
+the manual file into a format that is used by the manual 
+program. Check the file and directory permissions and that
+you have sudo access.
+.RE 
+.SH AUTHOR
+Aleksandar Alduk S3437526, USAP, SP3 2020 <s3437526@student.rmit.edu.au>

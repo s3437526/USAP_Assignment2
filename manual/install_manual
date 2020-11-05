@@ -5,38 +5,29 @@
 # This script is designed to automate the installation
 # of the manual page for the build_kernel script.
 
-: "
-
-To do - write manpage for this script
-To dp - implement and document the inclusion of this page in documentation
-
-Troubleshooting manpage script installation
-Add this script to the build_kernel script
-"
-
 # Global variables/definitions
 declare CP=/bin/cp
 declare GZIP=/bin/gzip
+declare SUCCESS=0
+declare FAILURE=1
 
-# Install the manual page
+# Install the manual page - using input parameters as respective manual pages
 function install_manpage () {
 	
 	# Local variables
-	local SUCCESS=0
-	local FAILURE=1
-	local man_file="build_kernel.1"
 	local man_src="manual"
 	local man_dest="/usr/share/man/man1/"
 
 	# Copy the manpage to the shared man1 page directory - if this 
 	# fails then notify the user and exit
 	echo "Copying manual page entry to manuals directory..."
-	if ! sudo "$CP" "$man_file" "$man_dest""$man_file" ; then
+	if ! sudo "$CP" "$1" "$man_dest""$1" ; then
 		printf "%s" "Error: unable to copy manual page for the "
-		printf "%s\n" "build_kernel script to the manuals directory."
-		printf "%s" "Please check that the file \"$man_file\""
+		printf "%s\n" "script to the manuals directory."
+		printf "%s" "Please check that the file \"$1\""
 		printf "%s\n" "exists in the \"$man_src\" directory."
 		printf "%s\n" "Exiting..."
+		printf "\n"
 		exit "$FAILURE"
 	fi
 	echo "Done."
@@ -44,18 +35,21 @@ function install_manpage () {
 	# Compress the manpage document to a gzip format for use with man - 
 	# if it fails, report to the user and exit
 	echo "Compressing file for use with the manual system..."
-	if ! sudo "$GZIP" "$man_dest""$man_file" ; then
-		printf "%s" "Error: unable to compress \"$man_file\" "
-		printf "%s\n" "build_kernel script."
-		printf "%s" "Please check that the file \"$man_file\""
+	if ! sudo "$GZIP" "$man_dest""$1" ; then
+		printf "%s" "Error: unable to compress \"$1\" "
+		printf "%s\n" "script."
+		printf "%s" "Please check that the file \"$1\""
 		printf "%s" "exists in the \"$man_src\" and "
  	       	printf "%s\n" "directory."
 		printf "%s\n" "Exiting..."
+		printf "\n"
 		exit "$FAILURE"
 	fi
 	echo "Done." 
-	echo "The manual can now be accessed by typing man build_kernel"
-	exit "$SUCCESS"
+	echo "The manual can now be accessed by typing man \"$2\""
 }
 
-install_manpage
+install_manpage "build_kernel.1" "build_kernel"
+install_manpage "install_manual.1" "install_manual"
+
+exit "$SUCCESS"

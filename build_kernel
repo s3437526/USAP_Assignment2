@@ -157,7 +157,7 @@ function install_kernel () {
 	fi
 	"$ECHO" "Done"
 	
-	if ! sudo "$CP" arch/arm/boot/dts/*.dtb /boot/ ; then # was sudo
+	if ! sudo "$CP" arch/arm/boot/dts/*.dtb /boot/ ; then
 		result="$?"
 		failed_process="copying of architecture to boot directory"
 		handle_fails "$failed_process"
@@ -187,13 +187,13 @@ function install_kernel () {
 	# "$ECHO" "Deleting temporary folder..."
 	# sudo rm -r /home/alx/tmp
 
+	# Run the manual installer script in the /manual directory
+	./manual/install_manual
+
 	"$ECHO" "Kernel installed successfully, restarting in 10 seconds..."
 	"$SLEEP" 10
-	sudo "$REBOOT" 
-	#exit "$SUCCESS"
+	sudo "$REBOOT"
 }
-
-#startup_checks "$display_IP"
 
 # Install pre-requisites for kernel download
 "$ECHO" "Installing dependancies..."
@@ -209,12 +209,9 @@ setup_directories
 
 prepare_kernel
 
-#setup_ui "$display_IP"
-
-
 # Set up image to run on 4 cores
 "$ECHO" "Setting image to run on 4 cores..."
-if ! make -j4 zImage modules dtbs ; then #was sudo
+if ! make -j4 zImage modules dtbs ; then
 	result="$?"
 	failed_process="setting of the image to run on 4 cores"
 	handle_fails "$failed_process"

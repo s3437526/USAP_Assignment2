@@ -140,7 +140,6 @@ function prepare_kernel () {
 			directory"
 		handle_fails "$failed_process"
 	fi
-	cat "$STUDENT_DIR"/"$config_file" >log
 	"$ECHO" "Done."
 }
 

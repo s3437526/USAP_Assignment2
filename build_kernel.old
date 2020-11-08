@@ -180,14 +180,6 @@ function prepare_kernel () {
 		handle_fails "$failed_process"
 	fi
 	"$ECHO" "Done."
-	# Copy .config file to the local repo
-	"$ECHO" "Copying $config_file file to the local repository $STUDENT_DIR"
-	if ! "$CP" "$config_file" "$dir"/"$STUDENT_DIR"/"$config_file" ; then
-		result="$?"
-		failed_process="copying of the .config file to the git repo"
-		handle_fails "$failed_process"
-	fi
-	"$ECHO" "Done."
 }
 
 # Prepare user interface to allow user to modify kernel features
@@ -221,6 +213,15 @@ function setup_ui () {
 	"$PRINTF" "running.\nPlease check that you have X11 installed, X11 "
 	"$PRINTF" "forwarded and a correct lcal (client computer) IP address."; 
        	exit "$FAILURE" ; }
+	"$ECHO" "Done."
+
+	# Copy .config file to the local repo
+	"$ECHO" "Copying $config_file file to the local repository $STUDENT_DIR"
+	if ! "$CP" "$config_file" "$dir"/"$STUDENT_DIR"/"$config_file" ; then
+		result="$?"
+		failed_process="copying of the .config file to the git repo"
+		handle_fails "$failed_process"
+	fi
 	"$ECHO" "Done."
 }
 
@@ -305,4 +306,3 @@ if ! install_kernel ; then
 	failed_process="installation of the kernel"
 	handle_fails "$failed_process"
 fi
-'

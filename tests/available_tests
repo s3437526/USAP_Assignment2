@@ -1,0 +1,78 @@
+
+Phoronix Test Suite v5.2.1
+Available Suites
+
+  pts/audio-encoding               - Audio Encoding                   System
+  pts/av1                          - AV1                              System
+  pts/bioinformatics               - Bioinformatics                   System
+  pts/browsers                     - Web Browsers                     System
+  pts/chess                        - Chess Test Suite                 Processor
+  pts/compilation                  - Timed Code Compilation           System
+  pts/compiler                     - C/C++ Compiler Tests             Processor
+  pts/compression                  - Compression Tests                Processor
+  pts/computational                - Computational Test Suite         System
+  pts/computational-biology        - Computational Biology Test Suite Processor
+* pts/cpu                          - CPU / Processor Suite            Processor
+* pts/cpu-massive                  - CPU Massive                      System
+* pts/creator                      - Creator Workloads                System
+  pts/cryptography                 - Cryptography                     Processor
+* pts/daily-kernel-tracker         - Daily Kernel Tracker             System
+* pts/daily-system-tracker         - Daily System Tracker             System
+  pts/database                     - Database Test Suite              System
+* pts/desktop-graphics             - Desktop Graphics                 System
+  pts/disk                         - Disk Test Suite                  Disk
+  pts/encoding                     - Encoding                         System
+* pts/favorites                    - Favorites                        System
+* pts/gaming                       - Gaming                           System
+* pts/gaming-closed                - Closed-Source Gaming             System
+* pts/gaming-free                  - Free Software Gaming             System
+  pts/gui-toolkits                 - GUI Toolkits                     Graphics
+  pts/hpc                          - HPC - High Performance Computing System
+  pts/imaging                      - Imaging                          System
+  pts/java                         - Java                             System
+  pts/java-opengl                  - Java OpenGL                      System
+  pts/kernel                       - Common Kernel Benchmarks         System
+* pts/linear-algebra               - Linear Algebra                   System
+  pts/linux-system                 - Linux System                     System
+* pts/machine-learning             - Machine Learning                 System
+  pts/memory                       - Memory Test Suite                Memory
+* pts/molecular-dynamics           - Molecular Dynamics               System
+* pts/motherboard                  - Motherboard                      System
+  pts/mpi                          - MPI Benchmarks                   System
+* pts/multicore                    - Multi-Core                       Processor
+* pts/netbook                      - Netbook Test Suite               System
+  pts/network                      - Networking Test Suite            Network
+  pts/nevada                       - OpenSolaris Nevada Test Suite    System
+* pts/nvidia-gpu-compute           - NVIDIA GPU Compute               Graphics
+  pts/ocr                          - OCR                              System
+* pts/oneapi                       - Intel oneAPI                     System
+* pts/opencl                       - OpenCL                           System
+* pts/opengl-demos                 - OpenGL Demos Test Suite          System
+* pts/opengl-workstation           - OpenGL Workstation Test Suite    System
+  pts/productivity                 - Productivity                     System
+* pts/pts-desktop-live             - PTS Desktop Live                 System
+  pts/python                       - Python                           System
+  pts/quantum-mechanics            - Quantum Mechanics                System
+  pts/ray-tracing                  - Ray-Tracing Test Suite           System
+* pts/raytracing                   - Raytracing                       System
+* pts/renderers                    - Renderers                        Processor
+* pts/scientific-computing         - Scientific Computing             System
+  pts/server                       - Server                           System
+* pts/server-cpu-tests             - Server CPU Tests                 Processor
+* pts/server-memory                - Server Memory                    Memory
+* pts/single-threaded              - Single-Threaded                  System
+* pts/speech                       - Speech                           System
+  pts/texture-compression          - Texture Compression              System
+* pts/unigine                      - Unigine Test Suite               Graphics
+* pts/universe                     - Universe Test Suite              System
+  pts/universe-cli                 - Universe CLI Test Suite          System
+* pts/universe-x                   - Universe X Test Suite            System
+  pts/video-encoding               - Video Encoding                   System
+* pts/vulkan-compute               - Vulkan Compute                   Graphics
+* pts/workstation                  - Common Workstation Benchmarks    System
+* pts/workstation-graphics         - Workstation Graphics             Graphics
+  pts/xrender                      - X Render Extension Testing       Graphics
+
+* Indicates a partially supported suite.
+
+

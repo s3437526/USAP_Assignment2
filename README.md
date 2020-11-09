@@ -51,23 +51,26 @@ The following steps were taken during the .config file creation to disable camer
 
 ****
 
-![Abilis AS102 DVB receiver disabled](/assets/images/Abilis AS102 DVB receiver.png "Abilis AS102 DVB receiver")
---------------------------------------------------------------------------
-
-!["Camera" xterm search query items disabled](/assets/images/camera.png "Camera driver disabled")
---------------------------------------------------------------------------
-
-!["Cam" xterm search query disabled](/assets/images/search_cam.png "Cam driver disabled")
---------------------------------------------------------------------------
-
-!["Cam" search pattern query disabled](/assets/images/cam.png "Cam driver disabled")
---------------------------------------------------------------------------
-
-!["V4L" video drivers search disabled](/assets/images/v4l.png "V4L drivers disabled")
---------------------------------------------------------------------------
-
-![BCM2835 camera support disabled](/assets/images/bcm2835_camera_support.png "BCM2835 camera disabled")
---------------------------------------------------------------------------
+Disabled camera drivers
+|                                                                            |
+|:--------------------------------------------------------------------------:|
+|Searched for "Abilis AS120 DVB receiver" term and disabled all returns|
+|![Abilis AS102 DVB receiver disabled](/assets/images/Abilis AS102 DVB receiver.png "Abilis AS102 DVB receiver")|
+||
+|Searched for "camera" term and disabled all returns|
+|!["Camera" xterm search query items disabled](/assets/images/camera.png "Camera driver disabled")|
+||
+|Searched for "cam" term and disabled all returns|
+|![Webcam disabled](/assets/images/search_cam.png "Webcam driver disabled")|
+||
+|Disabled webcam gadget|
+|!["Cam" search pattern query disabled](/assets/images/cam.png "Cam driver disabled")|
+||
+|Searched for "V4L" and disabled all returns|
+|!["V4L" video drivers search disabled](/assets/images/v4l.png "V4L drivers disabled")|
+||
+|Searched for "BCM2835 Camera" and disabled returns|
+|![BCM2835 camera support disabled](/assets/images/bcm2835_camera_support.png "BCM2835 camera disabled")|
 
 ***
 

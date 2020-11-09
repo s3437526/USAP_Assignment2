@@ -49,6 +49,7 @@ Manual pages for the build_kernel and install_manual scripts can be run using th
 
 The following steps were taken during the .config file creation to disable camera support:
 
+||
 |:--------------------------------------------------------------------------:|
 |Searched for "Abilis AS102 DVB receiver" term and disabled all returns|
 |![Abilis AS102 DVB receiver disabled](/assets/images/Abilis%20AS102%20DVB%20receiver.png "Abilis AS102 DVB receiver")|

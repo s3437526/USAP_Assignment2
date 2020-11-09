@@ -45,8 +45,17 @@ On successful completion the installation will reboot the Raspberry Pi.
 
 :paperclip: **Additional comments about the program**
 
--	Disabling of camera  feature was done as follows:.....
--	Manual pages for the build_kernel and install_manual scripts can be run using the man command as follows: `man build_kernel` and `man install_manual`.
+Manual pages for the build_kernel and install_manual scripts can be run using the man command as follows: `man build_kernel` and `man install_manual`.
+
+The following steps were taken during the .config file creation to disable camera support:
+
+****
+![Alt text](/assets/images/Abilis AS102 DVB receiver.png "Mouseover text")
+![Alt text](/assets/images/camera.png "Mouseover text")
+![Alt text](/assets/images/search_cam.png "Mouseover text")
+![Alt text](/assets/images/cam.png "Mouseover text")
+![Alt text](/assets/images/v4l.png "Mouseover text")
+![Alt text](/assets/images/bcm2835_camera_support.png "Mouseover text")
 
 ***
 

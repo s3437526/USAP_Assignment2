@@ -50,12 +50,24 @@ Manual pages for the build_kernel and install_manual scripts can be run using th
 The following steps were taken during the .config file creation to disable camera support:
 
 ****
-![Alt text](/assets/images/Abilis AS102 DVB receiver.png "Mouseover text")
-![Alt text](/assets/images/camera.png "Mouseover text")
-![Alt text](/assets/images/search_cam.png "Mouseover text")
-![Alt text](/assets/images/cam.png "Mouseover text")
-![Alt text](/assets/images/v4l.png "Mouseover text")
-![Alt text](/assets/images/bcm2835_camera_support.png "Mouseover text")
+
+![Abilis AS102 DVB receiver disabled](/assets/images/Abilis AS102 DVB receiver.png "Abilis AS102 DVB receiver")
+--------------------------------------------------------------------------
+
+!["Camera" xterm search query items disabled](/assets/images/camera.png "Camera driver disabled")
+--------------------------------------------------------------------------
+
+!["Cam" xterm search query disabled](/assets/images/search_cam.png "Cam driver disabled")
+--------------------------------------------------------------------------
+
+!["Cam" search pattern query disabled](/assets/images/cam.png "Cam driver disabled")
+--------------------------------------------------------------------------
+
+!["V4L" video drivers search disabled](/assets/images/v4l.png "V4L drivers disabled")
+--------------------------------------------------------------------------
+
+![BCM2835 camera support disabled](/assets/images/bcm2835_camera_support.png "BCM2835 camera disabled")
+--------------------------------------------------------------------------
 
 ***
 

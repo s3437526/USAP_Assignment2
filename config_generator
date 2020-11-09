@@ -4,25 +4,11 @@
 
 Script by Alex Alduk S3437526
 
-This script initiates and installs the Linux Kernel for the Raspberry Pi 4
+This script initiates the Linux Kernel .config file creation process
+for the Raspberry Pi 4
 
 *** TO-DO ***
 
-Clone personal repo
-Checkout Raspberry Pi repo
-Copy .config file into git repo
-Build kernel
-Backup /boot directory and compress
-Copy files to boot directory
-Restart Pi 
-
-No user input??
-
-Input IP address when running script... - check about user input...
-remove unneccessary 'sudo' commands
-
-Adjustments to kernel install setup
-fix up exception handling for incorrect IP address entered on start
 "
 
 # Variables
@@ -32,7 +18,6 @@ dir="$HOME/tmp"
 declare input_IP="$1"
 declare display_IP="$1:0.0"
 declare FAILURE=1
-#declare SUCCESS=0
 declare STUDENT_DIR="s3437526"
 failed_process=""
 declare PRINTF=/usr/bin/printf
@@ -40,12 +25,7 @@ declare MKDIR=/bin/mkdir
 declare CP=/bin/cp
 declare ECHO=/bin/echo
 declare SLEEP=/bin/sleep
-#declare MAKE=/usr/bin/make
-#declare INSTALL=/usr/bin/install
-#declare WGET=/usr/bin/wget
-#declare REBOOT=/sbin/reboot
 declare GIT=/usr/bin/git
-declare TAR=/bin/tar
 
 #*******************************************************************************
 #Dummmy test print! - remove!
@@ -70,7 +50,8 @@ function startup_checks () {
 #===============================================================================
 function handle_fails () {
 
-	"$PRINTF" "An error was encountered while running the %s$failed_process"
+	"$PRINTF" "An error was encountered while running the \
+		%s$failed_process" >>"$LOG" 
 	"$PRINTF" " process.\nExiting..." 
 	exit "$result"
 }
@@ -128,7 +109,6 @@ function setup_directories () {
 function prepare_kernel () {
 
 	# Local variables
-	local boot_dir="/boot"
 	local config_file=".config"
 
 	# Download latest linux kernel
@@ -140,14 +120,14 @@ function prepare_kernel () {
 	fi
 	"$ECHO" "Done."
 
-	# Select kernel for Rapberry Pi 4
-	"$ECHO" "Setting Kernel to Rasberry Pi 4"
-	if ! KERNEL=kernel7l ; then
-		result="$?"
-		failed_process="setting of up the Raspberry Pi 4 kernel"
-		handle_fails "$failed_process"
-	fi
-	"$ECHO" "Done."
+#	# Select kernel for Rapberry Pi 4
+#	"$ECHO" "Setting Kernel to Rasberry Pi 4"
+#	if ! KERNEL=kernel7l ; then
+#		result="$?"
+#		failed_process="setting of up the Raspberry Pi 4 kernel"
+#		handle_fails "$failed_process"
+#	fi
+#	"$ECHO" "Done."
 
 	# Set processor type for Raspberry Pi 4
 	"$ECHO" "Making bcm2711_defconfig..."
@@ -158,25 +138,6 @@ function prepare_kernel () {
 	if ! make bcm2711_defconfig ; then
 		result="$?"
 		failed_process="making of the bcm2711 kernel configuration"
-		handle_fails "$failed_process"
-	fi
-	"$ECHO" "Done."
-	
-	# Create backup directory for /boot directory in case of failure
-	"$ECHO" "Creating backup boot directory..."
-	if ! "$MKDIR" "$HOME"/boot_backup ; then
-		result="$?"
-		failed_process="creating boot backup directory"
-		handle_fails "$failed_process"
-	fi
-	"$ECHO" "Done."
-	
-	# Compress and move backup to backup directory
-	"$ECHO" "Compressing and moving backup boot directory..."
-	if ! "$TAR" -czvf "$HOME"/boot_backup/boot_backup.tar.gz "$boot_dir" ;
-	       	then
-		result="$?"
-		failed_process="backing up and compressing of boot directory"
 		handle_fails "$failed_process"
 	fi
 	"$ECHO" "Done."
@@ -222,63 +183,18 @@ function setup_ui () {
 		failed_process="copying of the .config file to the git repo"
 		handle_fails "$failed_process"
 	fi
-	"$ECHO" "Done."
-}
-
-# Build and install the Raspberry Pi 4 kernel - notifying the user and exiting
-# if any failures occur
-#===============================================================================
-function install_kernel () {
-
-	"$ECHO" "Installing kernel..."
-	if ! sudo make modules_install ; then
-		result="$?"
-		failed_process="making of the install modules"
-		handle_fails "$failed_process"
-	fi
-	"$ECHO" "Done"
+	"$ECHO" "Done."	
 	
-	if ! sudo "$CP" arch/arm/boot/dts/*.dtb /boot/ ; then # was sudo
-		result="$?"
-		failed_process="copying of architecture to boot directory"
-		handle_fails "$failed_process"
-	fi
-
-	if ! sudo "$CP" arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/ ; then
-		result="$?"
-		failed_process="copying of architecture to overlays directory"
-		handle_fails "$failed_process"
-	fi
-
-	if ! sudo "$CP" arch/arm/boot/dts/overlays/README /boot/overlays/ ; then
-		result="$?"
-		failed_process="copying of architecture to overlays directory"
-		handle_fails "$failed_process"
-	fi
-
-	"$ECHO" "Copying architecture to Kernel image..."
-	if ! sudo "$CP" arch/arm/boot/zImage /boot/$KERNEL.img ; then
-		result="$?"
-		failed_process="copying of kernel image to the boot directory"
-		handle_fails "$failed_process"
-	fi
-	"$ECHO" "Done"
-
-	# Delete temporary folder
-	# "$ECHO" "Deleting temporary folder..."
-	# sudo rm -r /home/alx/tmp
-
-	"$ECHO" "Kernel installed successfully, restarting in 10 seconds..."
-	"$SLEEP" 10
-	sudo "$REBOOT" 
-	exit "$SUCCESS"
+	"$ECHO" "Deleting temporary folder..."
+        sudo rm -r "$dir"
 }
 
 startup_checks "$display_IP"
 
 # Install pre-requisites for kernel download
 "$ECHO" "Installing dependancies..."
-if ! sudo apt install raspberrypi-kernel-headers build-essential bc git wget bison flex libssl-dev make ; then
+if ! sudo apt install raspberrypi-kernel-headers build-essential bc git \
+	wget bison flex libssl-dev make ; then
 	result="$?"
 	failed_process="installing of depencencies"
 	handle_fails "$failed_process"
@@ -300,9 +216,3 @@ if ! make -j4 zImage modules dtbs ; then #was sudo
 	handle_fails "$failed_process"
 fi
 "$ECHO" "Done."
-
-if ! install_kernel ; then
-	result="$?"
-	failed_process="installation of the kernel"
-	handle_fails "$failed_process"
-fi

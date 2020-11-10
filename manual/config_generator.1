@@ -1,0 +1,134 @@
+.\" Manpage for config_generator script for Raspberry Pi 4
+.\" By Aleksandar Alduk S343752
+.\" CPT264– UNIX (Linux) Systems Administration 
+.\" and Programming (USAP), Study Period 3, 2020
+.\"
+.TH man 1 "November 2020" Linux "config_generator page"
+.SH NAME
+config_generator \- create a new custom Linux kernel .config file
+.SH SYNOPSIS
+config_generator [local_IP_address]
+.SH DESCRIPTION
+.B config_generator 
+is a script which automates the creation of a customised kernel 
+configuration (.config) file based on theRaspberry Pi 4 armvhf 
+architecture. 
+
+It takes one argument which is the local machine's IP address.
+When run, it downloads the latest kernel image from
+github, installs any required dependancies and presents the user
+with kernel build options via xterm. On completion the user saves
+changes and exits. This results in an outuput of the .config file.
+
+Example use ./config_generator 192.168.0.10
+.SH DIAGNOSTICS
+Most of the problems associated with the creating of the 
+custom kernel .config file will be likely resulting from 
+incorrect file and directory permissions, missing or incorrectly
+named directories.
+
+Other problems may be due to incorrectly setup xterm and x11
+programs or incorrectly entered local IP address.
+
+Reviewing each error message should
+give adequate guidance of where the program failed and
+allow the user to troubleshoot the process.
+
+The following diagnostics may be issued to the user:
+
+"Directory already exists"
+.RS
+Displayed to the user if the temporary working directory
+"tmp" already exists in the user's home directory and 
+prompts the user to ensure it is backed up and removed 
+prior to commencing.
+.RE
+"There has been no IP address input."
+.RS
+Displayed to the user if they have not input an IP address
+when launching the script. Be sure to enter a valid local IP
+address before launching the script.
+.RE
+"ERROR: creating directory failed"
+.RS
+Displayed to the user if there was a problem with creating
+the temporary working "tmp" directory in the user's home
+directory.
+.RE 
+"An error occurred while making of the bcm2711 kernel
+configuration process"
+.RS
+Displayed to the user if there was a problem with running of
+the make command for the bcm2711 kernel configuration.
+.RE 
+"An error occurred while running the install section of the
+qt5 process"
+.RS
+Displayed to the user if there was a problem with installing
+ the qt5 UI builder.
+.RE 
+"There was an error with getting Xconfig running. Please check
+that you have X11 installed, X11 forwarded and a correct local
+(client computer) IP address."
+.RS
+Displayed to the user if there was a problem with launching
+the xterm GUI via X11.
+.RE 
+"ERROR: changing to the linux directory failed"
+.RS
+Displayed to the user if there was a problem with changing
+into the working "tmp" directory in the user's home
+directory.
+.RE 
+"An error occurred while running the setting of the Raspberry 
+Pi 4 kernel process"
+.RS
+Displayed to the user if there was a problem with setting the
+Raspberry Pi 4 kernel output settings.
+.RE
+"An error has occurred while running the backing up and 
+compressing of boot directory process."
+.RS
+Displayed to the user if there was a problem with backing
+up and compressing of the boot directory.
+.RE
+"An error has occurred while running the git initialisation
+ process."
+.RS
+Displayed to the user if there was a problem with initialising
+the local git repo directory.
+.RE
+"An error has occurred while running the cloning of remote
+repository process."
+.RS
+Displayed to the user if there was a problem with cloning the
+remote repository into the local repo directory.
+.RE
+"An error has occurred while running the copying of 
+the .config file to the build directory process."
+.RS
+Displayed to the user if there was a problem with copying
+of the .config file from the downloaded repo into the
+working directory for use with the script.
+.RE
+"An error has occurred while running the making of the 
+install modules process."
+.RS
+Displayed to the user if there was a problem with making
+of the install modules process.
+architecture to boot directory process."
+.RE
+"An error has occurred while running the installing of 
+dependancies process."
+.RS
+Displayed to the user if there was a problem with installing
+of dependencies required to run all subsequent installation
+processes.
+.RE
+"An error has occurred while running the setting of the 
+image to run on 4 cores process."
+.RS
+Displayed to the user if there was a problem with setting the
+kernel image to run on 4 cores of the ARM processor.
+.SH AUTHOR
+Aleksandar Alduk S3437526, USAP, SP3 2020 <s3437526@student.rmit.edu.au>

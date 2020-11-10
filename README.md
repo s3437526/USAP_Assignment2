@@ -18,12 +18,10 @@ The main user interactive files in the project are:
 -	[Build_kernel script](https://github.com/s3437526/USAP_Assignment2)
 -	[Project report - pending](https://duckduckgo.com)
 -	[Install_manual script](https://github.com/s3437526/USAP_Assignment2/tree/develop/manual)
--	[?]()
+-	[Config_generator script](https://github.com/s3437526/USAP_Assignment2/tree/develop/manual)
+-	[Tests/Results](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests)
 
-***
-
-:page_with_curl: **Resources used**
-
+These need to be changed to the MASTER URL!!!
 
 ***
 
@@ -41,16 +39,25 @@ The install_manual script is run automatically on completion of the kernel insta
 
 On successful completion the installation will reboot the Raspberry Pi.
 
+***Generating .config file***
+
+This script is ***NOT*** required to be run if there is already a working version of the .config file in the root directory. If, however, there is a desire to create a new .config file, it may be run as follows:
+
+`./config_generator [local_IP_address]`where "local_IP_address" is the client computer's local network IP address. This is used for the purpose of exporing the kernel setup GUI to the user.
+Be sure that xterm is correctly setup, and the ***CORRECT*** local IP address is being used.
+
+Read the manual page for the config_generator script for more information.
+
 ***
 
 :paperclip: **Additional comments about the program**
 
-Manual pages for the build_kernel and install_manual scripts can be run using the man command as follows: `man build_kernel` and `man install_manual`.
+Manual pages for the build_kernel, install_manual, and config_generator scripts can be run using the man command as follows: `man build_kernel`, `man install_manual`, and `man config_generator` respectively.
 
 The following steps were taken during the .config file creation to disable camera support:
 
 ||
-|:-----------------------------------------------------------------------------------------------:|
+|:----------------------------------------------------------------------------:|
 |Searched for "Abilis AS102 DVB receiver" term and disabled all returns|
 |![Abilis AS102 DVB receiver disabled](/assets/images/Abilis%20AS102%20DVB%20receiver.png "Abilis AS102 DVB receiver")|
 ||
@@ -70,8 +77,3 @@ The following steps were taken during the .config file creation to disable camer
 |![BCM2835 camera support disabled](/assets/images/bcm2835_camera_support.png "BCM2835 camera disabled")|
 
 ***
-
-![Tux, the Linux mascot](/assets/images/tux.png)
-[Duck Duck Go](https://duckduckgo.com)
-<https://www.markdownguide.org>
-<fake@example.com>

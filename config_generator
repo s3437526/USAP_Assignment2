@@ -168,7 +168,7 @@ function setup_ui () {
 	"$ECHO" "Making Xconfig"
 	make xconfig || { "$PRINTF" "There was an error with getting Xconfig "
 	"$PRINTF" "running.\nPlease check that you have X11 installed, X11 "
-	"$PRINTF" "forwarded and a correct lcal (client computer) IP address."; 
+	"$PRINTF" "forwarded and a correct local (client computer) IP address.";
        	exit "$FAILURE" ; }
 	"$ECHO" "Done."
 

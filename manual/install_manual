@@ -51,5 +51,6 @@ function install_manpage () {
 
 install_manpage "build_kernel.1" "build_kernel"
 install_manpage "install_manual.1" "install_manual"
+install_manpage "config_generator.1" "config_generator"
 
 exit "$SUCCESS"

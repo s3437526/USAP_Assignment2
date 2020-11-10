@@ -1,21 +1,9 @@
 #!/bin/bash
 
 : "
-
 Script by Alex Alduk S3437526
 
 This script initiates and installs the Linux Kernel for the Raspberry Pi 4
-
-*** TO-DO ***
-Install manpage script
-Add manpage
-Minor aesthetic edits to README.md page
-Add manpage to README.md
-Document the use of the manpage
-Elaborate on some print logs to help with troubleshooting and error messages
-Create error log?
-Added manual directory and page
-
 "
 
 # Variables

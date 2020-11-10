@@ -1,14 +1,10 @@
 #!/bin/bash
 
 : "
-
 Script by Alex Alduk S3437526
 
 This script initiates the Linux Kernel .config file creation process
 for the Raspberry Pi 4
-
-*** TO-DO ***
-
 "
 
 # Variables

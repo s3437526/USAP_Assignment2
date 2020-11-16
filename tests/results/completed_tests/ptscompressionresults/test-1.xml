@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<!--Phoronix Test Suite v5.2.1 (Khanino)-->
+<?xml-stylesheet type="text/xsl" href="pts-results-viewer.xsl"?>
+<PhoronixTestSuite>
+  <Generated>
+    <Title>pts/compression_results</Title>
+    <LastModified>2020-11-09 10:53:00</LastModified>
+    <TestClient>Phoronix Test Suite v5.2.1 (Khanino)</TestClient>
+    <Description>ARMv7 rev 3 testing on Raspbian 10 via the Phoronix Test Suite_compresssion</Description>
+    <PreSetEnvironmentVariables></PreSetEnvironmentVariables>
+  </Generated>
+  <System>
+    <Identifier>ARMv7 rev 3</Identifier>
+    <Hardware>Processor: ARMv7 rev 3 @ 1.50GHz (4 Cores), Motherboard: BCM2711, Memory: 4096MB, Disk: 64GB SN64G</Hardware>
+    <Software>OS: Raspbian 10, Kernel: 5.4.74-v7l_s3437526+ (armv7l), File-System: ext4</Software>
+    <User>alx</User>
+    <TimeStamp>2020-11-09 10:53:01</TimeStamp>
+    <TestClientVersion>5.2.1</TestClientVersion>
+    <Notes></Notes>
+    <JSON>{"compiler-configuration":"--build=arm-linux-gnueabihf --disable-libitm --disable-libquadmath --disable-libquadmath-support --disable-sjlj-exceptions --disable-werror --enable-bootstrap --enable-checking=release --enable-clocale=gnu --enable-gnu-unique-object --enable-languages=c,ada,c++,go,d,fortran,objc,obj-c++ --enable-libstdcxx-debug --enable-libstdcxx-time=yes --enable-multiarch --enable-nls --enable-objc-gc=auto --enable-plugin --enable-shared --enable-threads=posix --host=arm-linux-gnueabihf --program-prefix=arm-linux-gnueabihf- --target=arm-linux-gnueabihf --with-arch=armv6 --with-default-libstdcxx-abi=new --with-float=hard --with-fpu=vfp --with-gcc-major-version-only --with-target-system-zlib -v","cpu-scaling-governor":"cpufreq-dt ondemand","kernel-parameters":"snd_bcm2835.enable_compat_alsa=0 snd_bcm2835.enable_hdmi=1"}</JSON>
+  </System>
+  <Result>
+    <Identifier>pts/compress-zstd-1.2.1</Identifier>
+    <Title>Zstd Compression</Title>
+    <AppVersion>1.4.5</AppVersion>
+    <Arguments>-b3</Arguments>
+    <Description>Compression Level: 3</Description>
+    <Scale>MB/s</Scale>
+    <Proportion>HIB</Proportion>
+    <DisplayFormat>BAR_GRAPH</DisplayFormat>
+    <Data>
+      <Entry>
+        <Identifier>ARMv7 rev 3</Identifier>
+        <Value>104.53</Value>
+        <RawString>104.8:104.4:104.4</RawString>
+        <JSON>{"compiler-options":{"compiler-type":"CC","compiler":"gcc","compiler-options":"-O3 -pthread -lz"}}</JSON>
+      </Entry>
+    </Data>
+  </Result>
+  <Result>
+    <Identifier>pts/compress-zstd-1.2.1</Identifier>
+    <Title>Zstd Compression</Title>
+    <AppVersion>1.4.5</AppVersion>
+    <Arguments>-b19</Arguments>
+    <Description>Compression Level: 19</Description>
+    <Scale>MB/s</Scale>
+    <Proportion>HIB</Proportion>
+    <DisplayFormat>BAR_GRAPH</DisplayFormat>
+    <Data>
+      <Entry>
+        <Identifier>ARMv7 rev 3</Identifier>
+        <Value>2.60</Value>
+        <RawString>2.59:2.62:2.58</RawString>
+        <JSON>{"compiler-options":{"compiler-type":"CC","compiler":"gcc","compiler-options":"-O3 -pthread -lz"}}</JSON>
+      </Entry>
+    </Data>
+  </Result>
+  <Result>
+    <Identifier>pts/compress-7zip-1.7.1</Identifier>
+    <Title>7-Zip Compression</Title>
+    <AppVersion>16.02</AppVersion>
+    <Arguments></Arguments>
+    <Description>Compress Speed Test</Description>
+    <Scale>MIPS</Scale>
+    <Proportion>HIB</Proportion>
+    <DisplayFormat>BAR_GRAPH</DisplayFormat>
+    <Data>
+      <Entry>
+        <Identifier>ARMv7 rev 3</Identifier>
+        <Value>3703</Value>
+        <RawString>3738:3727:3644</RawString>
+        <JSON>{"compiler-options":{"compiler-type":"CXX","compiler":"g++","compiler-options":"-pipe -lpthread"}}</JSON>
+      </Entry>
+    </Data>
+  </Result>
+  <Result>
+    <Identifier>pts/compress-pbzip2-1.5.0</Identifier>
+    <Title>Parallel BZIP2 Compression</Title>
+    <AppVersion>1.1.12</AppVersion>
+    <Arguments></Arguments>
+    <Description>256MB File Compression</Description>
+    <Scale>Seconds</Scale>
+    <Proportion>LIB</Proportion>
+    <DisplayFormat>BAR_GRAPH</DisplayFormat>
+    <Data>
+      <Entry>
+        <Identifier>ARMv7 rev 3</Identifier>
+        <Value>69.12</Value>
+        <RawString>76.190207004547:68.385407924652:68.069863080978:67.396457910538:67.548345088959:67.103200912476</RawString>
+        <JSON>{"compiler-options":{"compiler-type":"CXX","compiler":"g++","compiler-options":"-O2 -pthread -lbz2 -lpthread"}}</JSON>
+      </Entry>
+    </Data>
+  </Result>
+  <Result>
+    <Identifier>pts/compress-gzip-1.2.0</Identifier>
+    <Title>Gzip Compression</Title>
+    <AppVersion></AppVersion>
+    <Arguments></Arguments>
+    <Description>Linux Source Tree Archiving To .tar.gz</Description>
+    <Scale>Seconds</Scale>
+    <Proportion>LIB</Proportion>
+    <DisplayFormat>BAR_GRAPH</DisplayFormat>
+    <Data>
+      <Entry>
+        <Identifier>ARMv7 rev 3</Identifier>
+        <Value>159.67</Value>
+        <RawString>167.31071400642:158.55868005753:156.0863161087:156.70485305786</RawString>
+      </Entry>
+    </Data>
+  </Result>
+  <Result>
+    <Identifier>pts/compress-xz-1.1.0</Identifier>
+    <Title>XZ Compression</Title>
+    <AppVersion>5.2.4</AppVersion>
+    <Arguments></Arguments>
+    <Description>Compressing ubuntu-16.04.3-server-i386.img, Compression Level 9</Description>
+    <Scale>Seconds</Scale>
+    <Proportion>LIB</Proportion>
+    <DisplayFormat>BAR_GRAPH</DisplayFormat>
+    <Data>
+      <Entry>
+        <Identifier>ARMv7 rev 3</Identifier>
+        <Value>380.08</Value>
+        <RawString>385.41173481941:381.0375058651:373.78086304665</RawString>
+        <JSON>{"compiler-options":{"compiler-type":"CC","compiler":"gcc","compiler-options":"-pthread -fvisibility=hidden -O2"}}</JSON>
+      </Entry>
+    </Data>
+  </Result>
+  <Result>
+    <Identifier>pts/system-decompress-gzip-1.1.1</Identifier>
+    <Title>System GZIP Decompression</Title>
+    <AppVersion></AppVersion>
+    <Arguments></Arguments>
+    <Description>Phoronix Test Suite v5.2.1</Description>
+    <Scale>Seconds</Scale>
+    <Proportion>LIB</Proportion>
+    <DisplayFormat>BAR_GRAPH</DisplayFormat>
+    <Data>
+      <Entry>
+        <Identifier>ARMv7 rev 3</Identifier>
+        <Value>11.77</Value>
+        <RawString>12.220121145248:11.572463989258:11.507624864578</RawString>
+      </Entry>
+    </Data>
+  </Result>
+  <Result>
+    <Identifier>pts/system-decompress-xz-1.0.2</Identifier>
+    <Title>System XZ Decompression</Title>
+    <AppVersion></AppVersion>
+    <Arguments></Arguments>
+    <Description>Phoronix Test Suite v5.2.1</Description>
+    <Scale>Seconds</Scale>
+    <Proportion>LIB</Proportion>
+    <DisplayFormat>BAR_GRAPH</DisplayFormat>
+    <Data>
+      <Entry>
+        <Identifier>ARMv7 rev 3</Identifier>
+        <Value>14.14</Value>
+        <RawString>14.194211006165:14.122115135193:14.093234062195</RawString>
+      </Entry>
+    </Data>
+  </Result>
+  <Result>
+    <Identifier>pts/system-decompress-zlib-1.0.2</Identifier>
+    <Title>System ZLIB Decompression</Title>
+    <AppVersion>1.2.7</AppVersion>
+    <Arguments></Arguments>
+    <Description>Phoronix Test Suite v5.2.1</Description>
+    <Scale>ms</Scale>
+    <Proportion>LIB</Proportion>
+    <DisplayFormat>BAR_GRAPH</DisplayFormat>
+    <Data>
+      <Entry>
+        <Identifier>ARMv7 rev 3</Identifier>
+        <Value>5759.52</Value>
+        <RawString>7306.284217:5698.957873:5674.962489:5670.160733:5695.706784:5677.781298:5667.096143:5688.313034:5683.282095:5731.357358:5657.075779:5659.653568:5689.682844:5651.424735:5660.925585:5678.735686:5680.378927:5671.212399:5683.721756:5663.609694</RawString>
+      </Entry>
+    </Data>
+  </Result>
+</PhoronixTestSuite>

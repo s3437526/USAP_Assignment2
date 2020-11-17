@@ -35,33 +35,33 @@ The below table illustrates the summarised results obtained from running the mem
 
 which table results were uses - include url
 
-**Results obtained from ptsmemoryv2 - **[**Available here.**](https://github.com/s3437526/USAP_Assignment2/blob/develop/tests/results/completed_tests/ptsmemoryv2/)
+**Results obtained from ptsmemoryv2 - ** [***available here.***](https://github.com/s3437526/USAP_Assignment2/blob/develop/tests/results/completed_tests/ptsmemoryv2/)
 # Change all these to master branch URL!
 
 **Summary of results:**
 |**Test**|**Runs**|**Average result**|**Standard error**|**Standard deviation (%)**|
 |:-----|:-----|:-----|:-----|:-----|
-|Add Integer|4|4193.67|60.94|2.91|
-|Copy Integer|3|4988.89|77.67|2.70|
-|Scale Integer|6|4802.52|113.58|5.79|
-|Triad Integer|3|4484.48|5.62|0.22|
-|Average Integer|3|4319.34|17.79|0.71|
-|Add Floating Point|3|4105.06|33.81|1.43|
-|Copy Floating Point|3|3594.52|47.25|2.28|
-|Scale Floating Point|6|4827.55|97.46|4.94|
-|Triad Floating Point|3|4063.77|1.70|0.07|
-|Average Floating Point|3|4040.06|11.36|0.49|
-|Stream Copy|5|4013.02|7.73|0.43|
-|Stream Scale|5|4042.86|10.96|0.61|
-|Stream Triad|5|3718.44|7.17|0.43|
-|Stream Add|4|3714.80|9.01|0.49|
-|Tinymembench|3|2603.27|3.51|0.23|
-|MBW Memory Copy - Array Size: 1024 MiB|3|2474.92|0.69|0.05|
-|MBW Memory Copt, Fixed Block Size - Array Size: 1024 MiB|3|2481.30|0.90|0.06|
-|T-test1 - Threads: 1|3|203.15|0.32|0.27|
-|T-test2 - Threads: 2|3|72.37|0.16|0.39|
-|CacheBench - Read Cache|3|3806.88|2.57|0.12|
-|CacheBench - Read Cache|3|5213.89|5.72|0.19|
+|Add Integer (MB/s)|4|4193.67|60.94|2.91|
+|Copy Integer (MB/s)|3|4988.89|77.67|2.70|
+|Scale Integer (MB/s)|6|4802.52|113.58|5.79|
+|Triad Integer (MB/s)|3|4484.48|5.62|0.22|
+|Average Integer (MB/s)|3|4319.34|17.79|0.71|
+|Add Floating Point (MB/s)|3|4105.06|33.81|1.43|
+|Copy Floating Point (MB/s)|3|3594.52|47.25|2.28|
+|Scale Floating Point (MB/s)|6|4827.55|97.46|4.94|
+|Triad Floating Point (MB/s)|3|4063.77|1.70|0.07|
+|Average Floating Point (MB/s)|3|4040.06|11.36|0.49|
+|Stream Copy (MB/s)|5|4013.02|7.73|0.43|
+|Stream Scale (MB/s)|5|4042.86|10.96|0.61|
+|Stream Triad (MB/s)|5|3718.44|7.17|0.43|
+|Stream Add (MB/s)|4|3714.80|9.01|0.49|
+|Tinymembench (MB/s)|3|2603.27|3.51|0.23|
+|MBW Memory Copy - Array Size: 1024 MiB (MiB/s)|3|2474.92|0.69|0.05|
+|MBW Memory Copt, Fixed Block Size - Array Size: 1024 MiB (MiB/s)|3|2481.30|0.90|0.06|
+|T-test1 - Threads: 1 (Seconds)|3|203.15|0.32|0.27|
+|T-test2 - Threads: 2 (Seconds)|3|72.37|0.16|0.39|
+|CacheBench - Read Cache (MB/s)|3|3806.88|2.57|0.12|
+|CacheBench - Read Cache (MB/s)|3|5213.89|5.72|0.19|
 
 ***Table 1 - Memory test results summary***
 

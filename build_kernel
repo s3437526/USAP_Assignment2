@@ -121,7 +121,7 @@ function prepare_kernel () {
 
 	# Copy .config file to the kernel build directory
 	"$ECHO" "Copying $config_file file to the build directory $dir"
-	if ! "$CP" "$STUDENT_DIR"/"$config_file" "$config_file" ; then
+	if ! "$CP" "$STUDENT_DIR"/"$config_file" . ; then
 		result="$?"
 		failed_process="copying of the .config file to the build \
 			directory"

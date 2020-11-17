@@ -116,14 +116,14 @@ function prepare_kernel () {
 	fi
 	"$ECHO" "Done."
 
-	# Select kernel for Rapberry Pi 4
-	"$ECHO" "Setting Kernel to Rasberry Pi 4"
-	if ! KERNEL=kernel7l ; then
-		result="$?"
-		failed_process="setting of up the Raspberry Pi 4 kernel"
-		handle_fails "$failed_process"
-	fi
-	"$ECHO" "Done."
+#	# Select kernel for Rapberry Pi 4
+#	"$ECHO" "Setting Kernel to Rasberry Pi 4"
+#	if ! KERNEL=kernel7l ; then
+#		result="$?"
+#		failed_process="setting of up the Raspberry Pi 4 kernel"
+#		handle_fails "$failed_process"
+#	fi
+#	"$ECHO" "Done."
 
 	# Set processor type for Raspberry Pi 4
 	"$ECHO" "Making bcm2711_defconfig..."

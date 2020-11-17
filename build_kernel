@@ -79,10 +79,19 @@ function setup_directories () {
 # Download and prepare Linux kernel - report any errors to the user and exit
 #===============================================================================
 function prepare_kernel () {
-
+	
 	# Local variables
 	local boot_dir="/boot"
 	local config_file=".config"
+
+	# Select kernel for Rapberry Pi 4
+	"$ECHO" "Setting Kernel to Rasberry Pi 4"
+	if ! KERNEL=kernel7l ; then
+		result="$?"
+		failed_process="setting of up the Raspberry Pi 4 kernel"
+		handle_fails "$failed_process"
+	fi
+	"$ECHO" "Done."
 
 	# Download latest linux kernel
 	"$ECHO" "Fetching the latest Rasbperry Pi Kernel mirror"
@@ -92,7 +101,6 @@ function prepare_kernel () {
 		handle_fails "$failed_process"
 	fi
 	"$ECHO" "Done."
-
 	
 	# Access build directory
 	cd linux || { "$PRINTF" "Error: changing to the linux directory failed."
@@ -116,8 +124,7 @@ function prepare_kernel () {
 		failed_process="backing up and compressing of boot directory"
 		handle_fails "$failed_process"
 	fi
-	"$ECHO" "Done."
-
+	"$ECHO" "Done"
 
 	# Copy .config file to the kernel build directory
 	"$ECHO" "Copying $config_file file to the build directory $dir"
@@ -128,6 +135,16 @@ function prepare_kernel () {
 		handle_fails "$failed_process"
 	fi
 	"$ECHO" "Done."
+
+	# Set up image to run on 4 cores
+	"$ECHO" "Setting image to run on 4 cores..."
+	if ! yes n | make -j4 zImage modules dtbs ; then
+		result="$?"
+		failed_process="setting of the image to run on 4 cores"
+		handle_fails "$failed_process"
+	fi
+	"$ECHO" "Done."
+
 }
 
 # Build and install the Raspberry Pi 4 kernel - notifying the user and exiting
@@ -142,7 +159,7 @@ function install_kernel () {
 		handle_fails "$failed_process"
 	fi
 	"$ECHO" "Done"
-	
+
 	if ! sudo "$CP" arch/arm/boot/dts/*.dtb /boot/ ; then
 		result="$?"
 		failed_process="copying of architecture to boot directory"
@@ -194,15 +211,6 @@ fi
 setup_directories
 
 prepare_kernel
-
-# Set up image to run on 4 cores
-"$ECHO" "Setting image to run on 4 cores..."
-if ! yes | make -j4 zImage modules dtbs ; then
-	result="$?"
-	failed_process="setting of the image to run on 4 cores"
-	handle_fails "$failed_process"
-fi
-"$ECHO" "Done."
 
 if ! install_kernel ; then
 	result="$?"

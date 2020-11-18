@@ -33,7 +33,7 @@ Test suites were initially run via SSH CLI, however, due to timeout-related conn
 **Test suite 1 - Memory**
 The below table illustrates the summarised results obtained from running the memory test suite:
 
-Results obtained from ptsmemoryv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/blob/develop/tests/results/completed_tests/ptsmemoryv2/)
+Results obtained from ptsmemoryv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/blob/develop/tests/results/completed_tests/ptsmemoryv2/)  
 Detailed uploaded results are available on the openbenchmarking.org website [**here.**](https://openbenchmarking.org/result/2011179-KH-PTSMEMORY32)
 # Change all these to master branch URL!
 
@@ -64,10 +64,12 @@ Detailed uploaded results are available on the openbenchmarking.org website [**h
 
 ***Table 1 - Memory test results summary***
 
+***
+
 **Test suite 2 - CPU**
 The below table illustrates the summarised results obtained from running the CPU test suite:
 
-Results obtained from ptscpuv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptscpuv2)
+Results obtained from ptscpuv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptscpuv2)  
 Detailed uploaded results are available on the openbenchmarking.org website [**here.**](https://openbenchmarking.org/result/2011177-KH-PTSCPUV2941)
 # Change all these to master branch URL!
 
@@ -83,10 +85,12 @@ Detailed uploaded results are available on the openbenchmarking.org website [**h
 
 ***Table 2 - CPU test results summary***
 
+***
+
 **Test suite 3 - Disk**
 The below table illustrates the summarised results obtained from running the Disk test suite:
 
-Results obtained from ptsdiskv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptsdiskv2)
+Results obtained from ptsdiskv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptsdiskv2)  
 Detailed uploaded results are available on the openbenchmarking.org website [**here.**](https://openbenchmarking.org/result/2011162-KH-PTSDISKV231)
 # Change all these to master branch URL!
 
@@ -107,10 +111,12 @@ Detailed uploaded results are available on the openbenchmarking.org website [**h
 
 ***Table 3 - Disk test results summary***
 
+***
+
 **Test suite 4 - Compression**
 The below table illustrates the summarised results obtained from running the Compression test suite:
 
-Results obtained from ptscompressionresults10Nov - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptscompressionresults10nov)
+Results obtained from ptscompressionresults10Nov - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptscompressionresults10nov)  
 Detailed uploaded results are available on the openbenchmarking.org website [**here.**](https://openbenchmarking.org/result/2011179-KH-PTSCOMPRE60)
 # Change all these to master branch URL!
 
@@ -145,8 +151,8 @@ Detailed uploaded results are available on the openbenchmarking.org website [**h
 
 
 
-• introduction (2 marks): explain the structure the report will have and what you plan to cover.
-• method (3 Marks): outline what you did to decide which tests to run and the tests that you selected and how you ran them.
-• results (5 marks): summarise the results of the tests you ran, include relevant tables and graphs that show the important parts of the results.
-• analysis (8 Marks): discuss the results that you found and what they mean about the performance of your raspberry pi.
+• introduction (2 marks): explain the structure the report will have and what you plan to cover.  
+• method (3 Marks): outline what you did to decide which tests to run and the tests that you selected and how you ran them.  
+• results (5 marks): summarise the results of the tests you ran, include relevant tables and graphs that show the important parts of the results.  
+• analysis (8 Marks): discuss the results that you found and what they mean about the performance of your raspberry pi.  
 • conclusions (2 Marks): summarise the key points that you found in the results and analysis. 

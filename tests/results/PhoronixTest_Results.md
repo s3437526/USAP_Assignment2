@@ -30,7 +30,7 @@ Test suites were initially run via SSH CLI, however, due to timeout-related conn
 
 ## Results
 
-###Test suite 1 - Memory
+### Test suite 1 - Memory
 The below table illustrates the summarised results obtained from running the memory test suite:
 
 Results obtained from ptsmemoryv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/blob/develop/tests/results/completed_tests/ptsmemoryv2/)  
@@ -66,7 +66,7 @@ Detailed uploaded results are available on the openbenchmarking.org website [**h
 
 ***
 
-###Test suite 2 - CPU
+### Test suite 2 - CPU
 The below table illustrates the summarised results obtained from running the CPU test suite:
 
 Results obtained from ptscpuv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptscpuv2)  
@@ -87,7 +87,7 @@ Detailed uploaded results are available on the openbenchmarking.org website [**h
 
 ***
 
-###Test suite 3 - Disk
+### Test suite 3 - Disk
 The below table illustrates the summarised results obtained from running the Disk test suite:
 
 Results obtained from ptsdiskv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptsdiskv2)  
@@ -113,7 +113,7 @@ Detailed uploaded results are available on the openbenchmarking.org website [**h
 
 ***
 
-###Test suite 4 - Compression
+### Test suite 4 - Compression
 The below table illustrates the summarised results obtained from running the Compression test suite:
 
 Results obtained from ptscompressionresults10Nov - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptscompressionresults10nov)  

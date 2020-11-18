@@ -15,10 +15,10 @@ This program was designed to automate the build and compilation of a custom kern
 :open_file_folder: **Files in the project**
 
 The main user interactive files in the project are:
--	[Build_kernel script](https://github.com/s3437526/USAP_Assignment2)
--	[Project report](https://github.com/s3437526/USAP_Assignment2/blob/develop/tests/results/PhoronixTest_Results.md)
--	[Install_manual script](https://github.com/s3437526/USAP_Assignment2/tree/develop/manual)
--	[Config_generator script](https://github.com/s3437526/USAP_Assignment2/tree/develop/manual)
+-	[Build_kernel script (this page)](https://github.com/s3437526/USAP_Assignment2)
+-	[Phoronix Performance Report](https://github.com/s3437526/USAP_Assignment2/blob/develop/tests/results/PhoronixTest_Results.md)
+-	[Install_manual script and manuals](https://github.com/s3437526/USAP_Assignment2/tree/develop/manual)
+-	[Config_generator script (this page)](https://github.com/s3437526/USAP_Assignment2)
 -	[Tests/Results](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests)
 
 These need to be changed to the MASTER URL!!!

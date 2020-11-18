@@ -154,43 +154,45 @@ These are:
 - XZ Compression/Decompression (Compression)
 
 #### Memory Analysis:
-***RAMspeed SMP***
+***RAMspeed SMP***  
 According to the results shown above it can be seen that the RAM performed relatively evenly across the board in the range of 4000 and 5000 MB/s. This includes the whole (integer) and real (floating point) numbers and a variety of computations e.g. Adding, averaging, copying, scaling and triads.  
+
 A noteworthy observation was made about the result of the copying of a floating point number which scored below the range at 3594.52 MB/s. As this computation doesn't seem like such a demanding task compared to other tests it is unclear whether or not there was a dip in the performance due to other influences e.g. additional unplanned computational such as user-initiated tasks.  
 
 According to raw data across three runs of the test and with the standard deviation of 2.28%, there there isn't any conclusive evidence (comparitive to other tests) which indicates that this is the result of additional unaccounted workload or the demand of the test. More testing would should be done to gather conslusive evidence.
 
-***MBW***
+***MBW***  
+
 cover results across the board, and comapre them
 compare against other hardware available online
 RISC vs CISC?
 
 
 #### CPU Analysis:
-***Rodinia 2.4***
+***Rodinia 2.4***  
 
 
-***OpenSSL***
+***OpenSSL***  
 
 
 #### Disk Analysis:
-***SQLite***
+***SQLite***  
 
 
-***FS-Mark 3.3***
+***FS-Mark 3.3***  
 
 
 #### Compression Analyis:
-***7-Zip Compression***
+***7-Zip Compression***  
 
 
-***Parallel BZIP2 Compression***
+***Parallel BZIP2 Compression***  
 
 
-***Gzip Compression/Decompression***
+***Gzip Compression/Decompression***  
 
 
-***XZ Compression/Decompression***
+***XZ Compression/Decompression***  
 
 
 ***

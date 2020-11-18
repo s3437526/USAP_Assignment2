@@ -155,6 +155,7 @@ These are:
 
 #### Memory Analysis:
 ***RAMspeed SMP***  
+
 According to the results shown above it can be seen that the RAM performed relatively evenly across the board in the range of 4000 and 5000 MB/s. This includes the whole (integer) and real (floating point) numbers and a variety of computations e.g. Adding, averaging, copying, scaling and triads.  
 
 A noteworthy observation was made about the result of the copying of a floating point number which scored below the range at 3594.52 MB/s. As this computation doesn't seem like such a demanding task compared to other tests it is unclear whether or not there was a dip in the performance due to other influences e.g. additional unplanned computational load such as user-initiated tasks.  
@@ -170,37 +171,47 @@ More testing would should be done to gather conslusive evidence.
 
 Surprisingly, the memory bandwidth performance was on the low end of the "Low-Tier" systems tested. It performed below the 8th and 10th percentile for the same array sizes compared to other tested systems. However, the testing pool is smaller in this test category.
 
-***Personal notes..***
+# ***Personal notes..***
 cover results across the board, and comapre them
 compare against other hardware available online
 RISC vs CISC?
-
 
 #### CPU Analysis:
 ***Rodinia 2.4***  
 
 
+The Rodinia 2.4 OpenMP accelerator has performed between the 21st and 22nd percentile. While this still classifies it as a "Low-Tier" device, it performed surprisingly well in the LaveMD test, considering its closest competitors were an AMD Ryzen 5 2600 and Intel Xeon Silver 4215R.  
+
+The CFD Solver test placed the unit below the 3rd percentile which initially made it appear as an underperforming device, however, considering its nearest recorded competition is an Intel Core i5-M CPU it is difficult to determine that this is the case. Further teseting against similar devices would provide more conclusive evidence and greater context.  
+
 ***OpenSSL***  
 
+At 97.27 signs per second the Raspberry Pi performs between the 5th and 7th percentile. This is on par with its competitiers in the "Low-Tier" systems.
 
 #### Disk Analysis:
 ***SQLite***  
 
 
+
 ***FS-Mark 3.3***  
+
 
 
 #### Compression Analyis:
 ***7-Zip Compression***  
 
 
+
 ***Parallel BZIP2 Compression***  
+
 
 
 ***Gzip Compression/Decompression***  
 
 
+
 ***XZ Compression/Decompression***  
+
 
 
 ***

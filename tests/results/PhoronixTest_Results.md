@@ -34,7 +34,7 @@ Test suites were initially run via SSH CLI, however, due to timeout-related conn
 The below table illustrates the summarised results obtained from running the memory test suite:
 
 Results obtained from ptsmemoryv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/blob/develop/tests/results/completed_tests/ptsmemoryv2/)  
-Detailed uploaded results are available on the openbenchmarking.org website [**here.**](https://openbenchmarking.org/result/2011179-KH-PTSMEMORY32)
+Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011179-KH-PTSMEMORY32)
 # Change all these to master branch URL!
 
 **Summary of results:**
@@ -70,7 +70,7 @@ Detailed uploaded results are available on the openbenchmarking.org website [**h
 The below table illustrates the summarised results obtained from running the CPU test suite:
 
 Results obtained from ptscpuv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptscpuv2)  
-Detailed uploaded results are available on the openbenchmarking.org website [**here.**](https://openbenchmarking.org/result/2011177-KH-PTSCPUV2941)
+Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011177-KH-PTSCPUV2941)
 # Change all these to master branch URL!
 
 **Summary of results:**
@@ -91,7 +91,7 @@ Detailed uploaded results are available on the openbenchmarking.org website [**h
 The below table illustrates the summarised results obtained from running the Disk test suite:
 
 Results obtained from ptsdiskv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptsdiskv2)  
-Detailed uploaded results are available on the openbenchmarking.org website [**here.**](https://openbenchmarking.org/result/2011162-KH-PTSDISKV231)
+Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011162-KH-PTSDISKV231)
 # Change all these to master branch URL!
 
 **Summary of results:**
@@ -117,7 +117,7 @@ Detailed uploaded results are available on the openbenchmarking.org website [**h
 The below table illustrates the summarised results obtained from running the Compression test suite:
 
 Results obtained from ptscompressionresults10Nov - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptscompressionresults10nov)  
-Detailed uploaded results are available on the openbenchmarking.org website [**here.**](https://openbenchmarking.org/result/2011179-KH-PTSCOMPRE60)
+Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011179-KH-PTSCOMPRE60)
 # Change all these to master branch URL!
 
 **Summary of results:**
@@ -157,12 +157,20 @@ These are:
 ***RAMspeed SMP***  
 According to the results shown above it can be seen that the RAM performed relatively evenly across the board in the range of 4000 and 5000 MB/s. This includes the whole (integer) and real (floating point) numbers and a variety of computations e.g. Adding, averaging, copying, scaling and triads.  
 
-A noteworthy observation was made about the result of the copying of a floating point number which scored below the range at 3594.52 MB/s. As this computation doesn't seem like such a demanding task compared to other tests it is unclear whether or not there was a dip in the performance due to other influences e.g. additional unplanned computational such as user-initiated tasks.  
+A noteworthy observation was made about the result of the copying of a floating point number which scored below the range at 3594.52 MB/s. As this computation doesn't seem like such a demanding task compared to other tests it is unclear whether or not there was a dip in the performance due to other influences e.g. additional unplanned computational load such as user-initiated tasks.  
 
-According to raw data across three runs of the test and with the standard deviation of 2.28%, there there isn't any conclusive evidence (comparitive to other tests) which indicates that this is the result of additional unaccounted workload or the demand of the test. More testing would should be done to gather conslusive evidence.
+According to raw data across three runs of the test and with the standard deviation of 2.28%, there there isn't any conclusive evidence (comparitive to other tests) which indicates that this is the result of additional unaccounted workload or the demand of the test.  
 
-***MBW***  
+According to results specified at openbenchmarking.org this Raspberry Pi performs between the 6th and 13th (low tier) percentile across the RAMspeed tests compared to other tested systems.  
 
+More testing would should be done to gather conslusive evidence.  
+
+
+***Memory Bandwidth - MBW***  
+
+Surprisingly, the memory bandwidth performance was on the low end of the "Low-Tier" systems tested. It performed below the 8th and 10th percentile for the same array sizes compared to other tested systems. However, the testing pool is smaller in this test category.
+
+***Personal notes..***
 cover results across the board, and comapre them
 compare against other hardware available online
 RISC vs CISC?

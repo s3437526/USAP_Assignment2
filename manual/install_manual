@@ -17,15 +17,16 @@ function install_manpage () {
 	# Local variables
 	local man_src="manual"
 	local man_dest="/usr/share/man/man1/"
+	local student_dir="\"$HOME\"/s3437526_A2/"
 
 	# Copy the manpage to the shared man1 page directory - if this 
 	# fails then notify the user and exit
 	echo "Copying manual page entry to manuals directory..."
-	if ! sudo "$CP" "$1" "$man_dest""$1" ; then
+	if ! sudo "$CP" "$student_dir""$man_src"/"$1" "$man_dest""$1" ; then
 		printf "%s" "Error: unable to copy manual page for the "
 		printf "%s\n" "script to the manuals directory."
 		printf "%s" "Please check that the file \"$1\""
-		printf "%s\n" "exists in the \"$man_src\" directory."
+		printf "%s\n" " exists in the \"$man_src\" directory."
 		printf "%s\n" "Exiting..."
 		printf "\n"
 		exit "$FAILURE"

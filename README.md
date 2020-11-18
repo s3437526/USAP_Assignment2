@@ -16,7 +16,7 @@ This program was designed to automate the build and compilation of a custom kern
 
 The main user interactive files in the project are:
 -	[Build_kernel script](https://github.com/s3437526/USAP_Assignment2)
--	[Project report - pending](https://duckduckgo.com)
+-	[Project report](://github.com/s3437526/USAP_Assignment2/blob/develop/tests/results/PhoronixTest_Results.md)
 -	[Install_manual script](https://github.com/s3437526/USAP_Assignment2/tree/develop/manual)
 -	[Config_generator script](https://github.com/s3437526/USAP_Assignment2/tree/develop/manual)
 -	[Tests/Results](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests)

@@ -139,6 +139,58 @@ Detailed uploaded results are available on the openbenchmarking.org website [**h
 
 ## Analysis
 
+Due to the large volume of tests performed and the overlap of tests between test suites, the results of some carefully selected key tests will be included in the analysis.
+These are:
+
+- RAMspeed SMP (Memory)
+- MBW (Memory)
+- Rodinia 2.4 (CPU)
+- OpenSSL (CPU)
+- SQLite (Disk)
+- FS-Mark 3.3 (Disk)
+- 7-Zip Compression (Compression)
+- Parallel BZIP2 Compression (Compression)
+- Gzip Compression/Decompression (Compression)
+- XZ Compression/Decompression (Compression)
+
+#### Memory Analysis:
+***RAMspeed SMP***
+According to the results shown above it can be seen that the RAM performed relatively evenly across the board in the range of 4000 and 5000 MB/s. This includes the whole (integer) and real (floating point) numbers and a variety of computations e.g. Adding, averaging, copying, scaling and triads.  
+A noteworthy observation was made about the result of the copying of a floating point number which scored below the range at 3594.52 MB/s. As this computation doesn't seem like such a demanding task compared to other tests it is unclear whether or not there was a dip in the performance due to other influences e.g. additional unplanned computational such as user-initiated tasks.  
+
+According to raw data across three runs of the test and with the standard deviation of 2.28%, there there isn't any conclusive evidence (comparitive to other tests) which indicates that this is the result of additional unaccounted workload or the demand of the test. More testing would should be done to gather conslusive evidence.
+
+***MBW***
+cover results across the board, and comapre them
+compare against other hardware available online
+RISC vs CISC?
+
+
+#### CPU Analysis:
+***Rodinia 2.4***
+
+
+***OpenSSL***
+
+
+#### Disk Analysis:
+***SQLite***
+
+
+***FS-Mark 3.3***
+
+
+#### Compression Analyis:
+***7-Zip Compression***
+
+
+***Parallel BZIP2 Compression***
+
+
+***Gzip Compression/Decompression***
+
+
+***XZ Compression/Decompression***
 
 
 ***

@@ -41,7 +41,7 @@ On successful completion the installation will reboot the Raspberry Pi.
 
 This script is ***NOT*** required to be run if there is already a working version of the .config file in the root directory. If, however, there is a desire to create a new .config file, it may be run as follows:
 
-`./config_generator [local_IP_address]`where "local_IP_address" is the client computer's local network IP address. This is used for the purpose of exporing the kernel setup GUI to the user.
+`./config_generator [local_IP_address]`where "local_IP_address" is the client computer's local network IP address. This is used for the purpose of displaying the kernel setup GUI to the user.
 Be sure that xterm is correctly setup, and the ***CORRECT*** local IP address is being used.
 
 Read the manual page for the config_generator script for more information.

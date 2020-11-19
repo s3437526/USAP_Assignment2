@@ -180,7 +180,7 @@ RISC vs CISC?
 ***Rodinia 2.4***  
 
 
-The Rodinia 2.4 OpenMP accelerator has performed between the 21st and 22nd percentile. While this still classifies it as a "Low-Tier" device, it performed surprisingly well in the LaveMD test, considering its closest competitors were an AMD Ryzen 5 2600 and Intel Xeon Silver 4215R.  
+The Rodinia 2.4 OpenMP accelerator has performed between the 21st and 22nd percentile. While this still classifies it as a "Low-Tier" device, it performed surprisingly well in the LavaMD test, considering its closest competitors were an AMD Ryzen 5 2600 and Intel Xeon Silver 4215R.  
 
 The CFD Solver test placed the unit below the 3rd percentile which initially made it appear as an underperforming device, however, considering its nearest recorded competition is an Intel Core i5-M CPU it is difficult to determine that this is the case. Further teseting against similar devices would provide more conclusive evidence and greater context.  
 

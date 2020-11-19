@@ -202,19 +202,19 @@ Finally, when processing 1,000 files at 1MB per file without synchronisation, th
 #### Compression Analyis:
 ***7-Zip Compression***  
 
-
+The compression speed of 7-Zip places the performance of the Raspberry Pi between the 14th and 15th percentile. While still in the "Low-Tier" category, it is on par with its peers.  
 
 ***Parallel BZIP2 Compression***  
 
-
+Using BZIP2 as a compression mechanism the Raspberry Pi managed to compress a 256MB Linux kernel source in 69.19 seconds. This is still in the "Low-Tier" category, placing between the 7th and 9th percentile among other ARMv7s and lower end AMD and Intel processors.  
 
 ***Gzip Compression/Decompression***  
 
-
+Similar to BZIP2, the Raspberry Pi places in the 9th percentile - and among its peers - at 158.83 seconds to complress a Linux source tree to .tar.gz. Unfortunately, no comparable data is available for decompression results. More testing would need to be done in order to obtain a comparable variety of results.  
 
 ***XZ Compression/Decompression***  
 
-
+Interestingly, according to its peers, the Raspberry Pi placed between the 4th and 6th percentile in performance when compressing an image of ubuntu16.04.3-server-i386. This is towards the bottom of the performance chart. Again, there is no comparable data for file decompression.
 
 ***
 

@@ -33,7 +33,7 @@ Test suites were initially run via SSH CLI, however, due to timeout-related conn
 ### Test suite 1 - Memory
 The below table illustrates the summarised results obtained from running the memory test suite:
 
-Results obtained from ptsmemoryv2 - [***available here.***](../completed-tests/ptsmemoryv2/)  
+Results obtained from ptsmemoryv2 - [***available here.***](completed-tests/ptsmemoryv2/)  
 Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011179-KH-PTSMEMORY32)  
 
 **Summary of results:**
@@ -68,7 +68,7 @@ Detailed uploaded results are available on the openbenchmarking.org website [***
 ### Test suite 2 - CPU
 The below table illustrates the summarised results obtained from running the CPU test suite:
 
-Results obtained from ptscpuv2 - [***available here.***](../completed_tests/ptscpuv2)  
+Results obtained from ptscpuv2 - [***available here.***](completed_tests/ptscpuv2)  
 Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011177-KH-PTSCPUV2941)  
 
 **Summary of results:**
@@ -88,7 +88,7 @@ Detailed uploaded results are available on the openbenchmarking.org website [***
 ### Test suite 3 - Disk
 The below table illustrates the summarised results obtained from running the Disk test suite:
 
-Results obtained from ptsdiskv2 - [***available here.***](../completed_tests/ptsdiskv2)  
+Results obtained from ptsdiskv2 - [***available here.***](completed_tests/ptsdiskv2)  
 Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011162-KH-PTSDISKV231)  
 
 **Summary of results:**
@@ -113,7 +113,7 @@ Detailed uploaded results are available on the openbenchmarking.org website [***
 ### Test suite 4 - Compression
 The below table illustrates the summarised results obtained from running the Compression test suite:
 
-Results obtained from ptscompressionresults10Nov - [***available here.***](../completed_tests/ptscompressionresults10nov)  
+Results obtained from ptscompressionresults10Nov - [***available here.***](completed_tests/ptscompressionresults10nov)  
 Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011179-KH-PTSCOMPRE60)  
 
 **Summary of results:**

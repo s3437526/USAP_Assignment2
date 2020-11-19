@@ -33,7 +33,7 @@ Test suites were initially run via SSH CLI, however, due to timeout-related conn
 ### Test suite 1 - Memory
 The below table illustrates the summarised results obtained from running the memory test suite:
 
-Results obtained from ptsmemoryv2 - [***available here.***](./completed-tests/ptsmemoryv2/)  
+Results obtained from ptsmemoryv2 - [***available here.***](USAP_Assignment2/tests/results/completed-tests/ptsmemoryv2/)  
 Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011179-KH-PTSMEMORY32)  
 
 **Summary of results:**

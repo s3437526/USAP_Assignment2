@@ -171,16 +171,12 @@ More testing would should be done to gather conslusive evidence.
 
 Surprisingly, the memory bandwidth performance was on the low end of the "Low-Tier" systems tested. It performed below the 8th and 10th percentile for the same array sizes compared to other tested systems. However, the testing pool is smaller in this test category.
 
-# ***Personal notes..***
-cover results across the board, and comapre them
-compare against other hardware available online
-RISC vs CISC?
 
 #### CPU Analysis:
 ***Rodinia 2.4***  
 
 
-The Rodinia 2.4 OpenMP accelerator has performed between the 21st and 22nd percentile. While this still classifies it as a "Low-Tier" device, it performed surprisingly well in the LaveMD test, considering its closest competitors were an AMD Ryzen 5 2600 and Intel Xeon Silver 4215R.  
+The Rodinia 2.4 OpenMP accelerator has performed between the 21st and 22nd percentile. While this still classifies it as a "Low-Tier" device, it performed surprisingly well in the LavaMD test, considering its closest competitors were an AMD Ryzen 5 2600 and Intel Xeon Silver 4215R.  
 
 The CFD Solver test placed the unit below the 3rd percentile which initially made it appear as an underperforming device, however, considering its nearest recorded competition is an Intel Core i5-M CPU it is difficult to determine that this is the case. Further teseting against similar devices would provide more conclusive evidence and greater context.  
 
@@ -191,11 +187,17 @@ At 97.27 signs per second the Raspberry Pi performs between the 5th and 7th perc
 #### Disk Analysis:
 ***SQLite***  
 
-
+This performance metric measures the timed insertions of of data into an indexed database. The performance of this test places the Raspberry Pi in the 22nd percentile across its competitors.While it still places in the "Low-Tier" category, it is at the top of and is in competition with reputable brand SSDs and M.2 drives.
 
 ***FS-Mark 3.3***  
 
+The file system performance test average result of 19.87 files processed per second places the Raspberry Pi between the 15th and 16th percentile across its competitors when testing 1,000 files at 1MB per file.  
 
+When processing 5000 files of the same size across 4 threads the unit average result is 24.27 files per second. This places it in the 7th percentile across its competitors. However, it is worth noting that the unit performs noticably better compared to the results for a single thread. In fact, it processes 1,000 more files at a cost of an additional 4.4 seconds. This result had a higher degree of error with a standard deviation of 9.48%.   
+
+When processing 4,000 files across 32 sub-directories the unit performed slightly better  than 1,000 files across one thread. This is impressive considering the additional workload of directory traversal. Unfortunately there was no competition data recorded for comparison.
+
+Finally, when processing 1,000 files at 1MB per file without synchronisation, the performance was significantly degraded. This is understandable as FSync is responsible for optimising file processing. This test was subject to a degree of error as it took 6 runs to achieve, and yielded a standard deviaiton of 8.01%. Again, there is no comparable data across other devices to determine whether there were external factors which contributed to this performance decrease.  
 
 #### Compression Analyis:
 ***7-Zip Compression***  
@@ -218,7 +220,7 @@ At 97.27 signs per second the Raspberry Pi performs between the 5th and 7th perc
 
 ## Conclusion
 
-
+... but it is a ~$100 all-in-one computer
 
 ***
 

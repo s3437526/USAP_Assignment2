@@ -187,7 +187,7 @@ At 97.27 signs per second the Raspberry Pi performs between the 5th and 7th perc
 #### Disk Analysis:
 ***SQLite***  
 
-This performance metric measures the timed insertions of of data into an indexed database. The performance of this test places the Raspberry Pi in the 22nd percentile across its competitors.While it still places in the "Low-Tier" category, it is at the top of and is in competition with reputable brand SSDs and M.2 drives.
+This performance metric measures the timed insertions of of data into an indexed database. The performance of this test places the Raspberry Pi in the 22nd percentile across its competitors. While it still places in the "Low-Tier" category, it is at the top of and is in competition with reputable brand SSDs and M.2 drives.
 
 ***FS-Mark 3.3***  
 

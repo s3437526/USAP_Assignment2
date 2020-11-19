@@ -21,8 +21,6 @@ The main user interactive files in the project are:
 -	[Config_generator script (this page)](https://github.com/s3437526/USAP_Assignment2)
 -	[Tests/Results](tests)
 
-These need to be changed to the MASTER URL!!!
-
 ***
 
 :computer: **Running the program**

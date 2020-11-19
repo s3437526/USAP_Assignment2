@@ -16,10 +16,10 @@ This program was designed to automate the build and compilation of a custom kern
 
 The main user interactive files in the project are:
 -	[Build_kernel script (this page)](https://github.com/s3437526/USAP_Assignment2)
--	[Phoronix Performance Report](https://github.com/s3437526/USAP_Assignment2/blob/develop/tests/results/PhoronixTest_Results.md)
--	[Install_manual script and manuals](https://github.com/s3437526/USAP_Assignment2/tree/develop/manual)
+-	[Phoronix Performance Report](tests/results/PhoronixTest_Results.md)
+-	[Install_manual script and manuals](manual)
 -	[Config_generator script (this page)](https://github.com/s3437526/USAP_Assignment2)
--	[Tests/Results](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests)
+-	[Tests/Results](tests)
 
 These need to be changed to the MASTER URL!!!
 

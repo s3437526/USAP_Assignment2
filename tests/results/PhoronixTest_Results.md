@@ -16,15 +16,15 @@ This report will cover four test suites, including:
 These test suites will be analysed against known performance metrics and results will be reported in the results section below. 
 An analysis will be formed based on those results.
 
-***Disclaimer*** - Not all tests ran successfully, however, data was extrapolated as best as possible to obtain valid results to report on. Of the **xxx** tests run **xx** were successful or seemed to provide adequate reportable data.
+***Disclaimer*** - Not all tests ran successfully, however, data was extrapolated as best as possible to obtain valid results to report on. Of the 24 test suites run 14 were successful or seemed to provide adequate reportable data.
  
 ***
 
 ## Method
 
-The tests were initially chosen based on known impact to computing and relevance e.g. memory, cpu etc. As several tests have failed due to architecture compatibilities and other issues, the test suite selection was subject to further selective refinement and based on information gathered from the RMIT USAP Announocements discussion board [***available here.***](https://rmit.instructure.com/courses/70649/discussion_topics/983460)
+The tests were initially chosen based on known impact to computing and relevance e.g. memory, cpu etc. As several tests failed due to architecture compatibilities and other issues such as failed dependencies, the test suite selection was subject to further selective refinement and based on information gathered from the RMIT USAP Announocements discussion board [***available here.***](https://rmit.instructure.com/courses/70649/discussion_topics/983460)
 
-Test suites were initially run via SSH CLI, however, due to timeout-related connectivity issues, a shift was made to GUI in order to minimuise impact based on errors due to lack of user input.
+Test suites were initially run via SSH CLI, however, due to timeout-related connectivity issues, a shift was made to GUI to minimuise impact based on errors due to lack of user input.
 
 ***
 
@@ -33,9 +33,8 @@ Test suites were initially run via SSH CLI, however, due to timeout-related conn
 ### Test suite 1 - Memory
 The below table illustrates the summarised results obtained from running the memory test suite:
 
-Results obtained from ptsmemoryv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/blob/develop/tests/results/completed_tests/ptsmemoryv2/)  
-Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011179-KH-PTSMEMORY32)
-# Change all these to master branch URL!
+Results obtained from ptsmemoryv2 - [***available here.***](/completed-tests/ptsmemoryv2/)  
+Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011179-KH-PTSMEMORY32)  
 
 **Summary of results:**
 |**Test**|**Runs**|**Average result**|**Standard error**|**Standard deviation (%)**|
@@ -69,9 +68,8 @@ Detailed uploaded results are available on the openbenchmarking.org website [***
 ### Test suite 2 - CPU
 The below table illustrates the summarised results obtained from running the CPU test suite:
 
-Results obtained from ptscpuv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptscpuv2)  
-Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011177-KH-PTSCPUV2941)
-# Change all these to master branch URL!
+Results obtained from ptscpuv2 - [***available here.***](/completed_tests/ptscpuv2)  
+Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011177-KH-PTSCPUV2941)  
 
 **Summary of results:**
 |**Test**|**Runs**|**Average result**|**Standard error**|**Standard deviation (%)**|
@@ -90,9 +88,8 @@ Detailed uploaded results are available on the openbenchmarking.org website [***
 ### Test suite 3 - Disk
 The below table illustrates the summarised results obtained from running the Disk test suite:
 
-Results obtained from ptsdiskv2 - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptsdiskv2)  
-Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011162-KH-PTSDISKV231)
-# Change all these to master branch URL!
+Results obtained from ptsdiskv2 - [***available here.***](/completed_tests/ptsdiskv2)  
+Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011162-KH-PTSDISKV231)  
 
 **Summary of results:**
 |**Test**|**Runs**|**Average result**|**Standard error**|**Standard deviation (%)**|
@@ -116,9 +113,8 @@ Detailed uploaded results are available on the openbenchmarking.org website [***
 ### Test suite 4 - Compression
 The below table illustrates the summarised results obtained from running the Compression test suite:
 
-Results obtained from ptscompressionresults10Nov - [***available here.***](https://github.com/s3437526/USAP_Assignment2/tree/develop/tests/results/completed_tests/ptscompressionresults10nov)  
-Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011179-KH-PTSCOMPRE60)
-# Change all these to master branch URL!
+Results obtained from ptscompressionresults10Nov - [***available here.***](/completed_tests/ptscompressionresults10nov)  
+Detailed uploaded results are available on the openbenchmarking.org website [***here.***](https://openbenchmarking.org/result/2011179-KH-PTSCOMPRE60)  
 
 **Summary of results:**
 |**Test**|**Runs**|**Average result**|**Standard error**|**Standard deviation (%)**|
@@ -160,11 +156,11 @@ According to the results shown above it can be seen that the RAM performed relat
 
 A noteworthy observation was made about the result of the copying of a floating point number which scored below the range at 3594.52 MB/s. As this computation doesn't seem like such a demanding task compared to other tests it is unclear whether or not there was a dip in the performance due to other influences e.g. additional unplanned computational load such as user-initiated tasks.  
 
-According to raw data across three runs of the test and with the standard deviation of 2.28%, there there isn't any conclusive evidence (comparitive to other tests) which indicates that this is the result of additional unaccounted workload or the demand of the test.  
+According to raw data across three runs of the test and with the standard deviation of 2.28%, there isn't any conclusive evidence (comparative to other tests) to indicate that this is the result of additional unaccounted workload or the demand of the test.  
 
 According to results specified at openbenchmarking.org this Raspberry Pi performs between the 6th and 13th (low tier) percentile across the RAMspeed tests compared to other tested systems.  
 
-More testing would should be done to gather conslusive evidence.  
+More testing would be needed to gather more conclusive evidence.  
 
 ***Memory Bandwidth - MBW***  
 
@@ -173,24 +169,24 @@ Surprisingly, the memory bandwidth performance was on the low end of the "Low-Ti
 #### CPU Analysis:
 ***Rodinia 2.4***  
 
-The Rodinia 2.4 OpenMP accelerator has performed between the 21st and 22nd percentile. While this still classifies it as a "Low-Tier" device, it performed surprisingly well in the LavaMD test, considering its closest competitors were an AMD Ryzen 5 2600 and Intel Xeon Silver 4215R.  
+The Rodinia 2.4 OpenMP accelerator performed between the 21st and 22nd percentile. While this still classifies it as a "Low-Tier" device, it performed surprisingly well in the LavaMD test, considering its closest competitors were an AMD Ryzen 5 2600 and Intel Xeon Silver 4215R.  
 
-The CFD Solver test placed the unit below the 3rd percentile which initially made it appear as an underperforming device, however, considering its nearest recorded competition is an Intel Core i5-M CPU it is difficult to determine that this is the case. Further teseting against similar devices would provide more conclusive evidence and greater context.  
+The CFD Solver test placed the unit below the 3rd percentile which initially made it appear as an underperforming device. However, considering its nearest recorded competition is an Intel Core i5-M CPU it is difficult to determine that this is in fact the case. Further testing against similar devices would provide more conclusive evidence and greater context.  
 
 ***OpenSSL***  
 
-At 97.27 signs per second the Raspberry Pi performs between the 5th and 7th percentile. This is on par with its competitiers in the "Low-Tier" systems.
+At 97.27 signs per second the Raspberry Pi performs between the 5th and 7th percentile. This is on par with its competitors in the "Low-Tier" systems.
 
 #### Disk Analysis:
 ***SQLite***  
 
-This performance metric measures the timed insertions of of data into an indexed database. The performance of this test places the Raspberry Pi in the 22nd percentile across its competitors. While it still places in the "Low-Tier" category, it is at the top of and is in competition with reputable brand SSDs and M.2 drives.
+This performance metric measures the timed insertions of data into an indexed database. The performance of this test places the Raspberry Pi in the 22nd percentile across its competitors. While it still places in the "Low-Tier" category, it is at the top end and is in competition with reputable brand SSDs and M.2 drives.
 
 ***FS-Mark 3.3***  
 
 The file system performance test average result of 19.87 files processed per second places the Raspberry Pi between the 15th and 16th percentile across its competitors when testing 1,000 files at 1MB per file.  
 
-When processing 5000 files of the same size across 4 threads the unit average result is 24.27 files per second. This places it in the 7th percentile across its competitors. However, it is worth noting that the unit performs noticably better compared to the results for a single thread. In fact, it processes 1,000 more files at a cost of an additional 4.4 seconds. This result had a higher degree of error with a standard deviation of 9.48%.   
+When processing 5000 files of the same size across 4 threads the unit average result is 24.27 files per second. This places it in the 7th percentile across its competitors. However, it is worth noting that the unit performs noticeably better compared to the results for a single thread. In fact, it processes 1,000 more files at a cost of an additional 4.4 seconds. This result had a higher degree of error with a standard deviation of 9.48%.   
 
 When processing 4,000 files across 32 sub-directories the unit performed slightly better  than 1,000 files across one thread. This is impressive considering the additional workload of directory traversal. Unfortunately there was no competition data recorded for comparison.
 
@@ -207,7 +203,7 @@ Using BZIP2 as a compression mechanism the Raspberry Pi managed to compress a 25
 
 ***Gzip Compression/Decompression***  
 
-Similar to BZIP2, the Raspberry Pi places in the 9th percentile - and among its peers - at 158.83 seconds to complress a Linux source tree to .tar.gz. Unfortunately, no comparable data is available for decompression results. More testing would need to be done in order to obtain a comparable variety of results.  
+Similar to BZIP2, the Raspberry Pi places in the 9th percentile - and among its peers - at 158.83 seconds to compress a Linux source tree to .tar.gz. Unfortunately, no comparable data is available for decompression results. More testing would need to be done in order to obtain a comparable variety of results.  
 
 ***XZ Compression/Decompression***  
 
@@ -217,18 +213,10 @@ Interestingly, according to its peers, the Raspberry Pi placed between the 4th a
 
 ## Conclusion
 
-Overall, the Raspberry Pi computer performs well among its peer architectures and in a number of cases has produced more favourable results. Some performance characteristics such as CPU and Disk are comparable and in some cases better than well known modern hardware.  
+Overall, the Raspberry Pi computer performs well compared to its peer architectures and in a number of tests produced more favourable results. Some performance characteristics such as CPU and Disk are comparable to and in some cases better than well known modern hardware such as the AMD Ryzen 5, Intel Xeon Silver and M.2 and other SSD drives.  
 
-The unit test results are relatively consistent given similar test cases such as those within the RAMspeed SMP category. Of those tests, only a few minor noteworthy points and dips in performance were observed. Some tests lack comparative data among competing hardware systems, resulting in a limited test analysis. Quality of the analysis would be improved with a wider testing pool and further iterations of the chosen tests. No major anomalies were observed during the analysis of the test results.  
+The unit test results are relatively consistent given similar test cases such as those within the RAMspeed SMP category. Of those tests, only a few minor noteworthy points and dips in performance were observed. Some tests lack comparative data among competing hardware systems, resulting in a limited test analysis. Quality of the analysis could be improved with a wider testing pool and further iterations of the chosen tests. No major anomalies were observed during the analysis of the test results.  
 
 While the unit consistently performed in the "Low-Tier" computer category, it is important to note is that it is a ~$100 all-in-one computer, after all.
 
 ***
-
-
-
-• introduction (2 marks): explain the structure the report will have and what you plan to cover.  
-• method (3 Marks): outline what you did to decide which tests to run and the tests that you selected and how you ran them.  
-• results (5 marks): summarise the results of the tests you ran, include relevant tables and graphs that show the important parts of the results.  
-• analysis (8 Marks): discuss the results that you found and what they mean about the performance of your raspberry pi.  
-• conclusions (2 Marks): summarise the key points that you found in the results and analysis. 

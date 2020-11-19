@@ -166,15 +166,12 @@ According to results specified at openbenchmarking.org this Raspberry Pi perform
 
 More testing would should be done to gather conslusive evidence.  
 
-
 ***Memory Bandwidth - MBW***  
 
 Surprisingly, the memory bandwidth performance was on the low end of the "Low-Tier" systems tested. It performed below the 8th and 10th percentile for the same array sizes compared to other tested systems. However, the testing pool is smaller in this test category.
 
-
 #### CPU Analysis:
 ***Rodinia 2.4***  
-
 
 The Rodinia 2.4 OpenMP accelerator has performed between the 21st and 22nd percentile. While this still classifies it as a "Low-Tier" device, it performed surprisingly well in the LavaMD test, considering its closest competitors were an AMD Ryzen 5 2600 and Intel Xeon Silver 4215R.  
 
@@ -220,7 +217,11 @@ Interestingly, according to its peers, the Raspberry Pi placed between the 4th a
 
 ## Conclusion
 
-... but it is a ~$100 all-in-one computer
+Overall, the Raspberry Pi computer performs well among its peer architectures and in a number of cases has produced more favourable results. Some performance characteristics such as CPU and Disk are comparable and in some cases better than well known modern hardware.  
+
+The unit test results are relatively consistent given similar test cases such as those within the RAMspeed SMP category. Of those tests, only a few minor noteworthy points and dips in performance were observed. Some tests lack comparative data among competing hardware systems, resulting in a limited test analysis. Quality of the analysis would be improved with a wider testing pool and further iterations of the chosen tests. No major anomalies were observed during the analysis of the test results.  
+
+While the unit consistently performed in the "Low-Tier" computer category, it is important to note is that it is a ~$100 all-in-one computer, after all.
 
 ***
 

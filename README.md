@@ -72,7 +72,17 @@ The following steps were taken during the .config file creation to disable camer
 |!["V4L" video drivers search disabled](/assets/images/v4l.png "V4L drivers disabled")|
 ||
 |Searched for "BCM2835 Camera" and disabled returns|
-|![BCM2835 camera support disabled](/assets/images/bcm2835_camera_support.png "BCM2835 camera disabled")|
+|![BCM2835 camera support disabled](/assets/images/bcm2835_camera_support.png "BCM2835 camera disabled")|  
+
+
+**Please note:** upon review of specification compliance, it was identified that the commits did NOT have my full name, rather only my student ID. in order to remedy this I attempted to amend this as early as possible to allow a significant portion to have the additional details, however, this change did not seem to take effect. I provide below screenshots of the .gitconfig file and git config --list files showing my credentials matching my github commits.  
+
+|Screenshots|
+|:----|
+|.gitconfig file
+|![.gitconfig file](/assets/images/gitconfig.png)
+|gitconfig --list file
+|![gitconfig --list file](/assets/images/gitconfig\ --list.png)|
 
 ***
 

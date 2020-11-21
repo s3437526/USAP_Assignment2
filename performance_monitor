@@ -1,0 +1,81 @@
+#!/bin/bash
+
+# Performance monitoring script
+# By Aleksandar Alduk S3437526
+# CPT264 = Unix (Linux) Systems Administration and Programming (USAP),
+# Study Period 3, 2020
+
+# This script is designed to monitor the performance of the Raspberry Pi
+# unit during the kernel compilation process. It will calculate the CPU
+# usage and output to the 'ACT' LED the computational workload in a serieas of
+# time flashes based proportionally on the CPU load.
+
+# Current working references:
+# https://www.idnt.net/en-US/kb/941772
+
+#...incomplete function...work in progress...
+# Requires:
+# Finishing of getting the CPU load
+# Regular checking of shellcheck compliance
+# Implementing logic to convert load to LED logic
+# Implementing LED driving function
+# Implement signalling function
+# Error handling
+# Embed the action of this function into the build_kernel function when
+# this function is complete
+# Tranfer work and refrences
+# Update README.md with the existence of this script - when done
+# Create manpage when this script is done
+
+# Get CPU utilisation percentage and set the logic for 'ACT' LED
+function get_CPU_load() {
+while :; do
+	# Get all data from total CPU usage 
+	mapfile -t current_usage < <(head -n1 /proc/stat)
+	#echo "${current_usage[*]:1}"	
+	
+	#current_usage=()
+	
+	
+	#head -n1 /proc/stat | IFS=" " read -r -a current_usage
+	#current_usage=($(head -n1 /proc/stat)) 
+	# Get all columns values, ignoring the first column which is a string 
+	#cpu_sum="${current_usage[*]:1}"
+	
+	cpu_sum=$(${current_usage[1]+${current_usage[2]}})
+	echo "CPU sum is: $cpu_sum"
+
+	# Replace field seperator with a '+' for aggregation 
+	cpu_sum=$((${cpu_sum// /+})) 
+	# Get the delta between two reads 
+	cpu_delta=$((cpu_sum - cpu_last_sum)) 
+	# Get the idle time Delta 
+	cpu_idle=$((current_usage[4]- cpu_last[4])) 
+	# Calc time spent working 
+	cpu_used=$((cpu_delta - cpu_idle)) 
+	# Calc percentage 
+#	cpu_load=$((100 * cpu_used / cpu_delta)) 
+	      
+	# Keep this as last for our next read 
+	cpu_last=("${current_usage[@]}") 
+	cpu_last_sum=$cpu_sum 
+		    
+	echo "CPU load: $cpu_load%" 
+
+	# Wait one second before polling again 
+	sleep 1 
+	done
+
+}
+
+# Listen to signals to end this process
+
+
+# Set and control the 'ACT' LED
+function trigger_LED_state() {
+return 0
+}
+
+
+get_CPU_load
+trigger_LED_state

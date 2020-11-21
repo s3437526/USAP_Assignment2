@@ -32,7 +32,7 @@ function get_CPU_load() {
 while :; do
 	# Get all data from total CPU usage 
 	mapfile -t current_usage < <(head -n1 /proc/stat)
-	#echo "${current_usage[*]:1}"	
+	echo "current usage is: " ${current_usage[*]}	
 	
 	#current_usage=()
 	
@@ -40,10 +40,12 @@ while :; do
 	#head -n1 /proc/stat | IFS=" " read -r -a current_usage
 	#current_usage=($(head -n1 /proc/stat)) 
 	# Get all columns values, ignoring the first column which is a string 
-	#cpu_sum="${current_usage[*]:1}"
+	cpu_sum="${current_usage[2]}"
 	
-	cpu_sum=$(${current_usage[1]+${current_usage[2]}})
-	echo "CPU sum is: $cpu_sum"
+
+#	cpu_sum=$(${current_usage[1]+${current_usage[2]}})
+	printf "%s%d\n" "Current usage: " "${current_usage[2]}"
+	#echo "${current_usage[1]}"
 
 	# Replace field seperator with a '+' for aggregation 
 	cpu_sum=$((${cpu_sum// /+})) 

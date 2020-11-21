@@ -1,0 +1,1158 @@
+commit d1a594b144223a7181d9ecc4612603de47e440e7
+Author: S3437526 <s3437526@student.rmit.edu.au>
+Date:   Sun Nov 22 10:39:16 2020 +1100
+
+    Requirement 4 updates
+    Added supporting documentation for Requirement 4 where git did not publish my full name, rather only my student ID.
+
+commit 72a3b32c5d47b3e99bbfc3e42b7403ebb92961b7
+Merge: 1acf06f 5768493
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Sun Nov 22 09:59:06 2020 +1100
+
+    Merge pull request #60 from s3437526/Requirement_2
+    
+    Update README.md
+
+commit 57684932528ebf22b6865df0889d8b7a0cb9fd71
+Author: S3437526 <s3437526@student.rmit.edu.au>
+Date:   Sun Nov 22 09:58:11 2020 +1100
+
+    Update README.md
+    Corrected referencing URLs to allow them to be clickable.
+
+commit 1acf06feda35b1502d9fc121524aa342ea7e75da
+Merge: 80e7995 8cbce48
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Sun Nov 22 09:13:22 2020 +1100
+
+    Merge pull request #59 from s3437526/Requirement_2
+    
+    Update README.md and Admin
+
+commit 8cbce484b94b21534015364f0fb92cb85fe7d6cf
+Author: S3437526 <s3437526@student.rmit.edu.au>
+Date:   Sun Nov 22 09:11:55 2020 +1100
+
+    Update README.md and Admin
+    Added references to README.md
+    Added student declaration to main page.
+
+commit 80e799506c32e6b23e71317b08a1970e83c514d5
+Merge: 3e45198 4c198cc
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Sat Nov 21 19:52:18 2020 +1100
+
+    Merge pull request #58 from s3437526/Requirement_6
+    
+    Changes to performance monitor
+
+commit 4c198cc88b1931715cd76ae8943fcf73334cc0aa
+Author: S3437526 <s3437526@student.rmit.edu.au>
+Date:   Sat Nov 21 19:51:05 2020 +1100
+
+    Changes to performance monitor
+    Troubleshooting of performance monitor script
+
+commit 3e45198230580072477ac36865e26385ed220d33
+Merge: 97e1221 d4d21c4
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Sat Nov 21 18:41:13 2020 +1100
+
+    Merge pull request #57 from s3437526/Requirement_6
+    
+    Performance monitor and admin stuff
+
+commit d4d21c4bdb7911da7b9b07a98de7fac77305b15f
+Author: S3437526 <s3437526@student.rmit.edu.au>
+Date:   Sat Nov 21 18:39:05 2020 +1100
+
+    Performance monitor and admin stuff
+    Uploaded first draft of performance monitoring script.
+    Admin changes to git configuration by adding first and surname for complliance with Requirement 4.
+
+commit 97e1221c63169733c7d449d0987706465f94c126
+Merge: 6e6791b 9a76a4b
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Fri Nov 20 10:37:58 2020 +1100
+
+    Merge pull request #56 from s3437526/Requirement_2
+    
+    README.md update
+
+commit 9a76a4be6626206f0c7eb88b0f28f472190dd976
+Author: S3437526 <s3437526@student.rmit.edu.au>
+Date:   Fri Nov 20 09:48:47 2020 +1100
+
+    README.md update
+    Changed some text in ./config_generator section to make more sense.
+
+commit 6e6791b626e5dcbc20cb96cb3e753df2bf607bea
+Merge: d07b13e 062512b
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 21:10:58 2020 +1100
+
+    Merge pull request #55 from s3437526/Requirement_2
+    
+    README.md update
+
+commit 062512b3c0b1ef2ed3771b969a292c18329f8feb
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 21:09:37 2020 +1100
+
+    README.md update
+    Removed reminder to link all URLs to relative paths.
+
+commit d07b13e36172c17729af8fd6e793c186abfa441c
+Merge: da10a56 a7b376d
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 21:00:59 2020 +1100
+
+    Merge pull request #54 from s3437526/Requirement_2
+    
+    README.md edit
+
+commit a7b376dbfec379d1b0cb8d1fbd85218daddf2a5d
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 21:00:02 2020 +1100
+
+    README.md edit
+    Changed paths to relative paths for working with all branches.
+
+commit da10a5689fcdf63f7b0692fa56ae2c6dd6db1cb2
+Merge: 2763124 9b583ba
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 20:55:23 2020 +1100
+
+    Merge pull request #53 from s3437526/Requirement_8
+    
+    Requirement 8
+
+commit 9b583ba7293473fbb6eeae664c02d43a3ed26269
+Merge: 27fe03c 2763124
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 20:54:27 2020 +1100
+
+    Merge branch 'develop' of github.com:s3437526/USAP_Assignment2 into Requirement_8
+
+commit 2763124b0bb98cea9812f829897e96a97e2efdfc
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 20:47:14 2020 +1100
+
+    Update PhoronixTest_Results.md
+
+commit 1e27c7bcd09840bea166a448aee1dbb350bd6867
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 20:45:58 2020 +1100
+
+    Update PhoronixTest_Results.md
+
+commit 5d00099128ed5b4ac68c69872d5f2813e0fcc31d
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 20:44:21 2020 +1100
+
+    Update PhoronixTest_Results.md
+
+commit 27fe03c176232957b97b40c94648d5e1d8fb1ee1
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 20:21:19 2020 +1100
+
+    More URL troubleshooting
+
+commit 38edd6a3646e98bc992740535dbdee6076ba814f
+Merge: 7f102f1 82617a7
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 20:08:35 2020 +1100
+
+    Merge pull request #52 from s3437526/Requirement_8
+    
+    Troubleshooting relative URL paths.
+
+commit 82617a70cf29b7354146f149f32a37b15935891a
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 20:07:47 2020 +1100
+
+    Troubleshooting relative URL paths.
+
+commit 7f102f108728ed8088b327cbc5b0f3ade7d5ffec
+Merge: 910fa0c 1c8b466
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 19:35:47 2020 +1100
+
+    Merge pull request #51 from s3437526/Requirement_8
+    
+    Typo fixes in relative URL paths.
+
+commit 1c8b466f38acb7f85303cd590a2275abece0252e
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 19:30:57 2020 +1100
+
+    Typo fixes in relative URL paths.
+
+commit 910fa0c0b5f8b4f2c5767ff23db5a02ae2d1095b
+Merge: 819bb66 0a5244d
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 19:26:28 2020 +1100
+
+    Merge pull request #50 from s3437526/Requirement_8
+    
+    Requirement 8
+
+commit 0a5244d41d9e7cd800be10e8b789dd4a9011bc04
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 19:23:06 2020 +1100
+
+    PhoronixTest_results.md update and test upload.
+    Added/staged/committed additional tests run mentioned in previous commit.
+    Changed URLs to relative URLs where possible (done in previous commit but failed to document).
+
+commit c288ab088abbf75e0000c3acff6e17fc44530835
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 19:21:00 2020 +1100
+
+    PhoronixTest_Results.md update
+    Documentation review/corrections to spelling and grammer.
+    Added further completed tests to completed_tests directory for use within the report.
+
+commit 819bb6674edc5a803214a256b1977b4006e77c5d
+Merge: df7b771 9587e56
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 18:25:48 2020 +1100
+
+    Merge pull request #49 from s3437526/Requirement_8
+    
+    PhoronixTest_Results.md udpate
+
+commit 9587e561b5783247489b13ee6c87449329744753
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 18:23:53 2020 +1100
+
+    PhoronixTest_Results.md udpate
+    Added conclusion section.
+
+commit df7b771aa61fb155ae02f9d6fa9e0c8f40a373a3
+Merge: 86237cc f9884fa
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 14:48:08 2020 +1100
+
+    Merge pull request #48 from s3437526/Requirement_8
+    
+    Typo fix.
+
+commit f9884faea6bd416b037d8dea2c2668f237f22a08
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 14:47:19 2020 +1100
+
+    Typo fix.
+
+commit 86237cc73d27402bdb7466d0ce18aacdc5be0734
+Merge: c4b787b 3a16cd3
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 14:44:58 2020 +1100
+
+    Merge pull request #47 from s3437526/Requirement_8
+    
+    PhoronixTest_Results.md update
+
+commit 3a16cd3d756e8617e1f47be414b317690f2e77dd
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 14:43:28 2020 +1100
+
+    PhoronixTest_Results.md update
+    Finished fleshing out analysis section of report. Require review and conclusion.
+
+commit c4b787bf7ccd52fd7da8f07be49d23545fd0a438
+Merge: 9760edf 7b9aedd
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 13:21:43 2020 +1100
+
+    Merge pull request #46 from s3437526/Requirement_8
+    
+    Requirement 8
+
+commit 7b9aeddcd9db626a30bf33686801733da6af346c
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 13:20:05 2020 +1100
+
+    PhoronixTest_Results.md update
+    Added analysis data for test suite 3.
+
+commit 8628cb31efac8e144f3c635a40c9b7b21acbcb39
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 11:01:54 2020 +1100
+
+    Typo fix.
+
+commit 9760edf8cfb2168a8db9e2c569b3670fac6b4fe4
+Merge: 1c91dac 05ccbfb
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 10:59:58 2020 +1100
+
+    Merge pull request #45 from s3437526/Requirement_8
+    
+    Add to PhoronixTest_Results.md
+
+commit 05ccbfb6b0c7300fff51aba7e1d04f15014ce4e5
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 10:57:59 2020 +1100
+
+    Add to PhoronixTest_Results.md
+    Added further analysis to the document for the second performance test - CPU.
+
+commit 1c91dac2d6f5c9b8e25497608113ef2f52943cbb
+Merge: 1e79beb 7f4df64
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 19 09:26:32 2020 +1100
+
+    Merge pull request #44 from s3437526/Requirement_8
+    
+    Adding analysis
+
+commit 7f4df64e0ec614b97ff8af6ca30fcf31b3b6fddc
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 19 09:25:26 2020 +1100
+
+    Adding analysis
+    Added analysis to the first test suite.
+
+commit 1e79bebe670a4f051cd38dd6671b092d50a93c94
+Merge: 6785669 5950485
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Wed Nov 18 21:56:11 2020 +1100
+
+    Merge pull request #43 from s3437526/Requirement_8
+    
+    PhoronixTest_Results.md update
+
+commit 59504850ae361aaec7b97f5195d2c8054bbfb2c2
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Wed Nov 18 21:55:13 2020 +1100
+
+    PhoronixTest_Results.md update
+    Formatting update.
+
+commit 67856690020b932990d00b45cf774746c45b323d
+Merge: e912524 fccabd2
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Wed Nov 18 21:51:38 2020 +1100
+
+    Merge pull request #42 from s3437526/Requirement_8
+    
+    PhoronixTest_Results.md update
+
+commit fccabd2fdc5bb9f78365a22267c22f326d1ab8f3
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Wed Nov 18 21:50:25 2020 +1100
+
+    PhoronixTest_Results.md update
+    Adding analysis of results.
+
+commit e912524df7c9a5952a47a487be22650483183a93
+Merge: ef3cb33 0aa9d51
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Wed Nov 18 17:55:06 2020 +1100
+
+    Merge pull request #41 from s3437526/Requirement_8
+    
+    PhoronixTest_Results.md fix
+
+commit 0aa9d5199a4e09af45ccd90c002bf7bf35468d03
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Wed Nov 18 17:53:44 2020 +1100
+
+    PhoronixTest_Results.md fix
+    Markdown error fixed for heading text.
+
+commit ef3cb3350f88be043ba3ef97d8d4965a1d501992
+Merge: c8f9fe0 f7f923f
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Wed Nov 18 17:52:59 2020 +1100
+
+    Merge pull request #40 from s3437526/Requirement_8
+    
+    PhoronixTest_Results.md formatting
+
+commit f7f923f5facdcf933b4509dc4d61e22d1ea7487a
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Wed Nov 18 17:51:42 2020 +1100
+
+    PhoronixTest_Results.md formatting
+    Fixed up some formatting to beter stand out.
+
+commit c8f9fe01f57224e09995748ccc33946b152c5128
+Merge: 000c9c8 b510bcf
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Wed Nov 18 17:47:28 2020 +1100
+
+    Merge pull request #39 from s3437526/Requirement_8
+    
+    Formatting of PhoronixTest_Results.md
+
+commit b510bcfb5186244c5b0332393b952042d2b18c4a
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Wed Nov 18 17:46:29 2020 +1100
+
+    Formatting of PhoronixTest_Results.md
+    Tidied up some layout and formatting for aesthetics.
+
+commit 000c9c8e40e52297038164253d4d3c095245018c
+Merge: 7b5c668 6bc5fcb
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Wed Nov 18 17:40:32 2020 +1100
+
+    Merge pull request #38 from s3437526/Requirement_2
+    
+    Tidying up README.md
+
+commit 6bc5fcbfac80b733d99c6f9f1c533d41c5910a26
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Wed Nov 18 17:39:16 2020 +1100
+
+    Tidying up README.md
+    Fixed up some links to avaliable pages and changed some text to more accurately reflect their links and locations.
+
+commit 7b5c668708360af012b5016c66d5ff9321f2720f
+Merge: d41663e fa1729a
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Wed Nov 18 17:13:59 2020 +1100
+
+    Merge pull request #37 from s3437526/Requirement_8
+    
+    Work on PhoronixTest_Results.md report
+
+commit fa1729a8504dfff09ad015f168c6f2a9d41477da
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Wed Nov 18 17:12:17 2020 +1100
+
+    Work on PhoronixTest_Results.md report
+    Added more content to the results section and tidiet up some formatting.
+
+commit d41663e565b8fb060c769e12ab7e2f999944769d
+Merge: a73bc8e 76918fd
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Wed Nov 18 17:05:00 2020 +1100
+
+    Merge pull request #36 from s3437526/Requirement_5
+    
+    Troubleshooting manual install
+
+commit a73bc8e888297f72307136f8a3f44fdceda1b9a4
+Merge: 29418a7 3a88fb1
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Wed Nov 18 17:04:31 2020 +1100
+
+    Merge pull request #35 from s3437526/Requirement_2
+    
+    Fix typos
+
+commit 3a88fb1674800d277a54cbf96d1d286b63b5f4e9
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Wed Nov 18 17:03:20 2020 +1100
+
+    Fix typos
+    Fixed typo in URL for PhoronixTest_Results.md page.
+
+commit 29418a74a60e329c78fd27a4597d0d682ecb4d64
+Merge: 1072ca7 4ef937d
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Wed Nov 18 17:02:38 2020 +1100
+
+    Merge pull request #34 from s3437526/Requirement_2
+    
+    Update README.md
+
+commit 4ef937dda4a767ce7ed7dbddea9465fd5659d3ed
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Wed Nov 18 17:01:29 2020 +1100
+
+    Update README.md
+    Added working link to PhoronixTest_Results.md page and edited text to reflect.
+
+commit 76918fdc9c2aa676f8babcd9735e9948e7eb2e1f
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Wed Nov 18 11:53:44 2020 +1100
+
+    Troubleshooting manual install
+    Troubleshoot the failure of installation of manual pages due to incorrectly entered pathnames.
+
+commit 1072ca784a5c78f93aa8239387c8fd8a0a9d231d
+Merge: f310903 ec83f2a
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Wed Nov 18 10:23:47 2020 +1100
+
+    Merge pull request #33 from s3437526/Requirement_5
+    
+    Troubleshooting kernel script
+
+commit ec83f2a2beab3eedb62880ae9f826279848c341a
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Wed Nov 18 10:21:34 2020 +1100
+
+    Troubleshooting kernel script
+    Found that kernel install was no longer copying student id and disabling v4l drivers. Shuffled a few lines of code around to make it flow neater and look more presentable.
+
+commit f3109037a13a1187e68f1a2353574437bd4e9b28
+Merge: e9047e8 1eecb2f
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Tue Nov 17 19:03:31 2020 +1100
+
+    Merge pull request #32 from s3437526/Requirement_8
+    
+    Updated Table 1 of PhoronixTest_Results.md
+
+commit 1eecb2f8f7da06ddd076e1dde53443e4d9a7f282
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 17 19:01:05 2020 +1100
+
+    Updated Table 1 of PhoronixTest_Results.md
+    Added units of measurement to give more context to the results.
+    Edited some text formatting.
+
+commit e9047e8cbd4e762f0f31f8f962752f6ee137324d
+Merge: 13820a5 0c88428
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Tue Nov 17 18:45:46 2020 +1100
+
+    Merge pull request #31 from s3437526/Requirement_8
+    
+    Added more content to PhoronixTest_Results.md
+
+commit 0c88428624cd4a69261d8eaa2631b26f564e30f8
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 17 18:43:25 2020 +1100
+
+    Added more content to PhoronixTest_Results.md
+
+commit 13820a58e4830e5877686d5f2fe506757835563b
+Merge: 551427c c454ec9
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Tue Nov 17 17:03:02 2020 +1100
+
+    Merge pull request #30 from s3437526/Requirement_5
+    
+    Troubleshooting kernel auto build processes.
+
+commit c454ec930eb87d079aaf0dfec3b5816c42201af9
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 17 16:59:01 2020 +1100
+
+    Troubleshooting kernel auto build processes.
+    Changed the way the .config file is copied to the working directory.
+    Must have not been copying correctly and not applying the new .config file.
+
+commit 551427c65b9ed0066504a38d1365cf295e216ae5
+Merge: a352fba a969cbe
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Mon Nov 16 21:38:26 2020 +1100
+
+    Merge pull request #29 from s3437526/Requirement_8
+    
+    Added PhoronixTest_Results.md details and progressing with report.
+
+commit a969cbe3280b869b5610e67104ef7d1f72ddf283
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Mon Nov 16 21:37:15 2020 +1100
+
+    Added PhoronixTest_Results.md details and progressing with report.
+
+commit a352fba8cec229426f0f74809245f671d4a89d37
+Merge: 1b190f2 4b3554a
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Mon Nov 16 20:02:59 2020 +1100
+
+    Merge pull request #28 from s3437526/Requirement_5
+    
+    Minor bug fixes
+
+commit 4b3554a90ee1968f2abcecccbdf715f1946b9b47
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Mon Nov 16 20:01:37 2020 +1100
+
+    Minor bug fixes
+    Fixed error with install_manual script called from line 177 in build_kernel script.
+    Manually remove "V4L" entries from .config file.
+    Fix prompts when running build_kernel script to default "yes" as a parameter in line 200.
+
+commit 1b190f2e55a92a60b56d1dd1f3ffdec6062e253a
+Merge: d220b1e c026585
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Mon Nov 16 17:50:04 2020 +1100
+
+    Merge pull request #27 from s3437526/Requirement_7
+    
+    Added some Phoronix test results
+
+commit c0265852ba97e300f0da78d99d618c07d352fbcc
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Mon Nov 16 17:48:55 2020 +1100
+
+    Added some Phoronix test results
+
+commit d220b1ed853ae8593200918097c3d91d74102a2c
+Merge: e7c8a95 85b47b8
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Mon Nov 16 17:23:32 2020 +1100
+
+    Merge pull request #26 from s3437526/Requirement_7
+    
+    Added PhoronixTest_Results.md file to upload
+
+commit 85b47b8a8ad914ac277e59f92ee436416d63f0c5
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Mon Nov 16 17:22:11 2020 +1100
+
+    Added PhoronixTest_Results.md file to upload
+
+commit e7c8a95352e78a015a8b404a74808ec76cac3d32
+Merge: 75afc40 a040a84
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Tue Nov 10 14:23:17 2020 +1100
+
+    Merge pull request #25 from s3437526/Requirement_2
+    
+    Manpages and documentation
+
+commit a040a844bbdb20509293a550473b86a32c3da48f
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 10 14:21:33 2020 +1100
+
+    Manpages and documentation
+    Create manpage for config_generator.
+    Add config_generator script manpage to install_manual script to install upon triggering of the install_manual script.
+    Add manpage for config_generator script to git.
+    Add script to README.md sections and document its use and purpose.
+
+commit 75afc4025c6adaab070bfab6bc77e90fb395c496
+Merge: c5ab2d1 a1661d7
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Tue Nov 10 13:09:15 2020 +1100
+
+    Merge pull request #24 from s3437526/Requirement_5
+    
+    Typo correction
+
+commit a1661d7a3fa989750f2b6dde0d630fff720e4eee
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 10 13:07:29 2020 +1100
+
+    Typo correction
+    Fixed typo which was identified during making of manpage for config_generator
+    script.
+
+commit c5ab2d1e657943bff38f75875756696763a6be14
+Merge: e02476a 9a0edc4
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Tue Nov 10 12:51:30 2020 +1100
+
+    Merge pull request #23 from s3437526/Requirement_5
+    
+    Script tidying up
+
+commit 9a0edc473585767c07182c330305c9dd05d50bc5
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 10 12:50:07 2020 +1100
+
+    Script tidying up
+    Tidy up script edits and comments
+    Remove unneccessary comments and To-Dos
+
+commit e02476a6c0b09d8a473b15eebb65feb4408152be
+Merge: fc7b575 41af338
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Tue Nov 10 12:47:30 2020 +1100
+
+    Merge pull request #22 from s3437526/Requirement_5
+    
+    config_generator update
+
+commit 41af338fb68152b751a36667bd59c02df0c8b218
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 10 12:42:48 2020 +1100
+
+    config_generator update
+    Uncomment the setting up of the kernel function.
+
+commit fc7b5758917a9af88d3773e82494fb76ba8ab908
+Merge: f127ac0 2108b23
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Tue Nov 10 11:40:41 2020 +1100
+
+    Merge pull request #21 from s3437526/Requirement_2
+    
+    README.md edit
+
+commit 2108b23592d5dd54362108e412cd70e1fd2bec74
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 10 11:15:10 2020 +1100
+
+    README.md edit
+    Previous commit (fixing filename blank spaces in image) broke image centering.
+
+commit f127ac0823d7f0eb38290458c2db9dcefa7656d8
+Merge: d822bb5 3a38c2c
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Tue Nov 10 10:39:12 2020 +1100
+
+    Merge pull request #20 from s3437526/Requirement_2
+    
+    Requirement 2
+
+commit 3a38c2c5f9c44df9b1e726b888676d8a8cd3cf68
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 10 10:38:08 2020 +1100
+
+    README.md
+    Formatting attempt fix of table.
+
+commit 05ba8f3bb5db52bc90d6e78fc1b4f9d0e57f71b6
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 10 10:36:24 2020 +1100
+
+    README.md
+    Try to fix table centering issue.
+
+commit a27ca65b13281c9f31c0f4c0e64960990f7f925b
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 10 10:29:41 2020 +1100
+
+    README.md edits
+    Fixed name issue of first image to display correctly.
+
+commit 801c2095615d52d6dd7dcb5d2db1a95bfcceb773
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 10 10:16:58 2020 +1100
+
+    README.md edit
+    Fix typo in image table (Abilis AS102 from AS120).
+    Removed unneccessary comment line from table.
+    Escaped spaces in image name to show first image.
+
+commit d822bb5592b3161d226271c40304f4e59858acfb
+Merge: 8b0e86c 2f3da15
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Tue Nov 10 10:10:51 2020 +1100
+
+    Merge pull request #19 from s3437526/Requirement_2
+    
+    Requirement 2
+
+commit 2f3da15e96e1b7fb088ab99759bc85d1ce5baeb5
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 10 10:09:55 2020 +1100
+
+    README.md editing
+    Trying to fix table layout
+
+commit 7f45036630cf61a45aa78df96db6b35cd1c42883
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 10 09:58:40 2020 +1100
+
+    README.md edits
+    Added comments to each image on README.md
+    Centered images.
+    Removed unwanted text from above first image.
+
+commit 8b0e86ce0c9b928b2cd1d788f8b13dfa0d103c74
+Merge: 65df1b9 8d009f2
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Tue Nov 10 09:05:48 2020 +1100
+
+    Merge pull request #18 from s3437526/Requirement_2
+    
+    README.md edits
+
+commit 8d009f2bc343a5e66b0be3e261aeaab8b6aeaf49
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 10 09:03:44 2020 +1100
+
+    README.md edits
+    Add table to README.md to try and center images.
+    Added comments to README.md to explain camera features disable.
+
+commit 65df1b989e5149da8f66f8fc69abb6759c9fa6bf
+Merge: eba578c 0f347ef
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Mon Nov 9 21:31:47 2020 +1100
+
+    Merge pull request #17 from s3437526/Requirement_2
+    
+    Added photos
+
+commit 0f347efa6e92330d305cd55e4ccdfa40bc2edf21
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Mon Nov 9 21:29:50 2020 +1100
+
+    Added photos
+    Created /assets/images directory and added photos of disabled camera support
+    screenshots to them.
+    Added photos and links to the README.md.
+
+commit eba578c657158d65536a817dd7bf09df8757c7e3
+Merge: f595225 30fc5e9
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Mon Nov 9 18:58:52 2020 +1100
+
+    Merge pull request #16 from s3437526/Fixes
+    
+    Fix manual install problem
+
+commit 30fc5e93b20958063b57167fd1b904d4bef9257c
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Mon Nov 9 18:57:33 2020 +1100
+
+    Fix manual install problem
+    Fixed manual install problem where it failed to run the script due to
+    typo in script command.
+
+commit f595225a4f434856ebedd302fc1e69eaad5b8826
+Merge: 87d2d85 fdac3f1
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Mon Nov 9 14:22:14 2020 +1100
+
+    Merge pull request #15 from s3437526/Requirement_5
+    
+    Config generator
+
+commit fdac3f168157cc10d9d814922e0b74985e606d98
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Mon Nov 9 14:18:44 2020 +1100
+
+    Config generator
+    Renamed build_kernel.old to config_generator and changed contents
+    to work more like a config generator rather than part geenrator
+    and part old build_kernel script. More like re-purposed it.
+
+commit 87d2d858c4c29c668cd65d4dd6faee0536fa9b1e
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Mon Nov 9 13:27:18 2020 +1100
+
+    Delete build_kernel.old
+
+commit f642602e8d74bbab952c8802965bbc4b01258261
+Merge: 1217853 2211cf3
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Mon Nov 9 10:27:30 2020 +1100
+
+    Merge pull request #14 from s3437526/Requirement_7
+    
+    Added testing directories
+
+commit 2211cf3b84ed6cc68aea10648e2891fb0c66404f
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Mon Nov 9 10:25:53 2020 +1100
+
+    Added testing directories
+    Added tests directory, prepared list of available phoronix tests,
+    and created directory for results.
+
+commit 121785398cac9926ea28fe18050b24449a1119b7
+Merge: 9f9ec9a 798b6b0
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Mon Nov 9 09:48:24 2020 +1100
+
+    Merge pull request #13 from s3437526/Requirement_5
+    
+    Remove log line
+
+commit 798b6b06c61e265d55f57d97ca0ecf4f4a72338b
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Mon Nov 9 09:47:06 2020 +1100
+
+    Remove log line
+
+commit 9f9ec9ad7e0bb486418120ccd0750430785ae804
+Merge: e9c7417 a8830fe
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Sun Nov 8 21:06:21 2020 +1100
+
+    Merge pull request #12 from s3437526/Requirement_5
+    
+    Config script rectifications
+
+commit a8830fe58fab751adb6a9289b319a6cc6c5889a1
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Sun Nov 8 21:03:08 2020 +1100
+
+    Config script rectifications
+    Identified and fixed error in .config file generator script
+    (aka build_kernel.old).
+    Modified .config file generator order to better export new .config file.
+    Update/replace .config file for use with build_kernel script.
+
+commit e9c7417f58e486c079282d683976db87fd77bd33
+Merge: 6333729 37b9e17
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 5 22:46:38 2020 +1100
+
+    Merge pull request #11 from s3437526/Requirement_5
+    
+    Build kernel fixes
+
+commit 37b9e170141a33361539e100073ee8b9a22ba25d
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 5 22:44:26 2020 +1100
+
+    Build kernel fixes
+    Troubleshooting and testing build_kernel script issues with installation
+    of man pages where they did not install correctly due to incorrect paths.
+
+commit 633372932a2e7d8efd9d9e9cd2b006e4dfbb2d6b
+Merge: 2b68a92 ac7d6fd
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 5 20:51:37 2020 +1100
+
+    Merge pull request #10 from s3437526/Requirement_2
+    
+    Requirement 2
+
+commit ac7d6fd113851609870dafefdf9afd10992d74e6
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 5 20:49:18 2020 +1100
+
+    Minor error fix
+    Fixed URL 404 for manuals page due to typo in README.md
+
+commit ca81e9d95dd185e89c96d34b8754048a1cef5d61
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 5 20:41:41 2020 +1100
+
+    Permission changes
+    Changed permissions to allow other users to read as well as exiecute.
+
+commit 2b68a92b9feb57cf505b5f03c7653ff6c72e24d6
+Merge: f0bd770 9c80d2f
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Nov 5 20:22:50 2020 +1100
+
+    Merge pull request #9 from s3437526/Requirement_2
+    
+    Further documentation improvements
+
+commit 9c80d2f8bab5e88e1882cead31a3756906ab6082
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Nov 5 20:19:55 2020 +1100
+
+    Further documentation improvements
+    Created manpage for install_manual
+    Added install_manual manpage to install_manual script which also installs
+    the build_kernel manual.
+    Added install_manual script to build_kernel script so that it is called on
+    completion of kernel build and before rebooting.
+    Tidied up some unused comments in build_kernel script.
+    Added info to README.md page
+
+commit f0bd770512e0029b23745076bb7e638ad2f1fbc7
+Merge: c5e2c40 0318045
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Wed Nov 4 21:19:12 2020 +1100
+
+    Merge pull request #8 from s3437526/Requirement_2
+    
+    Troubleshooting
+
+commit 031804537c6fab7e85ebe9552ce1a9c3d970188c
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Wed Nov 4 21:17:52 2020 +1100
+
+    Troubleshooting
+    Troubleshot the manpage installation script. Tested and working.
+    Manpage is now accessible by typing man build_kernel.
+
+commit c5e2c4010e4c6b591458dfc7d0f19c42a1598dc6
+Merge: 646fa32 d556532
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Tue Nov 3 22:39:32 2020 +1100
+
+    Merge pull request #7 from s3437526/Requirement_2
+    
+    Added manpage script
+
+commit d556532286aa6a22814e9ba467304bcbf0eb2c24
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Nov 3 22:36:46 2020 +1100
+
+    Added manpage script
+    Added page installation script
+    Some modifications to run the script.
+    Troubleshooting of running of script
+
+commit 646fa329d809924e06bd6db261a010cf24b35c39
+Merge: ebfd419 11198b8
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Mon Nov 2 21:40:20 2020 +1100
+
+    Merge pull request #6 from s3437526/Requirement_2
+    
+    Added further documentation and small fixes
+
+commit 11198b81f6c4304757d9f7a061617cc286d08c9d
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Mon Nov 2 21:36:25 2020 +1100
+
+    Added further documentation and small fixes
+    Created and fleshed out manpage for build_kernel script
+    Minor aesthetic adjustment to formatting of README.md page
+
+commit ebfd419432d3fa274cf0d6215c69d14ec162824a
+Merge: 7335411 df69bb6
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Mon Nov 2 18:28:36 2020 +1100
+
+    Merge pull request #5 from s3437526/Requirement_2
+    
+    Requirement 2
+
+commit df69bb696886e2c25b4584ba32c30c2eaaa9a89c
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Mon Nov 2 18:25:35 2020 +1100
+
+    Reshuffled layout
+    Made some minor layout changes for aesthetics
+    Added emojis to complement headings
+
+commit 82399770530d9db1fe0afbb9a8f64759be4392d7
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Mon Nov 2 18:02:34 2020 +1100
+
+    Documentation edits
+    Fleshed out README.md file with more useful information
+    Edited comments/TO-DO list in script
+
+commit 73354117f37f3de4224443ed319ba75f46785ceb
+Merge: c4ddf75 0367221
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Sun Nov 1 19:46:02 2020 +1100
+
+    Merge pull request #4 from s3437526/Requirement_5
+    
+    Further troubleshooting of kernel installation
+
+commit 0367221ef344075e7eb58a71777e557775452e75
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Sun Nov 1 19:44:40 2020 +1100
+
+    Further troubleshooting of kernel installation
+    Re-wrote .config file for uploading
+
+commit c4ddf75af66ff47153eb5824f77ad202a6560544
+Merge: 2ab8ac4 7397c9c
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Sun Nov 1 18:28:28 2020 +1100
+
+    Merge pull request #3 from s3437526/Requirement_5
+    
+    Requirement 5
+
+commit 7397c9cbec954aa9ec461fd857967f10187e89be
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Sun Nov 1 18:20:14 2020 +1100
+
+    Started revamping script
+    Started revamping script by adding .config file created in requirement 3
+    Added original build script which automated the creation of kernel as per
+    requirement 3. This is for temporary and backup purposes.
+    Troubleshooting changes.
+
+commit 6187ee582c7470558c8e36d7ac7527738cdfda10
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Sun Nov 1 08:34:53 2020 +1100
+
+    Minor tweaks to aesthetics of script printlines
+
+commit d86a6aab4e25a9cca98ef62e63559884a7323a3b
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Sat Oct 31 23:15:55 2020 +1100
+
+    Troubleshooting of kernel installation and copying of files
+
+commit 069e32272b45e96e3bfed24e512ab1427fd9634a
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Sat Oct 31 19:18:39 2020 +1100
+
+    Troubleshooting and modifying
+    Troubleshooting functions with constant paths
+    Adjusted formatting after path variable implementation
+    Worked on copying .config file
+    Worked on backing up of /boot directory
+    Troubleshooting exception handling problems where errors were not getting caught
+    by erro handling program and processed
+
+commit 3091db648846d72073cbeff8ea36bd8037b15028
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Sat Oct 31 16:11:49 2020 +1100
+
+    Added declaration of variables and paths for executables
+
+commit 2ab8ac46dc313e9c62bf2a0d359fc9d905fedea8
+Merge: 0ffc2f3 f97be83
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Oct 29 21:42:47 2020 +1100
+
+    Merge pull request #2 from s3437526/Requirement_5
+    
+    Requirement 5
+
+commit f97be839f18ae839b8e0ac451236b300616f5d52
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Oct 29 21:38:55 2020 +1100
+
+    Finished implementing error handling for all current functions
+    Tested most cases up to installation step
+
+commit 7038d1f11225199e30786c1643eb4e5df996ecb8
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Oct 29 19:03:53 2020 +1100
+
+    More error handling and troubleshooting of existing code
+    Making functions more versatile and robust with error handling and
+    reusable error notifications
+
+commit 9c91a9cfca5ced1606eddd8153262e0ef4e496ac
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Thu Oct 29 14:48:52 2020 +1100
+
+    Added some error handling for startup function
+
+commit 0ffc2f3f902d798ec2c43de43c1d878d2e85e256
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Wed Oct 28 22:09:35 2020 +1100
+
+    Testing and troubleshooting
+    Testing function operations, troubleshooting line errors, shellchecking,
+    rearranging layout for readability and aesthetics, added comments for help with
+    further work
+
+commit a3ab8ffab5fbc337834b87de0b090df7a2bb2c62
+Merge: 8c23b5c 65d86e1
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Tue Oct 27 22:42:16 2020 +1100
+
+    Merge pull request #1 from s3437526/Requirement_5
+    
+    Added some comments
+
+commit 65d86e1b2d479cb998d6eae53beb999ae2f3bbff
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Tue Oct 27 22:38:09 2020 +1100
+
+    Added some comments
+    Minor variable formatting
+    Created functions and some testing and troubleshooting
+
+commit 8c23b5cfa8af33c2e778e665a4452163143b15b5
+Author: s3437526 <s3437526@student.rmit.edu.au>
+Date:   Mon Oct 26 21:24:57 2020 +1100
+
+    Adding working version of build_kernel script
+
+commit 057f26c5046745fb9b482a766db25d5d3d6c6ac5
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Oct 22 18:18:34 2020 +1100
+
+    Update README.md
+
+commit 6de2f63f4688c7730aa3e80b8b976a0f8a87daf3
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Thu Oct 22 18:17:40 2020 +1100
+
+    Initial commit

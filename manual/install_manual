@@ -17,7 +17,7 @@ function install_manpage () {
 	# Local variables
 	local man_src="manual"
 	local man_dest="/usr/share/man/man1/"
-	local student_dir="\"$HOME\"/s3437526_A2/"
+	local student_dir="$HOME/s3437526_A2/"
 
 	# Copy the manpage to the shared man1 page directory - if this 
 	# fails then notify the user and exit

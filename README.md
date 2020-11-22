@@ -82,7 +82,7 @@ The following steps were taken during the .config file creation to disable camer
 |.gitconfig file|
 |![.gitconfig file](/assets/images/gitconfig.png)|
 |gitconfig --list file|
-|![gitconfig --list file](/assets/images/gitconfig&20--list.png)|
+|![gitconfig --list file](/assets/images/gitconfig%20--list.png)|
 
 ***
 

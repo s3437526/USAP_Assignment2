@@ -1,3 +1,21 @@
+commit 682a3839b6f12cd504d19eff760a233a1cd549ae
+Author: S3437526 <s3437526@student.rmit.edu.au>
+Date:   Sun Nov 22 14:08:21 2020 +1100
+
+    Fix path name (space) issue in README.md RE: git config table image.
+
+commit 403848de4766eab890dd355277b4c0f579644f91
+Author: S3437526 <s3437526@student.rmit.edu.au>
+Date:   Sun Nov 22 14:05:29 2020 +1100
+
+    fix README.md RE: git table update
+
+commit 0e58628d712732ad240baeccf8228f0befa2e554
+Author: S3437526 <s3437526@student.rmit.edu.au>
+Date:   Sun Nov 22 12:56:10 2020 +1100
+
+    Update git log for submission
+
 commit 7c4b068a70e2517ac65ed9d33a594465d14c765e
 Author: S3437526 <s3437526@student.rmit.edu.au>
 Date:   Sun Nov 22 12:50:46 2020 +1100

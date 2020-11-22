@@ -1,3 +1,25 @@
+commit 7c4b068a70e2517ac65ed9d33a594465d14c765e
+Author: S3437526 <s3437526@student.rmit.edu.au>
+Date:   Sun Nov 22 12:50:46 2020 +1100
+
+    Capturing last failed commit
+    Previous commit included fixing of install_manual script but it never mananged to find it's way to the develop branch.
+
+commit 00def8af5b81ac198034a27442aac6cc0059bd97
+Merge: 72a3b32 aae5121
+Author: s3437526 <49778458+s3437526@users.noreply.github.com>
+Date:   Sun Nov 22 10:43:15 2020 +1100
+
+    Merge pull request #61 from s3437526/Requirement_4
+    
+    Requirement 4
+
+commit aae512105b1fa05e4fb8e93a92f67a4657284698
+Author: S3437526 <s3437526@student.rmit.edu.au>
+Date:   Sun Nov 22 10:41:51 2020 +1100
+
+    Added git log--pretty for assignment submission.
+
 commit d1a594b144223a7181d9ecc4612603de47e440e7
 Author: S3437526 <s3437526@student.rmit.edu.au>
 Date:   Sun Nov 22 10:39:16 2020 +1100
